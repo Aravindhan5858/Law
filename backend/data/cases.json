@@ -1,0 +1,29 @@
+[
+  {
+    "id": 352,
+    "title": "Assault",
+    "text": "Whoever commits assault shall be punished...",
+    "punishment": "Imprisonment up to 3 months, fine, or both.",
+    "tags": ["hit", "assault", "punch", "slap", "beating"],
+    "examples": ["Someone hit me in public", "He slapped me"],
+    "procedure": "File a first information report (FIR) at the local police station; seek medical certificate and preserve evidence. Attend local magistrate for complaint guidance."
+  },
+  {
+    "id": 420,
+    "title": "Cheating and dishonestly inducing delivery of property",
+    "text": "Whoever cheats and dishonestly induces delivery of property shall be punished...",
+    "punishment": "Imprisonment which may extend to 7 years and also fine.",
+    "tags": ["cheat", "fraud", "scam", "e-commerce", "payment"],
+    "examples": ["I paid on a website but didn't receive goods", "Online seller took money and disappeared"],
+    "procedure": "Collect transaction records, order confirmations, bank statements, and correspondence; file an FIR for cheating; contact your bank to dispute the payment if possible."
+  },
+  {
+    "id": 406,
+    "title": "Punishment for criminal breach of trust",
+    "text": "Whoever commits criminal breach of trust shall be punished...",
+    "punishment": "Imprisonment which may extend to 3 years, or with fine, or with both.",
+    "tags": ["breach of trust", "cheating", "misuse", "money"],
+    "examples": ["An agent misappropriated funds entrusted to him"],
+    "procedure": "Gather evidence of entrustment and misuse; issue formal notices, keep copies of agreements, and file FIR if necessary; consider civil suit for recovery."
+  }
+]

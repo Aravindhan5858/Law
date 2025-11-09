@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model IPCSection {
+  id          Int      @id
+  title       String
+  text        String
+  punishment  String
+  severity    Int      @default(0)
+  tags        String?  // comma-separated keywords
+  examples    Example[]
+}
+
+model Example {
+  id          Int       @id @default(autoincrement())
+  ipcSection  IPCSection @relation(fields: [ipcSectionId], references: [id])
+  ipcSectionId Int
+  text        String
+}
+
+model Submission {
+  id         Int      @id @default(autoincrement())
+  inputText  String
+  resultJson String
+  confidence Float
+  createdAt  DateTime @default(now())
+}

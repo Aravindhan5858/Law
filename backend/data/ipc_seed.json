@@ -1,0 +1,26 @@
+[
+  {
+    "id": 352,
+    "title": "Assault",
+    "text": "Whoever commits assault shall be punished...",
+    "punishment": "Imprisonment up to 3 months, fine, or both.",
+    "tags": ["hit", "assault", "punch", "slap", "beating"],
+    "examples": ["Someone hit me in public", "He slapped me"]
+  },
+  {
+    "id": 323,
+    "title": "Voluntarily causing hurt",
+    "text": "Whoever causes bodily pain, disease or infirmity...",
+    "punishment": "Imprisonment up to 1 year or fine or both.",
+    "tags": ["hurt", "injury", "injure", "beat"],
+    "examples": ["He injured me with a stick", "They beat me"]
+  },
+  {
+    "id": 506,
+    "title": "Criminal intimidation",
+    "text": "Whoever commits the offence of criminal intimidation...",
+    "punishment": "Imprisonment up to 2 years or fine or both.",
+    "tags": ["threat", "threaten", "intimidate"],
+    "examples": ["He threatened to kill me", "She is threatening me"]
+  }
+]
