@@ -99,7 +99,57 @@ router.post('/analyze', (req: Request, res: Response) => {
   if (!text || typeof text !== 'string') return res.status(400).json({ error: 'text is required' });
 
   const recommendations = simpleMatch(text);
-  res.json({ query: text, recommendations, disclaimer: 'Informational only; not legal advice.' });
+  
+  // Determine case classification based on keywords
+  const lowerText = text.toLowerCase();
+  const classifications = [];
+  
+  if (lowerText.includes('cheat') || lowerText.includes('fraud') || lowerText.includes('scam') || 
+      lowerText.includes('threat') || lowerText.includes('assault') || lowerText.includes('hurt')) {
+    classifications.push('Criminal');
+  }
+  
+  if (lowerText.includes('consumer') || lowerText.includes('product') || lowerText.includes('service') ||
+      lowerText.includes('delivered') || lowerText.includes('refund') || lowerText.includes('purchase') ||
+      lowerText.includes('paid') || lowerText.includes('bought') || lowerText.includes('e-commerce') ||
+      lowerText.includes('online')) {
+    classifications.push('Consumer');
+  }
+  
+  if (lowerText.includes('online') || lowerText.includes('website') || lowerText.includes('cyber') ||
+      lowerText.includes('internet') || lowerText.includes('digital') || lowerText.includes('e-commerce')) {
+    classifications.push('Cyber');
+  }
+  
+  // Default to Consumer if nothing matched
+  if (classifications.length === 0) {
+    classifications.push('Consumer');
+  }
+  
+  // Build structured response
+  const structuredResponse = {
+    case_classification: [...new Set(classifications)], // Remove duplicates
+    applicable_sections: recommendations.map(r => ({
+      section: `IPC §${r.ipc_section}`,
+      title: r.title,
+      punishment: r.punishment
+    })),
+    punishment: recommendations.map(r => r.punishment).filter(Boolean),
+    action_steps: recommendations.map(r => r.procedure).filter(Boolean),
+    expected_outcome: [
+      'File a police complaint (FIR) if criminal offense is suspected',
+      'Collect all evidence: receipts, screenshots, communications, bank statements',
+      'Send legal notice to the concerned party',
+      'File consumer complaint if applicable',
+      'Seek compensation and refund through legal channels',
+      'Possible criminal prosecution if fraud/cheating is proven'
+    ],
+    original_query: text,
+    recommendations: recommendations,
+    disclaimer: 'This tool provides informational suggestions only and is not legal advice. Consult a qualified lawyer for your specific case.'
+  };
+  
+  res.json(structuredResponse);
 });
 
 // Search endpoint returning a single case-like object for frontend convenience

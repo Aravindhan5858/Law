@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Case Analyzer - Client-Side</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #fafafa;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+            --accent: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #dc2626;
+            --error: #dc2626;
+            --shadow: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: #334155;
+            --error: #ef4444;
+            --shadow: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-bottom: 1rem;
+        }
+
+        .theme-toggle {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--text-primary);
+            transition: all 0.2s;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .input-section {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--bg);
+            color: var(--text-primary);
+            resize: vertical;
+            transition: border-color 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 0.875rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .results-section {
+            display: none;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .results-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .result-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+        }
+
+        .result-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .result-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .result-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .result-card.numbered li {
+            counter-increment: step;
+        }
+
+        .result-card.numbered li:before {
+            content: counter(step);
+            background: var(--accent);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .result-card.numbered ul {
+            counter-reset: step;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-criminal {
+            background: rgba(220, 38, 38, 0.1);
+            color: var(--danger);
+            border: 2px solid var(--danger);
+        }
+
+        .badge-consumer {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border: 2px solid var(--success);
+        }
+
+        .badge-cyber {
+            background: rgba(99, 102, 241, 0.1);
+            color: #6366f1;
+            border: 2px solid #6366f1;
+        }
+
+        .section-item {
+            background: var(--bg);
+            padding: 0.875rem;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+            border: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .punishment-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .no-match {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .disclaimer {
+            background: rgba(245, 158, 11, 0.1);
+            border: 2px solid var(--warning);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .disclaimer-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader-container {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .loader-container.show {
+            display: block;
+        }
+
+        .loader {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .loader-text {
+            margin-top: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .error-message {
+            display: none;
+            background: rgba(220, 38, 38, 0.1);
+            border: 2px solid var(--error);
+            color: var(--error);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-message strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚖️ Legal Case Analyzer</h1>
+            <p class="subtitle">Client-Side Complaint Analysis Tool</p>
+        </header>
+
+        <div class="controls">
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span> Toggle Theme
+            </button>
+        </div>
+
+        <div class="input-section">
+            <label for="complaint">Your Complaint</label>
+            <textarea 
+                id="complaint" 
+                placeholder="Describe your complaint in detail..."
+            >A customer pays for a mobile phone on an e-commerce site. Product never delivered. Site stops replying. Money not refunded.</textarea>
+            
+            <div class="button-group">
+                <button class="btn-primary" id="analyzeBtn" onclick="analyzeComplaint()">
+                    <span>🔍</span> Analyze Case
+                </button>
+                <button class="btn-secondary" onclick="clearComplaint()">
+                    <span>🗑️</span> Clear
+                </button>
+            </div>
+
+            <div id="loader" class="loader-container">
+                <div class="loader"></div>
+                <div class="loader-text">Analyzing your complaint...</div>
+            </div>
+
+            <div id="errorMessage" class="error-message">
+                <strong>⚠️ Analysis Failed</strong>
+                <span id="errorText">Unable to analyze right now. Please try again later.</span>
+            </div>
+        </div>
+
+        <div id="results" class="results-section">
+            <div class="results-header">
+                <h2>Analysis Results</h2>
+                <button class="btn-secondary" onclick="copyResults()">
+                    <span>📋</span> Copy Result
+                </button>
+            </div>
+
+            <div class="results-grid">
+                <!-- Case Classification -->
+                <div class="result-card">
+                    <h3><span class="card-icon">🔍</span> Case Classification</h3>
+                    <div id="classification"></div>
+                </div>
+
+                <!-- Applicable Sections -->
+                <div class="result-card">
+                    <h3><span class="card-icon">⚖️</span> Applicable Sections</h3>
+                    <div id="sections"></div>
+                </div>
+
+                <!-- Punishment -->
+                <div class="result-card">
+                    <h3><span class="card-icon">⚡</span> Punishment</h3>
+                    <div id="punishment"></div>
+                </div>
+
+                <!-- Action Steps -->
+                <div class="result-card numbered">
+                    <h3><span class="card-icon">📋</span> Action Steps</h3>
+                    <div id="steps"></div>
+                </div>
+
+                <!-- Expected Outcome -->
+                <div class="result-card">
+                    <h3><span class="card-icon">🎯</span> Expected Outcome</h3>
+                    <div id="outcome"></div>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                <span class="disclaimer-icon">⚠️</span>
+                <p><strong>Disclaimer:</strong> This tool provides informational suggestions only and is not legal advice. Please consult a qualified lawyer for your specific case.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Rule Engine - Knowledge Base
+        const rules = {
+            // Keywords for classification
+            paymentKeywords: ['paid', 'payment', 'amount', 'money', 'rupees', 'rs', 'inr', 'price', 'cost'],
+            nonDeliveryKeywords: ['not delivered', 'never delivered', 'no delivery', 'item not received', 'product not received', 'not received', 'didnt receive', 'did not receive'],
+            noRefundKeywords: ['no refund', 'not refunded', 'refund denied', 'money not returned', 'amount not returned'],
+            fraudKeywords: ['scam', 'fraud', 'cheat', 'fake', 'stops replying', 'not responding', 'disappeared'],
+            onlineKeywords: ['website', 'online', 'e-commerce', 'portal', 'upi', 'netbanking', 'app', 'digital', 'internet'],
+
+            // Legal sections database
+            sections: {
+                ipc420: {
+                    id: 'IPC §420',
+                    title: 'Cheating and dishonestly inducing delivery of property',
+                    punishment: 'Imprisonment up to 7 years + fine',
+                    type: 'criminal'
+                },
+                ipc406: {
+                    id: 'IPC §406',
+                    title: 'Criminal breach of trust',
+                    punishment: 'Imprisonment up to 3 years or fine or both',
+                    type: 'criminal'
+                },
+                itAct66d: {
+                    id: 'IT Act §66D',
+                    title: 'Cheating by personation using computer resources',
+                    punishment: 'Imprisonment up to 3 years + fine (up to ₹1,00,000)',
+                    type: 'cyber'
+                },
+                consumerAct: {
+                    id: 'Consumer Protection Act, 2019',
+                    title: '§35 Complaint to District Consumer Commission; E-commerce Rules, 2020',
+                    punishment: 'Refund + compensation + costs + interest (civil remedies)',
+                    type: 'consumer'
+                }
+            },
+
+            // Action steps template
+            actionSteps: [
+                'Preserve evidence: order ID, invoices, chats, emails, payment proof, screenshots.',
+                'Send written notice/email to seller demanding delivery or refund within 7–15 days.',
+                'File grievance on the platform\'s helpdesk; escalate to their Grievance Officer.',
+                'File a consumer complaint (CPA §35) at the District Commission with affidavit, evidence, and claim for refund, compensation, costs, and interest.',
+                'If fraud suspected, file an FIR citing IPC §420/§406 and IT Act §66D; also report at cybercrime.gov.in.',
+                'Parallel remedy: call 1915 or use consumerhelpline.gov.in for mediation.',
+                'Track case; if seller refunds, record settlement and close.'
+            ],
+
+            // Expected outcome template
+            expectedOutcome: 'Likely refund of the paid amount, replacement (if requested), compensation for delay/mental agony, litigation costs, interest from payment date; possible criminal prosecution for cheating if police case proceeds.'
+        };
+
+        // Analyze complaint function
+        function analyzeComplaint() {
+            const complaint = document.getElementById('complaint').value.trim().toLowerCase();
+            
+            if (!complaint || complaint.length < 10) {
+                alert('Please enter a detailed complaint (at least 10 characters).');
+                return;
+            }
+
+            // Determine classification
+            const hasPayment = rules.paymentKeywords.some(kw => complaint.includes(kw));
+            const hasNonDelivery = rules.nonDeliveryKeywords.some(kw => complaint.includes(kw));
+            const hasNoRefund = rules.noRefundKeywords.some(kw => complaint.includes(kw));
+            const hasFraud = rules.fraudKeywords.some(kw => complaint.includes(kw));
+            const isOnline = rules.onlineKeywords.some(kw => complaint.includes(kw));
+
+            let classifications = [];
+            let applicableSections = [];
+            let punishments = [];
+
+            // Rule: Payment + Non-delivery/No refund/Fraud = Consumer + Criminal
+            if (hasPayment && (hasNonDelivery || hasNoRefund || hasFraud)) {
+                classifications.push('Consumer', 'Criminal');
+                
+                // Add relevant sections
+                applicableSections.push(rules.sections.ipc420);
+                applicableSections.push(rules.sections.consumerAct);
+                
+                // If online context, add IT Act
+                if (isOnline) {
+                    classifications.push('Cyber');
+                    applicableSections.push(rules.sections.itAct66d);
+                }
+                
+                // Add IPC 406 if breach of trust is indicated
+                if (hasNoRefund || hasFraud) {
+                    applicableSections.push(rules.sections.ipc406);
+                }
+            } 
+            // Fallback: Generic consumer issue
+            else if (hasNonDelivery || hasNoRefund) {
+                classifications.push('Consumer');
+                applicableSections.push(rules.sections.consumerAct);
+            }
+            // Fallback: No clear match
+            else {
+                displayNoMatch();
+                return;
+            }
+
+            // Remove duplicates and sort (criminal > consumer > cyber)
+            classifications = [...new Set(classifications)];
+            const order = { 'Criminal': 1, 'Consumer': 2, 'Cyber': 3 };
+            classifications.sort((a, b) => order[a] - order[b]);
+
+            // Render results
+            renderClassification(classifications);
+            renderSections(applicableSections);
+            renderPunishment(applicableSections);
+            renderActionSteps(rules.actionSteps);
+            renderOutcome(rules.expectedOutcome);
+
+            // Show results section
+            document.getElementById('results').classList.add('show');
+            
+            // Scroll to results
+            setTimeout(() => {
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        function renderClassification(classifications) {
+            const el = document.getElementById('classification');
+            
+            if (classifications.length === 0) {
+                el.innerHTML = '<p class="no-match">Unable to classify this complaint.</p>';
+                return;
+            }
+
+            let html = '<div>';
+            classifications.forEach(cls => {
+                const badgeClass = cls.toLowerCase();
+                html += `<span class="badge badge-${badgeClass}">${cls}</span>`;
+            });
+            html += '</div>';
+            
+            el.innerHTML = html;
+        }
+
+        function renderSections(sections) {
+            const el = document.getElementById('sections');
+            
+            if (sections.length === 0) {
+                el.innerHTML = '<p class="no-match">No applicable sections found.</p>';
+                return;
+            }
+
+            let html = '';
+            sections.forEach(section => {
+                html += `
+                    <div class="section-item">
+                        <div class="section-title">${section.id}</div>
+                        <div>${section.title}</div>
+                    </div>
+                `;
+            });
+            
+            el.innerHTML = html;
+        }
+
+        function renderPunishment(sections) {
+            const el = document.getElementById('punishment');
+            
+            if (sections.length === 0) {
+                el.innerHTML = '<p class="no-match">No punishment details available.</p>';
+                return;
+            }
+
+            let html = '<div class="punishment-box"><ul>';
+            
+            // Get unique punishments
+            const punishments = [...new Set(sections.map(s => s.punishment))];
+            
+            punishments.forEach(p => {
+                html += `<li>${p}</li>`;
+            });
+            
+            html += '</ul></div>';
+            el.innerHTML = html;
+        }
+
+        function renderActionSteps(steps) {
+            const el = document.getElementById('steps');
+            
+            let html = '<ul>';
+            steps.forEach(step => {
+                html += `<li>${step}</li>`;
+            });
+            html += '</ul>';
+            
+            el.innerHTML = html;
+        }
+
+        function renderOutcome(outcome) {
+            const el = document.getElementById('outcome');
+            el.innerHTML = `<p>${outcome}</p>`;
+        }
+
+        function displayNoMatch() {
+            document.getElementById('classification').innerHTML = '<p class="no-match">Unable to classify this complaint based on available rules.</p>';
+            document.getElementById('sections').innerHTML = '<p class="no-match">No applicable legal sections found. Please consult a lawyer for personalized advice.</p>';
+            document.getElementById('punishment').innerHTML = '<p class="no-match">N/A</p>';
+            document.getElementById('steps').innerHTML = '<p class="no-match">Please consult a legal professional for guidance on your specific case.</p>';
+            document.getElementById('outcome').innerHTML = '<p class="no-match">Unable to determine expected outcome. Legal advice recommended.</p>';
+            
+            document.getElementById('results').classList.add('show');
+            
+            setTimeout(() => {
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        function copyResults() {
+            const classification = document.getElementById('classification').innerText;
+            const sections = document.getElementById('sections').innerText;
+            const punishment = document.getElementById('punishment').innerText;
+            const steps = document.getElementById('steps').innerText;
+            const outcome = document.getElementById('outcome').innerText;
+
+            const resultText = `
+LEGAL CASE ANALYSIS RESULTS
+============================
+
+CASE CLASSIFICATION:
+${classification}
+
+APPLICABLE SECTIONS:
+${sections}
+
+PUNISHMENT:
+${punishment}
+
+ACTION STEPS:
+${steps}
+
+EXPECTED OUTCOME:
+${outcome}
+
+---
+Disclaimer: This tool provides informational suggestions only and is not legal advice.
+            `.trim();
+
+            navigator.clipboard.writeText(resultText).then(() => {
+                alert('Results copied to clipboard!');
+            }).catch(err => {
+                alert('Failed to copy results. Please try again.');
+            });
+        }
+
+        function clearComplaint() {
+            document.getElementById('complaint').value = '';
+            document.getElementById('results').classList.remove('show');
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            document.getElementById('theme-icon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            
+            // Save preference
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Load saved theme on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.getElementById('theme-icon').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>
