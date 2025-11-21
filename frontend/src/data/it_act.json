@@ -1,0 +1,128 @@
+[
+  {
+    "section_number": "43",
+    "title": "Penalty and Compensation for damage to computer, computer system, etc.",
+    "text": "If any person without permission of the owner or any other person who is in charge of a computer, computer system or computer network, accesses or secures access to such computer, computer system or computer network; downloads, copies or extracts any data, computer database or information from such computer; introduces or causes to be introduced any computer contaminant or computer virus; damages or causes to be damaged any computer, computer system or computer network, data, computer database or any other programmes residing in such computer; disrupts or causes disruption of any computer, computer system or computer network; denies or causes the denial of access to any person authorized to access any computer; provides any assistance to any person to facilitate access to a computer in contravention of the provisions of this Act; charges the services availed of by a person to the account of another person by tampering with or manipulating any computer; or destroys, deletes or alters any information residing in a computer resource or diminishes its value or utility or affects it injuriously by any means, he shall be liable to pay damages by way of compensation to the person so affected.",
+    "punishment": "Compensation up to Rs. 1 crore to affected person",
+    "example_case": "A hacker gains unauthorized access to a company's server and deletes critical customer data, causing business loss. The company can claim compensation under Section 43."
+  },
+  {
+    "section_number": "65",
+    "title": "Tampering with computer source documents",
+    "text": "Whoever knowingly or intentionally conceals, destroys or alters or intentionally or knowingly causes another to conceal, destroy or alter any computer source code used for a computer, computer programme, computer system or computer network, when the computer source code is required to be kept or maintained by law for the time being in force, shall be punishable with imprisonment up to three years, or with fine which may extend to two lakh rupees, or with both.",
+    "punishment": "Imprisonment up to 3 years or fine up to Rs. 2 lakh or both",
+    "example_case": "A software developer deliberately deletes source code that is required to be maintained as per company audit requirements. He is liable under Section 65."
+  },
+  {
+    "section_number": "66",
+    "title": "Computer related offences",
+    "text": "If any person, dishonestly or fraudulently, does any act referred to in section 43, he shall be punishable with imprisonment for a term which may extend to three years or with fine which may extend to five lakh rupees or with both.",
+    "punishment": "Imprisonment up to 3 years or fine up to Rs. 5 lakh or both",
+    "example_case": "A person fraudulently accesses a bank's computer system and transfers money to his own account. He is prosecutable under Section 66."
+  },
+  {
+    "section_number": "66A",
+    "title": "Punishment for sending offensive messages through communication service, etc. (Struck Down)",
+    "text": "Any person who sends, by means of a computer resource or a communication device, any information that is grossly offensive or has menacing character; or any information which he knows to be false, but for the purpose of causing annoyance, inconvenience, danger, obstruction, insult, injury, criminal intimidation, enmity, hatred or ill will, persistently by making use of such computer resource or a communication device; or any electronic mail or electronic mail message for the purpose of causing annoyance or inconvenience or to deceive or to mislead the addressee or recipient about the origin of such messages, shall be punishable with imprisonment for a term which may extend to three years and with fine.",
+    "punishment": "STRUCK DOWN by Supreme Court in 2015 (Shreya Singhal case)",
+    "example_case": "This section was declared unconstitutional in Shreya Singhal v. Union of India (2015) for violating Article 19(1)(a) - Freedom of Speech."
+  },
+  {
+    "section_number": "66B",
+    "title": "Punishment for dishonestly receiving stolen computer resource or communication device",
+    "text": "Whoever dishonestly receives or retains any stolen computer resource or communication device knowing or having reason to believe the same to be stolen computer resource or communication device, shall be punished with imprisonment of either description for a term which may extend to three years or with fine which may extend to rupees one lakh or with both.",
+    "punishment": "Imprisonment up to 3 years or fine up to Rs. 1 lakh or both",
+    "example_case": "A knowingly purchases a stolen laptop from B at a very low price. A is liable under Section 66B for receiving stolen computer resource."
+  },
+  {
+    "section_number": "66C",
+    "title": "Punishment for identity theft",
+    "text": "Whoever, fraudulently or dishonestly make use of the electronic signature, password or any other unique identification feature of any other person, shall be punished with imprisonment of either description for a term which may extend to three years and shall also be liable to fine which may extend to rupees one lakh.",
+    "punishment": "Imprisonment up to 3 years and fine up to Rs. 1 lakh",
+    "example_case": "A creates a fake Facebook profile using B's photographs and personal information to defame B. A commits identity theft under Section 66C."
+  },
+  {
+    "section_number": "66D",
+    "title": "Punishment for cheating by personation by using computer resource",
+    "text": "Whoever, by means of any communication device or computer resource cheats by personation, shall be punished with imprisonment of either description for a term which may extend to three years and shall also be liable to fine which may extend to one lakh rupees.",
+    "punishment": "Imprisonment up to 3 years and fine up to Rs. 1 lakh",
+    "example_case": "A creates a fake email ID impersonating a bank official and tricks people into sharing their bank account details. A is punishable under Section 66D."
+  },
+  {
+    "section_number": "66E",
+    "title": "Punishment for violation of privacy",
+    "text": "Whoever, intentionally or knowingly captures, publishes or transmits the image of a private area of any person without his or her consent, under circumstances violating the privacy of that person, shall be punished with imprisonment which may extend to three years or with fine not exceeding two lakh rupees, or with both.",
+    "punishment": "Imprisonment up to 3 years or fine up to Rs. 2 lakh or both",
+    "example_case": "A secretly photographs a woman in a changing room and uploads the images online without her consent. A violates Section 66E."
+  },
+  {
+    "section_number": "66F",
+    "title": "Punishment for cyber terrorism",
+    "text": "Whoever, with intent to threaten the unity, integrity, security or sovereignty of India or to strike terror in the people or any section of the people by denying or cause the denial of access to any person authorized to access computer resource; or attempting to penetrate or access a computer resource without authorization or exceeding authorized access; or introducing or causing to introduce any computer contaminant, and by means of such conduct causes or is likely to cause death or injuries to persons or damage to or destruction of property or disrupts or knowing that it is likely to cause damage or disruption of supplies or services essential to the life of the community or adversely affect the critical information infrastructure, commits the offence of cyber terrorism.",
+    "punishment": "Imprisonment up to life",
+    "example_case": "A hacker group attacks and disrupts the national power grid infrastructure with intent to cause panic. They are liable under Section 66F for cyber terrorism."
+  },
+  {
+    "section_number": "67",
+    "title": "Punishment for publishing or transmitting obscene material in electronic form",
+    "text": "Whoever publishes or transmits or causes to be published or transmitted in the electronic form any material which is lascivious or appeals to the prurient interest or if its effect is such as to tend to deprave and corrupt persons who are likely, having regard to all relevant circumstances, to read, see or hear the matter contained or embodied in it, shall be punished on first conviction with imprisonment of either description for a term which may extend to three years and with fine which may extend to five lakh rupees and in the event of second or subsequent conviction with imprisonment of either description for a term which may extend to five years and also with fine which may extend to ten lakh rupees.",
+    "punishment": "First conviction: up to 3 years and fine up to Rs. 5 lakh; Subsequent: up to 5 years and fine up to Rs. 10 lakh",
+    "example_case": "A runs a website publishing obscene content. On first conviction under Section 67, A faces up to 3 years imprisonment and Rs. 5 lakh fine."
+  },
+  {
+    "section_number": "67A",
+    "title": "Punishment for publishing or transmitting of material containing sexually explicit act, etc., in electronic form",
+    "text": "Whoever publishes or transmits or causes to be published or transmitted in the electronic form any material which contains sexually explicit act or conduct shall be punished on first conviction with imprisonment of either description for a term which may extend to five years and with fine which may extend to ten lakh rupees and in the event of second or subsequent conviction with imprisonment of either description for a term which may extend to seven years and also with fine which may extend to ten lakh rupees.",
+    "punishment": "First conviction: up to 5 years and fine up to Rs. 10 lakh; Subsequent: up to 7 years and fine up to Rs. 10 lakh",
+    "example_case": "A uploads and distributes explicit sexual content online. Under Section 67A, A can be imprisoned for up to 5 years on first conviction."
+  },
+  {
+    "section_number": "67B",
+    "title": "Punishment for publishing or transmitting of material depicting children in sexually explicit act, etc., in electronic form",
+    "text": "Whoever publishes or transmits or causes to be published or transmitted material in any electronic form which depicts children engaged in sexually explicit act or conduct or creates text or digital images, collects, seeks, browses, downloads, advertises, promotes, exchanges or distributes material in any electronic form depicting children in obscene or indecent or sexually explicit manner or cultivates, entices or induces children to online relationship with one or more children for and on sexually explicit act or in a manner that may offend a reasonable adult on the computer resource; or facilitates abusing children online, or records in any electronic form own abuse or that of others pertaining to sexually explicit act with children, shall be punished on first conviction with imprisonment of either description for a term which may extend to five years and with fine which may extend to ten lakh rupees and in the event of second or subsequent conviction with imprisonment of either description for a term which may extend to seven years and also with fine which may extend to ten lakh rupees.",
+    "punishment": "First conviction: up to 5 years and fine up to Rs. 10 lakh; Subsequent: up to 7 years and fine up to Rs. 10 lakh",
+    "example_case": "A creates and distributes child pornography online. This is a serious offence under Section 67B with up to 5 years imprisonment on first conviction."
+  },
+  {
+    "section_number": "67C",
+    "title": "Preservation and Retention of information by intermediaries",
+    "text": "Intermediary shall preserve and retain such information as may be specified for such duration and in such manner and format as the Central Government may prescribe. Any intermediary who intentionally or knowingly contravenes such rules shall be punished with an imprisonment for a term which may extend to three years and shall also be liable to fine.",
+    "punishment": "Imprisonment up to 3 years and fine",
+    "example_case": "A social media platform fails to preserve user data as mandated by government rules for investigation purposes. The platform is liable under Section 67C."
+  },
+  {
+    "section_number": "69",
+    "title": "Powers to issue directions for interception or monitoring or decryption of any information through any computer resource",
+    "text": "The Central Government or a State Government or any of its officers specially authorised by the Central Government or the State Government, may, if satisfied that it is necessary or expedient so to do, in the interest of the sovereignty or integrity of India, defence of India, security of the State, friendly relations with foreign States or public order or for preventing incitement to the commission of any cognizable offence relating to above or for investigation of any offence, by order, direct any agency of the appropriate Government to intercept, monitor or decrypt or cause to be intercepted or monitored or decrypted any information generated, transmitted, received or stored in any computer resource.",
+    "punishment": "N/A - Procedural provision for government surveillance",
+    "example_case": "During a terrorism investigation, the government issues an order under Section 69 to intercept and monitor emails of suspects."
+  },
+  {
+    "section_number": "70",
+    "title": "Protected system",
+    "text": "The appropriate Government may, by notification in the Official Gazette, declare any computer resource which directly or indirectly affects the facility of Critical Information Infrastructure, to be a protected system. The appropriate Government may, by order in writing, authorize the persons who are authorized to access protected systems.",
+    "punishment": "N/A - Procedural provision for declaring critical infrastructure",
+    "example_case": "The government declares the national power grid control system as a protected system under Section 70 to prevent cyber attacks."
+  },
+  {
+    "section_number": "72",
+    "title": "Breach of confidentiality and privacy",
+    "text": "Save as otherwise provided in this Act or any other law for the time being in force, any person who, in pursuance of any of the powers conferred under this Act, rules or regulations made thereunder, has secured access to any electronic record, book, register, correspondence, information, document or other material without the consent of the person concerned discloses such electronic record, book, register, correspondence, information, document or other material to any other person shall be punished with imprisonment for a term which may extend to two years, or with fine which may extend to one lakh rupees, or with both.",
+    "punishment": "Imprisonment up to 2 years or fine up to Rs. 1 lakh or both",
+    "example_case": "A government official accesses citizens' tax records and leaks them to a newspaper without authorization. He violates Section 72."
+  },
+  {
+    "section_number": "72A",
+    "title": "Punishment for disclosure of information in breach of lawful contract",
+    "text": "Save as otherwise provided in this Act or any other law for the time being in force, any person including an intermediary who, while providing services under the terms of lawful contract, has secured access to any material containing personal information about another person, with the intent to cause or knowing that he is likely to cause wrongful loss or wrongful gain discloses, without the consent of the person concerned, or in breach of a lawful contract, such material to any other person, shall be punished with imprisonment for a term which may extend to three years, or with fine which may extend to five lakh rupees, or with both.",
+    "punishment": "Imprisonment up to 3 years or fine up to Rs. 5 lakh or both",
+    "example_case": "An employee of a hospital leaks patients' medical records to an insurance company in violation of confidentiality agreement. Punishable under Section 72A."
+  },
+  {
+    "section_number": "84C",
+    "title": "Offences for which intermediary not liable",
+    "text": "For the removal of doubts, it is hereby declared that no person providing any service as a network service provider shall be liable under this Act, rules or regulations made thereunder for any third party information or data made available by him if he proves that the offence or contravention was committed without his knowledge or that he had exercised all due diligence to prevent the commission of such offence or contravention.",
+    "punishment": "N/A - Safe harbor provision for intermediaries",
+    "example_case": "A social media platform is not held liable for defamatory content posted by a user if the platform took down the content upon receiving notice and exercised due diligence."
+  }
+]

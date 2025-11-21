@@ -30,10 +30,16 @@ export default function Header() {
             alignItems: 'center',
             gap: '0.5rem'
           }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-            </svg>
+            <img 
+              src="/assets/legal_logo.svg" 
+              alt="Legal Case Advisor" 
+              style={{ 
+                width: '45px', 
+                height: '45px',
+                filter: 'drop-shadow(0 2px 8px rgba(255, 215, 0, 0.3))',
+                padding: '4px'
+              }} 
+            />
             Legal Case Advisor
           </Link>
         </div>
@@ -51,12 +57,12 @@ export default function Header() {
             fontWeight: 500,
             transition: 'color 0.2s'
           }}>Analyze</Link>
-          <Link to="/laws" style={{ 
+          <Link to="/offline-search" style={{ 
             textDecoration: 'none', 
             color: 'var(--text-secondary)',
             fontWeight: 500,
             transition: 'color 0.2s'
-          }}>Laws</Link>
+          }}>Offline Search</Link>
           <Link to="/about" style={{ 
             textDecoration: 'none', 
             color: 'var(--text-secondary)',

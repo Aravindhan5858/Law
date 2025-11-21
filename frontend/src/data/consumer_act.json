@@ -1,0 +1,107 @@
+[
+  {
+    "section_number": "2(1)(d)",
+    "title": "Definition of consumer",
+    "text": "Consumer means any person who buys any goods for a consideration which has been paid or promised or partly paid and partly promised, or under any system of deferred payment and includes any user of such goods other than the person who buys such goods for consideration paid or promised or partly paid or partly promised, or under any system of deferred payment, when such use is made with the approval of such person, but does not include a person who obtains such goods for resale or for any commercial purpose.",
+    "punishment": "N/A - Definition only",
+    "example_case": "A buys a refrigerator for household use. A is a consumer under the Act. But if B buys the same refrigerator to resell it, B is not a consumer."
+  },
+  {
+    "section_number": "2(1)(g)",
+    "title": "Definition of defect",
+    "text": "Defect means any fault, imperfection or shortcoming in the quality, quantity, potency, purity or standard which is required to be maintained by or under any law for the time being in force or under any contract, express or implied, or as is claimed by the trader in any manner whatsoever in relation to any goods.",
+    "punishment": "N/A - Definition only",
+    "example_case": "A purchases a mobile phone advertised with 128GB storage but receives only 64GB. This is a defect under Section 2(1)(g)."
+  },
+  {
+    "section_number": "2(1)(i)",
+    "title": "Definition of deficiency",
+    "text": "Deficiency means any fault, imperfection, shortcoming or inadequacy in the quality, nature and manner of performance which is required to be maintained by or under any law for the time being in force or has been undertaken to be performed by a person in pursuance of a contract or otherwise in relation to any service.",
+    "punishment": "N/A - Definition only",
+    "example_case": "A hotel fails to provide air conditioning despite advertising it as an amenity. This is deficiency in service under Section 2(1)(i)."
+  },
+  {
+    "section_number": "2(42)",
+    "title": "Definition of unfair trade practice",
+    "text": "Unfair trade practice means a trade practice which, for the purpose of promoting the sale, use or supply of any goods or for the provision of any service, adopts any unfair method or unfair or deceptive practice including any of the following practices: false representation; misleading advertisement; bargain sale without intent to sell; offering gifts or prizes without intent to provide them; non-compliance with prescribed standards; hoarding or destruction of goods; and other practices as may be prescribed.",
+    "punishment": "N/A - Definition, remedies under Sections 35-38",
+    "example_case": "A shop advertises a 50% off sale but marks up prices before applying discount. This is an unfair trade practice under Section 2(42)."
+  },
+  {
+    "section_number": "35",
+    "title": "Rights of consumers",
+    "text": "Every consumer shall have the right to: be protected against the marketing of goods, products or services which are hazardous to life and property; be informed about the quality, quantity, potency, purity, standard and price of goods, products or services; be assured, wherever possible, access to a variety of goods, products or services at competitive prices; be heard and be assured that consumer's interests will receive due consideration at appropriate forums; seek redressal against unfair trade practices or restrictive trade practices or unscrupulous exploitation of consumers; and consumer awareness.",
+    "punishment": "N/A - Rights declaration",
+    "example_case": "A consumer has the right to know all ingredients in a food product before purchasing, as guaranteed under Section 35."
+  },
+  {
+    "section_number": "58",
+    "title": "Pecuniary jurisdiction of District Commission",
+    "text": "A District Commission shall have jurisdiction to entertain complaints where the value of the goods or services and compensation, if any, claimed does not exceed one crore rupees.",
+    "punishment": "N/A - Jurisdictional provision",
+    "example_case": "A consumer with a dispute involving goods worth Rs. 50 lakh files a complaint with the District Consumer Commission under Section 58."
+  },
+  {
+    "section_number": "59",
+    "title": "Pecuniary jurisdiction of State Commission",
+    "text": "A State Commission shall have jurisdiction to entertain complaints where the value of the goods or services and compensation, if any, claimed exceeds one crore rupees but does not exceed ten crore rupees; and appeals against orders of any District Commission within the State.",
+    "punishment": "N/A - Jurisdictional provision",
+    "example_case": "A consumer dispute involving defective machinery worth Rs. 5 crore is filed with the State Consumer Commission under Section 59."
+  },
+  {
+    "section_number": "60",
+    "title": "Pecuniary jurisdiction of National Commission",
+    "text": "The National Commission shall have jurisdiction to entertain complaints where the value of the goods or services and compensation, if any, claimed exceeds ten crore rupees; and appeals against the orders of State Commissions.",
+    "punishment": "N/A - Jurisdictional provision",
+    "example_case": "A bulk buyer of construction materials worth Rs. 20 crore files a complaint with the National Consumer Commission under Section 60."
+  },
+  {
+    "section_number": "82",
+    "title": "Liability of product manufacturer",
+    "text": "A product manufacturer shall be liable to compensate for any harm caused to a consumer by such product manufactured or produced by him which suffers from any defect; or for any service which is defective in any manner. No product manufacturer shall be liable if he proves that the defect which caused the harm did not exist when the goods were supplied by him; or that he had complied with all mandatory standards relating to safety and quality.",
+    "punishment": "N/A - Liability provision, compensation determined by Commission",
+    "example_case": "A pressure cooker explodes due to manufacturing defect, injuring the consumer. The manufacturer is liable for compensation under Section 82."
+  },
+  {
+    "section_number": "84",
+    "title": "Liability of product seller",
+    "text": "A product seller shall be liable to compensate for any harm caused to a consumer by the product sold by him if the product seller has exercised any influence over the design, testing, manufacture, packaging or labeling of the product relative to its harm-causing characteristics; or has altered or modified the product which results in harm to a consumer; or the product manufacturer is not subject to the jurisdiction of the consumer commission.",
+    "punishment": "N/A - Liability provision, compensation determined by Commission",
+    "example_case": "A retailer sells expired medicines despite knowing they are harmful. The retailer is liable under Section 84 for harm caused."
+  },
+  {
+    "section_number": "87",
+    "title": "Remedies available to consumer",
+    "text": "The District Commission, the State Commission or the National Commission, as the case may be, may direct the opposite party to do one or more of the following: remove defect from goods; replace the goods; refund the price paid; award compensation for loss or injury suffered; remove deficiency in service; discontinue unfair trade practice and not to repeat it; not to offer hazardous goods for sale; withdraw hazardous goods from sale; cease manufacture of hazardous goods; pay punitive damages; provide adequate costs to the complainant.",
+    "punishment": "N/A - Remedial measures including compensation and punitive damages",
+    "example_case": "A consumer commission orders a mobile manufacturer to replace a defective phone and pay Rs. 10,000 as compensation for mental harassment under Section 87."
+  },
+  {
+    "section_number": "89",
+    "title": "Appeal against order of District Commission",
+    "text": "Any person aggrieved by an order made by the District Commission may prefer an appeal against such order to the State Commission within a period of forty-five days from the date of the order.",
+    "punishment": "N/A - Appellate provision",
+    "example_case": "A trader dissatisfied with the District Commission's order directing refund files an appeal with the State Commission within 45 days under Section 89."
+  },
+  {
+    "section_number": "90",
+    "title": "Appeal against order of State Commission",
+    "text": "Any person aggrieved by an order made by the State Commission in exercise of its original or appellate jurisdiction may prefer an appeal against such order to the National Commission within a period of thirty days from the date of the order.",
+    "punishment": "N/A - Appellate provision",
+    "example_case": "A company challenging the State Commission's order to pay Rs. 2 crore compensation files appeal with National Commission within 30 days under Section 90."
+  },
+  {
+    "section_number": "91",
+    "title": "Appeal against order of National Commission",
+    "text": "Any person aggrieved by an order made by the National Commission in exercise of its original or appellate jurisdiction, may prefer an appeal against such order to the Supreme Court within a period of thirty days from the date of the order.",
+    "punishment": "N/A - Appellate provision",
+    "example_case": "A party dissatisfied with National Commission's final order files a Special Leave Petition in the Supreme Court under Section 91."
+  },
+  {
+    "section_number": "100",
+    "title": "False or misleading advertisement",
+    "text": "No manufacturer or service provider shall indulge in false or misleading advertisement. The Central Authority may, by regulations, provide for penalty for false or misleading advertisement which may extend to ten lakh rupees and imprisonment for a term which may extend to two years in case of first conviction, and imprisonment which may extend to five years and fine which may extend to fifty lakh rupees in case of subsequent conviction.",
+    "punishment": "First conviction: up to Rs. 10 lakh fine and 2 years imprisonment; Subsequent: up to Rs. 50 lakh fine and 5 years imprisonment",
+    "example_case": "A cosmetic company falsely advertises that its cream can cure cancer. Under Section 100, it faces up to Rs. 10 lakh fine and 2 years imprisonment on first conviction."
+  }
+]

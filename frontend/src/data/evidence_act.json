@@ -1,0 +1,86 @@
+[
+  {
+    "section_number": "3",
+    "title": "Interpretation clause",
+    "text": "In this Act, unless the context otherwise requires: 'Court' means the Court of any Judge who is taking cognizance of an offence under the Code of Criminal Procedure; 'evidence' includes all statements which the Court permits or requires to be made before it by witnesses, in relation to matters of fact under inquiry; 'fact' means and includes any thing, state of things, or relation of things, capable of being perceived by the senses; and any mental condition of which any person is conscious.",
+    "punishment": "N/A - Definition only",
+    "example_case": "This section clarifies fundamental terms used throughout the Evidence Act, such as 'court', 'evidence', and 'fact'."
+  },
+  {
+    "section_number": "5",
+    "title": "Evidence may be given of facts in issue and relevant facts",
+    "text": "Evidence may be given in any suit or proceeding of the existence or non-existence of every fact in issue and of such other facts as are hereinafter declared to be relevant, and of no others.",
+    "punishment": "N/A - Procedural provision",
+    "example_case": "In a murder trial, evidence can be presented about the fact in issue (whether accused killed the victim) and relevant facts (motive, opportunity)."
+  },
+  {
+    "section_number": "24",
+    "title": "Confession caused by inducement, threat or promise, when irrelevant in criminal proceeding",
+    "text": "A confession made by an accused person is irrelevant in a criminal proceeding, if the making of the confession appears to the Court to have been caused by any inducement, threat or promise, having reference to the charge against the accused person, proceeding from a person in authority and sufficient in the opinion of the Court to give the accused person grounds which would appear to him reasonable for supposing that by making it he would gain any advantage or avoid any evil of a temporal nature in reference to the proceedings against him.",
+    "punishment": "N/A - Evidentiary rule",
+    "example_case": "Police promise an accused that he will be released if he confesses to theft. Such confession is inadmissible under Section 24."
+  },
+  {
+    "section_number": "25",
+    "title": "Confession to police officer not to be proved",
+    "text": "No confession made to a police officer shall be proved as against a person accused of any offence.",
+    "punishment": "N/A - Evidentiary rule",
+    "example_case": "An accused confesses to murder to a police inspector. This confession cannot be used as evidence in court under Section 25."
+  },
+  {
+    "section_number": "27",
+    "title": "How much of information received from accused may be proved",
+    "text": "Provided that, when any fact is deposed to as discovered in consequence of information received from a person accused of any offence, in the custody of a police officer, so much of such information, whether it amounts to a confession or not, as relates distinctly to the fact thereby discovered, may be proved.",
+    "punishment": "N/A - Evidentiary rule",
+    "example_case": "Accused tells police where he hid the murder weapon. Police recover the weapon. The fact of discovery and limited information leading to it is admissible under Section 27."
+  },
+  {
+    "section_number": "45",
+    "title": "Opinions of experts",
+    "text": "When the Court has to form an opinion upon a point of foreign law, or of science or art, or as to identity of handwriting or finger impressions, the opinions upon that point of persons specially skilled in such foreign law, science or art, or in questions as to identity of handwriting or finger impressions are relevant facts. Such persons are called experts.",
+    "punishment": "N/A - Evidentiary rule",
+    "example_case": "In a forgery case, a handwriting expert's opinion on whether the signature is genuine is admissible as evidence under Section 45."
+  },
+  {
+    "section_number": "65B",
+    "title": "Admissibility of electronic records",
+    "text": "Notwithstanding anything contained in this Act, any information contained in an electronic record which is printed on a paper, stored, recorded or copied in optical or magnetic media produced by a computer shall be deemed to be also a document, if the conditions mentioned in this section are satisfied in relation to the information and computer in question and shall be admissible in any proceedings, without further proof or production of the original, as evidence of any contents of the original or of any fact stated therein of which direct evidence would be admissible.",
+    "punishment": "N/A - Evidentiary rule for electronic evidence",
+    "example_case": "CCTV footage from a security camera, if properly certified under Section 65B, is admissible as evidence in court without producing the original recording device."
+  },
+  {
+    "section_number": "101",
+    "title": "Burden of proof",
+    "text": "Whoever desires any Court to give judgment as to any legal right or liability dependent on the existence of facts which he asserts, must prove that those facts exist. When a person is bound to prove the existence of any fact, it is said that the burden of proof lies on that person.",
+    "punishment": "N/A - Procedural rule",
+    "example_case": "In a civil suit for debt recovery, the plaintiff claiming money owed must prove the existence of the loan agreement. Burden of proof lies on the plaintiff under Section 101."
+  },
+  {
+    "section_number": "102",
+    "title": "On whom burden of proof lies",
+    "text": "The burden of proof in a suit or proceeding lies on that person who would fail if no evidence at all were given on either side.",
+    "punishment": "N/A - Procedural rule",
+    "example_case": "In a defamation suit, if no evidence is produced, the plaintiff would fail. Therefore, burden of proof lies on the plaintiff to prove defamatory statement under Section 102."
+  },
+  {
+    "section_number": "103",
+    "title": "Burden of proof as to particular fact",
+    "text": "The burden of proof as to any particular fact lies on that person who wishes the Court to believe in its existence, unless it is provided by any law that the proof of that fact shall lie on any particular person.",
+    "punishment": "N/A - Procedural rule",
+    "example_case": "Accused claims self-defense in a murder case. The burden of proving self-defense lies on the accused under Section 103."
+  },
+  {
+    "section_number": "114",
+    "title": "Court may presume existence of certain facts",
+    "text": "The Court may presume the existence of any fact which it thinks likely to have happened, regard being had to the common course of natural events, human conduct and public and private business, in their relation to the facts of the particular case.",
+    "punishment": "N/A - Presumption rule",
+    "example_case": "Court may presume that a person found in possession of recently stolen goods is either the thief or received them knowing they were stolen, under Section 114."
+  },
+  {
+    "section_number": "118",
+    "title": "Who may testify",
+    "text": "All persons shall be competent to testify unless the Court considers that they are prevented from understanding the questions put to them, or from giving rational answers to those questions, by tender years, extreme old age, disease, whether of body or mind, or any other cause of the same kind.",
+    "punishment": "N/A - Competency rule",
+    "example_case": "A person with severe mental illness may be deemed incompetent to testify if unable to understand questions or give rational answers under Section 118."
+  }
+]

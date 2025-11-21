@@ -1,0 +1,186 @@
+[
+  {
+    "section_number": "302",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Punishment for murder",
+    "definition": "Whoever commits murder shall be punished with death or imprisonment for life, and shall also be liable to fine.",
+    "punishment": "Death penalty or life imprisonment and fine",
+    "example": "A shoots Z with the intention of killing him. Z dies in consequence. A commits murder and is liable to be punished with death or imprisonment for life."
+  },
+  {
+    "section_number": "304",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Punishment for culpable homicide not amounting to murder",
+    "definition": "Whoever commits culpable homicide not amounting to murder shall be punished with imprisonment for life, or imprisonment of either description for a term which may extend to ten years, and shall also be liable to fine.",
+    "punishment": "Life imprisonment or imprisonment up to 10 years and fine",
+    "example": "A, knowing that Z is labouring under such a disease that a blow is likely to cause his death, strikes him with the intention of causing bodily injury. Z dies in consequence of the blow. A is guilty of culpable homicide."
+  },
+  {
+    "section_number": "376",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Punishment for rape",
+    "definition": "Whoever commits rape shall be punished with rigorous imprisonment of either description for a term which shall not be less than ten years but which may extend to imprisonment for life, and shall also be liable to fine.",
+    "punishment": "Rigorous imprisonment for minimum 10 years, which may extend to life imprisonment and fine",
+    "example": "A man forces a woman to have sexual intercourse without her consent. This constitutes rape under Section 376 IPC."
+  },
+  {
+    "section_number": "420",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Cheating and dishonestly inducing delivery of property",
+    "definition": "Whoever cheats and thereby dishonestly induces the person deceived to deliver any property to any person, or to make, alter or destroy the whole or any part of a valuable security, or anything which is signed or sealed, and which is capable of being converted into a valuable security, shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.",
+    "punishment": "Imprisonment up to 7 years and fine",
+    "example": "A, by falsely pretending to be in the Civil Service, intentionally deceives Z, and thus dishonestly induces Z to let him have on credit goods for which he does not mean to pay. A cheats."
+  },
+  {
+    "section_number": "498A",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Husband or relative of husband of a woman subjecting her to cruelty",
+    "definition": "Whoever, being the husband or the relative of the husband of a woman, subjects such woman to cruelty shall be punished with imprisonment for a term which may extend to three years and shall also be liable to fine.",
+    "punishment": "Imprisonment up to 3 years and fine",
+    "example": "A husband harasses his wife for dowry or subjects her to mental or physical cruelty. This falls under Section 498A IPC."
+  },
+  {
+    "section_number": "511",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Punishment for attempting to commit offences punishable with imprisonment for life or other imprisonment",
+    "definition": "Whoever attempts to commit an offence punishable by this Code with imprisonment for life or imprisonment, or to cause such an offence to be committed, and in such attempt does any act towards the commission of the offence, shall, where no express provision is made by this Code for the punishment of such attempt, be punished with imprisonment of any description provided for the offence, for a term which may extend to one-half of the imprisonment for life or imprisonment provided for that offence, or with such fine as is provided for the offence, or with both.",
+    "punishment": "Imprisonment up to half of the maximum term provided for the offence, or fine, or both",
+    "example": "A attempts to commit theft but is caught before completing the act. A can be punished under Section 511 for attempting to commit theft."
+  },
+  {
+    "section_number": "307",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Attempt to murder",
+    "definition": "Whoever does any act with such intention or knowledge, and under such circumstances that, if he by that act caused death, he would be guilty of murder, shall be punished with imprisonment of either description for a term which may extend to ten years, and shall also be liable to fine; and if hurt is caused to any person by such act, the offender shall be liable either to imprisonment for life, or to such punishment as is hereinbefore mentioned.",
+    "punishment": "Imprisonment up to 10 years and fine; if hurt is caused, may extend to life imprisonment",
+    "example": "A shoots at Z with intention to kill him, under circumstances that if death ensued A would be guilty of murder. A is liable to punishment under Section 307."
+  },
+  {
+    "section_number": "354",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Assault or criminal force to woman with intent to outrage her modesty",
+    "definition": "Whoever assaults or uses criminal force to any woman, intending to outrage or knowing it to be likely that he will thereby outrage her modesty, shall be punished with imprisonment of either description for a term which shall not be less than one year but which may extend to five years, and shall also be liable to fine.",
+    "punishment": "Imprisonment from 1 to 5 years and fine",
+    "example": "A forcibly touches a woman with the intention of outraging her modesty. A is guilty under Section 354 IPC."
+  },
+  {
+    "section_number": "66A",
+    "act_name": "Information Technology Act, 2000",
+    "title": "Punishment for sending offensive messages through communication service",
+    "definition": "Any person who sends, by means of a computer resource or a communication device, any information that is grossly offensive or has menacing character; or any information which he knows to be false, but for the purpose of causing annoyance, inconvenience, danger, obstruction, insult, injury, criminal intimidation, enmity, hatred or ill will, persistently by making use of such computer resource or a communication device, shall be punishable with imprisonment for a term which may extend to three years and with fine.",
+    "punishment": "Imprisonment up to 3 years and fine",
+    "example": "A sends threatening or grossly offensive messages through email or social media to harass someone. This falls under Section 66A of IT Act. (Note: This section was struck down by Supreme Court in 2015)"
+  },
+  {
+    "section_number": "66C",
+    "act_name": "Information Technology Act, 2000",
+    "title": "Punishment for identity theft",
+    "definition": "Whoever, fraudulently or dishonestly make use of the electronic signature, password or any other unique identification feature of any other person, shall be punished with imprisonment of either description for a term which may extend to three years and shall also be liable to fine which may extend to one lakh rupees.",
+    "punishment": "Imprisonment up to 3 years and fine up to Rs. 1 lakh",
+    "example": "A fraudulently uses B's email password to access B's account and send emails pretending to be B. A commits identity theft under Section 66C."
+  },
+  {
+    "section_number": "66D",
+    "act_name": "Information Technology Act, 2000",
+    "title": "Punishment for cheating by personation by using computer resource",
+    "definition": "Whoever, by means of any communication device or computer resource cheats by personation, shall be punished with imprisonment of either description for a term which may extend to three years and shall also be liable to fine which may extend to one lakh rupees.",
+    "punishment": "Imprisonment up to 3 years and fine up to Rs. 1 lakh",
+    "example": "A creates a fake profile on social media impersonating B and defrauds people by collecting money in B's name. A is punishable under Section 66D."
+  },
+  {
+    "section_number": "67",
+    "act_name": "Information Technology Act, 2000",
+    "title": "Punishment for publishing or transmitting obscene material in electronic form",
+    "definition": "Whoever publishes or transmits or causes to be published or transmitted in the electronic form any material which is lascivious or appeals to the prurient interest or if its effect is such as to tend to deprave and corrupt persons who are likely to read, see or hear the matter contained or embodied in it, shall be punished on first conviction with imprisonment of either description for a term which may extend to three years and with fine which may extend to five lakh rupees and in the event of second or subsequent conviction with imprisonment of either description for a term which may extend to five years and also with fine which may extend to ten lakh rupees.",
+    "punishment": "First conviction: Imprisonment up to 3 years and fine up to Rs. 5 lakhs; Subsequent conviction: Imprisonment up to 5 years and fine up to Rs. 10 lakhs",
+    "example": "A publishes obscene videos on a website. A is liable to be punished under Section 67 of IT Act."
+  },
+  {
+    "section_number": "2(1)(d)",
+    "act_name": "Consumer Protection Act, 2019",
+    "title": "Definition of Consumer",
+    "definition": "Consumer means any person who buys any goods for a consideration which has been paid or promised or partly paid and partly promised, or under any system of deferred payment and includes any user of such goods other than the person who buys such goods for consideration paid or promised or partly paid or partly promised, or under any system of deferred payment, when such use is made with the approval of such person, but does not include a person who obtains such goods for resale or for any commercial purpose.",
+    "punishment": "N/A - This is a definition clause",
+    "example": "A purchases a mobile phone from a shop for personal use. A is a consumer under the Consumer Protection Act and can file complaints against defective products or deficiency in services."
+  },
+  {
+    "section_number": "2(1)(g)",
+    "act_name": "Consumer Protection Act, 2019",
+    "title": "Definition of Defect",
+    "definition": "Defect means any fault, imperfection or shortcoming in the quality, quantity, potency, purity or standard which is required to be maintained by or under any law for the time being in force or under any contract, express or implied, or as is claimed by the trader in any manner whatsoever in relation to any goods.",
+    "punishment": "N/A - This is a definition clause",
+    "example": "A buys a refrigerator that stops working within a month due to manufacturing defect. This is a defect under Consumer Protection Act, and A can seek redressal."
+  },
+  {
+    "section_number": "378",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Theft",
+    "definition": "Whoever, intending to take dishonestly any movable property out of the possession of any person without that person's consent, moves that property in order to such taking, is said to commit theft.",
+    "punishment": "As per Section 379 - Imprisonment up to 3 years, or fine, or both",
+    "example": "Landmark Cases: (1) State of Maharashtra v. Narayan Shamrao Puranik (2019) - A domestic help stole jewelry worth Rs. 1.5 lakhs from employer's residence. Court held that removal of property without consent with dishonest intention constitutes theft. Convicted under Section 378 IPC with 2 years rigorous imprisonment. (2) Pyare Lal Bhargava v. State of Rajasthan (1963 SC) - Supreme Court held that essential ingredients of theft are: dishonest intention, movable property, taken out of possession, without consent. (3) Common Examples: Pickpocketing in crowded places, shoplifting from retail stores, stealing mobile phones/laptops, unauthorized removal of office equipment, house theft by domestic workers."
+  },
+  {
+    "section_number": "379",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Punishment for theft",
+    "definition": "Whoever commits theft shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both.",
+    "punishment": "Imprisonment up to 3 years, or fine, or both",
+    "example": "A dishonestly takes B's mobile phone from B's pocket without B's consent. A commits theft and is punishable under Section 379 IPC."
+  },
+  {
+    "section_number": "390",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Robbery",
+    "definition": "In all robbery there is either theft or extortion. When theft is robbery: Theft is 'robbery' if, in order to the committing of the theft, or in committing the theft, or in carrying away or attempting to carry away property obtained by the theft, the offender, for that end, voluntarily causes or attempts to cause to any person death or hurt or wrongful restraint, or fear of instant death or of instant hurt, or of instant wrongful restraint. When extortion is robbery: Extortion is 'robbery' if the offender, at the time of committing the extortion, is in the presence of the person put in fear, and commits the extortion by putting that person in fear of instant death, of instant hurt, or of instant wrongful restraint to that person or to some other person, and, by so putting in fear, induces the person so put in fear then and there to deliver up the thing extorted.",
+    "punishment": "As per Section 392 - Rigorous imprisonment up to 10 years and fine; if committed on highway between sunset and sunrise, up to 14 years",
+    "example": "Leading Cases: (1) Shankar Das v. State of Tamil Nadu (2012 SC) - Three accused committed robbery on highway using deadly weapons (iron rods and knives), looted Rs. 50,000 cash and gold ornaments from truck driver after causing grievous hurt. Supreme Court upheld conviction under Section 392 IPC with 10 years rigorous imprisonment. Court held robbery is committed when theft or extortion is accompanied by violence or threat of instant death/hurt. (2) Billa-Ranga Case (Delhi, 1978) - Infamous case of Kuljeet Singh (Ranga) and Jasbir Singh (Billa), highway robbers who committed multiple armed robberies on Delhi-Jaipur highway, later convicted for robbery-murder of Geeta-Sanjay Chopra. Landmark case on highway robbery. (3) State of UP v. Ram Kishan (2014) - Gang of four robbed bank branch using firearms, threatened staff and customers at gunpoint, looted Rs. 12 lakhs. Convicted for dacoity under Section 395 IPC (robbery by five or more persons). (4) State v. Rahul Singh (2021, Delhi HC) - Four accused stopped goods vehicle on NH-48 at 2 AM, assaulted driver causing bleeding injuries, robbed Rs. 8 lakh worth of electronic goods. Delhi High Court sentenced each to 12 years rigorous imprisonment for robbery on highway during nighttime, noting seriousness of targeting commercial vehicles on national highways."
+  },
+  {
+    "section_number": "392",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Punishment for robbery",
+    "definition": "Whoever commits robbery shall be punished with rigorous imprisonment for a term which may extend to ten years, and shall also be liable to fine; and, if the robbery be committed on the highway between sunset and sunrise, the imprisonment may be extended to fourteen years.",
+    "punishment": "Rigorous imprisonment up to 10 years and fine; if on highway between sunset and sunrise, up to 14 years",
+    "example": "Notable Convictions: (1) Billa and Ranga v. State (1980 SC) - Famous case of Geeta-Sanjay Chopra kidnapping and murder. Kuljeet Singh (Ranga) and Jasbir Singh (Billa) were convicted for highway robbery and murder on Delhi-Jaipur highway. They robbed victims' car, jewelry, and belongings before committing murder. Supreme Court upheld death sentence. Landmark case establishing severe punishment for robbery with murder. (2) State v. Rahul Singh & Ors. (2021) - Four accused stopped commercial goods vehicle on NH-48 highway at 2 AM, assaulted driver with iron rods causing bleeding head injuries, robbed electronic goods worth Rs. 8 lakhs. Delhi High Court convicted all under Section 392 IPC and sentenced each to 12 years rigorous imprisonment plus fine of Rs. 50,000, noting gravity of nighttime highway robbery targeting commercial vehicles. (3) Mohan Lal v. State of Rajasthan (2015) - Accused along with accomplices robbed petrol pump during night hours, threatened staff at gunpoint with country-made pistols, looted cash of Rs. 3.5 lakhs. Rajasthan High Court convicted under Section 392 IPC and enhanced sentence to 13 years rigorous imprisonment for armed robbery on highway after sunset. (4) Recent Trend: Courts consistently impose harsher sentences approaching the maximum 14 years when robberies involve deadly weapons, multiple offenders acting in concert, vulnerable victims (senior citizens, women), or systematic targeting of commercial establishments/vehicles on highways."
+  },
+  {
+    "section_number": "406",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Punishment for criminal breach of trust",
+    "definition": "Whoever commits criminal breach of trust shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both.",
+    "punishment": "Imprisonment up to 3 years, or fine, or both",
+    "example": "A, being a property agent entrusted with client's money for purchasing property, dishonestly uses that money for personal purposes. A commits criminal breach of trust under Section 406."
+  },
+  {
+    "section_number": "138",
+    "act_name": "Negotiable Instruments Act, 1881",
+    "title": "Dishonour of cheque for insufficiency of funds",
+    "definition": "Where any cheque drawn by a person on an account maintained by him with a banker for payment of any amount of money to another person from out of that account for the discharge, in whole or in part, of any debt or other liability, is returned by the bank unpaid, either because of the amount of money standing to the credit of that account is insufficient to honour the cheque or that it exceeds the amount arranged to be paid from that account by an agreement made with that bank, such person shall be deemed to have committed an offence.",
+    "punishment": "Imprisonment up to 2 years, or fine up to twice the amount of cheque, or both",
+    "example": "A issues a cheque to B for Rs. 50,000. The cheque bounces due to insufficient funds in A's account. A is liable under Section 138 of Negotiable Instruments Act."
+  },
+  {
+    "section_number": "499",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Defamation",
+    "definition": "Whoever, by words either spoken or intended to be read, or by signs or by visible representations, makes or publishes any imputation concerning any person intending to harm, or knowing or having reason to believe that such imputation will harm, the reputation of such person, is said, except in certain cases, to defame that person.",
+    "punishment": "Simple imprisonment up to 2 years, or fine, or both",
+    "example": "A publishes false statements about B in a newspaper, harming B's reputation. A commits defamation under Section 499 IPC."
+  },
+  {
+    "section_number": "323",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Punishment for voluntarily causing hurt",
+    "definition": "Whoever, except in the case provided for by section 334, voluntarily causes hurt, shall be punished with imprisonment of either description for a term which may extend to one year, or with fine which may extend to one thousand rupees, or with both.",
+    "punishment": "Imprisonment up to 1 year, or fine up to Rs. 1,000, or both",
+    "example": "A punches B causing physical pain and injury. A is guilty of voluntarily causing hurt under Section 323 IPC."
+  },
+  {
+    "section_number": "506",
+    "act_name": "Indian Penal Code, 1860",
+    "title": "Punishment for criminal intimidation",
+    "definition": "Whoever commits the offence of criminal intimidation shall be punished with imprisonment of either description for a term which may extend to two years, or with fine, or with both; If threat be to cause death or grievous hurt, etc.—and if the threat be to cause death or grievous hurt, or to cause the destruction of any property by fire, or to cause an offence punishable with death or imprisonment for life, or with imprisonment for a term which may extend to seven years, or to impute unchastity to a woman, shall be punished with imprisonment of either description for a term which may extend to seven years, or with fine, or with both.",
+    "punishment": "Imprisonment up to 2 years, or fine, or both; if threat is of death/grievous hurt: imprisonment up to 7 years, or fine, or both",
+    "example": "A threatens to kill B if B does not give him money. A commits criminal intimidation under Section 506 IPC and can be imprisoned for up to 7 years."
+  }
+]

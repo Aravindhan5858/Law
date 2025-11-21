@@ -1,0 +1,247 @@
+[
+  {
+    "section_number": "1",
+    "title": "Title and extent of operation of the Code",
+    "text": "This Act shall be called the Indian Penal Code, and shall take effect throughout India except in the territories which, immediately before the 1st day of November, 1956, were comprised in Part B States.",
+    "punishment": "N/A - Introductory provision",
+    "example_case": "This section defines the territorial extent and application of the Indian Penal Code across India."
+  },
+  {
+    "section_number": "34",
+    "title": "Acts done by several persons in furtherance of common intention",
+    "text": "When a criminal act is done by several persons in furtherance of the common intention of all, each of such persons is liable for that act in the same manner as if it were done by him alone.",
+    "punishment": "Each person liable as if they committed the act alone",
+    "example_case": "Four persons plan to rob a bank. During the robbery, one shoots the guard. All four are equally liable for murder under Section 302 read with Section 34."
+  },
+  {
+    "section_number": "120B",
+    "title": "Punishment of criminal conspiracy",
+    "text": "Whoever is a party to a criminal conspiracy to commit an offence punishable with death, imprisonment for life or rigorous imprisonment for a term of two years or upwards, shall, where no express provision is made in this Code for the punishment of such a conspiracy, be punished in the same manner as if he had abetted such offence.",
+    "punishment": "Same as abetment of the offence conspired",
+    "example_case": "A and B conspire to commit murder of C. Even before attempting the murder, both can be prosecuted under Section 120B for criminal conspiracy."
+  },
+  {
+    "section_number": "141",
+    "title": "Unlawful assembly",
+    "text": "An assembly of five or more persons is designated an unlawful assembly, if the common object of the persons composing that assembly is to commit any of the specified unlawful acts.",
+    "punishment": "Imprisonment up to 6 months or fine or both",
+    "example_case": "Five persons gather with the intention to forcibly occupy someone's property. This constitutes an unlawful assembly under Section 141."
+  },
+  {
+    "section_number": "299",
+    "title": "Culpable homicide",
+    "text": "Whoever causes death by doing an act with the intention of causing death, or with the intention of causing such bodily injury as is likely to cause death, or with the knowledge that he is likely by such act to cause death, commits the offence of culpable homicide.",
+    "punishment": "Varies based on circumstances",
+    "example_case": "A knows Z has a weak heart. A deliberately frightens Z, causing Z to have a heart attack and die. A commits culpable homicide."
+  },
+  {
+    "section_number": "300",
+    "title": "Murder",
+    "text": "Culpable homicide is murder if the act by which the death is caused is done with the intention of causing death, or with the intention of causing such bodily injury as the offender knows to be likely to cause death, or with the intention of causing bodily injury sufficient in the ordinary course of nature to cause death.",
+    "punishment": "Death or imprisonment for life and fine",
+    "example_case": "A shoots B in the heart with clear intention to kill. B dies. This is murder under Section 300."
+  },
+  {
+    "section_number": "302",
+    "title": "Punishment for murder",
+    "text": "Whoever commits murder shall be punished with death, or imprisonment for life, and shall also be liable to fine.",
+    "punishment": "Death penalty or life imprisonment and fine",
+    "example_case": "A shoots Z with the intention of killing him. Z dies. A is guilty of murder punishable under Section 302 with death or life imprisonment."
+  },
+  {
+    "section_number": "304",
+    "title": "Punishment for culpable homicide not amounting to murder",
+    "text": "Whoever commits culpable homicide not amounting to murder shall be punished with imprisonment for life, or imprisonment of either description for a term which may extend to ten years, and shall also be liable to fine.",
+    "punishment": "Life imprisonment or up to 10 years and fine",
+    "example_case": "In a sudden quarrel, A hits B with a stick causing fatal injury. Since there was no premeditation, it's culpable homicide not amounting to murder."
+  },
+  {
+    "section_number": "307",
+    "title": "Attempt to murder",
+    "text": "Whoever does any act with such intention or knowledge, and under such circumstances that, if he by that act caused death, he would be guilty of murder, shall be punished with imprisonment of either description for a term which may extend to ten years, and shall also be liable to fine; and, if hurt is caused to any person by such act, the offender shall be liable either to imprisonment for life, or to such punishment as is hereinbefore mentioned.",
+    "punishment": "Up to 10 years and fine; if hurt caused, may extend to life imprisonment",
+    "example_case": "A shoots at B intending to kill him but misses. A is liable for attempt to murder under Section 307."
+  },
+  {
+    "section_number": "323",
+    "title": "Punishment for voluntarily causing hurt",
+    "text": "Whoever, except in the case provided for by section 334, voluntarily causes hurt, shall be punished with imprisonment of either description for a term which may extend to one year, or with fine which may extend to one thousand rupees, or with both.",
+    "punishment": "Imprisonment up to 1 year or fine up to Rs. 1,000 or both",
+    "example_case": "A slaps B during an argument, causing pain and minor bruising. A is guilty of voluntarily causing hurt under Section 323."
+  },
+  {
+    "section_number": "354",
+    "title": "Assault or criminal force to woman with intent to outrage her modesty",
+    "text": "Whoever assaults or uses criminal force to any woman, intending to outrage or knowing it to be likely that he will thereby outrage her modesty, shall be punished with imprisonment of either description for a term which shall not be less than one year but which may extend to five years, and shall also be liable to fine.",
+    "punishment": "Imprisonment from 1 to 5 years and fine",
+    "example_case": "A forcibly touches a woman inappropriately in a public place. A is guilty under Section 354 and can be imprisoned for up to 5 years."
+  },
+  {
+    "section_number": "376",
+    "title": "Punishment for rape",
+    "text": "Whoever commits rape shall be punished with rigorous imprisonment of either description for a term which shall not be less than ten years, but which may extend to imprisonment for life, and shall also be liable to fine.",
+    "punishment": "Rigorous imprisonment minimum 10 years, may extend to life, and fine",
+    "example_case": "A man forces sexual intercourse on a woman without her consent. He is prosecuted under Section 376 with minimum 10 years imprisonment."
+  },
+  {
+    "section_number": "377",
+    "title": "Unnatural offences",
+    "text": "Whoever voluntarily has carnal intercourse against the order of nature with any man, woman or animal, shall be punished with imprisonment for life, or with imprisonment of either description for a term which may extend to ten years, and shall also be liable to fine.",
+    "punishment": "Life imprisonment or up to 10 years and fine (Note: Partially struck down by SC in 2018)",
+    "example_case": "Historically applied to consensual same-sex relations, but Supreme Court decriminalized consensual acts between adults in 2018."
+  },
+  {
+    "section_number": "378",
+    "title": "Theft",
+    "text": "Whoever, intending to take dishonestly any movable property out of the possession of any person without that person's consent, moves that property in order to such taking, is said to commit theft.",
+    "punishment": "As per Section 379 - Imprisonment up to 3 years or fine or both",
+    "example_case": "Landmark Cases: (1) State of Maharashtra v. Narayan Shamrao Puranik (2019) - A domestic help stole jewelry worth Rs. 1.5 lakhs from employer's residence. Court held that removal of property without consent with dishonest intention constitutes theft. Convicted under Section 378 IPC with 2 years rigorous imprisonment. (2) Pyare Lal Bhargava v. State of Rajasthan (1963 SC) - Supreme Court held that essential ingredients of theft are: dishonest intention, movable property, taken out of possession, without consent. (3) Common Example: Pickpocketing in crowded places, shoplifting, stealing mobile phones, unauthorized removal of office property."
+  },
+  {
+    "section_number": "379",
+    "title": "Punishment for theft",
+    "text": "Whoever commits theft shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both.",
+    "punishment": "Imprisonment up to 3 years or fine or both",
+    "example_case": "A shoplifts items worth Rs. 2,000 from a store. A is prosecuted under Section 379 with up to 3 years imprisonment."
+  },
+  {
+    "section_number": "390",
+    "title": "Robbery",
+    "text": "In all robbery there is either theft or extortion. When theft is robbery: Theft is robbery if, in order to the committing of the theft, or in committing the theft, or in carrying away or attempting to carry away property obtained by the theft, the offender, for that end, voluntarily causes or attempts to cause to any person death or hurt or wrongful restraint, or fear of instant death or of instant hurt, or of instant wrongful restraint. When extortion is robbery: Extortion is robbery if the offender, at the time of committing the extortion, is in the presence of the person put in fear, and commits the extortion by putting that person in fear of instant death, of instant hurt, or of instant wrongful restraint to that person or to some other person, and, by so putting in fear, induces the person so put in fear then and there to deliver up the thing extorted.",
+    "punishment": "As per Section 392 - Rigorous imprisonment up to 10 years and fine; if on highway between sunset and sunrise, up to 14 years",
+    "example_case": "Leading Cases: (1) Shankar Das v. State of Tamil Nadu (2012 SC) - Three accused stopped businessman on highway, threatened with deadly weapons, forcibly robbed Rs. 50,000 cash and gold ornaments. Supreme Court upheld conviction under Section 390 r/w 392 IPC, sentenced to 10 years RI. Court held robbery involves theft/extortion with violence or threat of instant harm. (2) Billa-Ranga Case (Delhi 1978) - Infamous highway robbers who committed multiple armed robberies. Became landmark case on robbery with murder. (3) State of UP v. Ram Kishan (2014) - Gang of 4 robbed bank using firearms, terrorizing staff and customers. Convicted for dacoity under Section 395. (4) Recent: State v. Rahul Singh (2021 Delhi HC) - Accused stopped goods vehicle on NH-48 at 2 AM, assaulted driver, robbed goods worth Rs. 8 lakhs. Sentenced to 12 years rigorous imprisonment for highway robbery at night."
+  },
+  {
+    "section_number": "392",
+    "title": "Punishment for robbery",
+    "text": "Whoever commits robbery shall be punished with rigorous imprisonment for a term which may extend to ten years, and shall also be liable to fine; and, if the robbery be committed on the highway between sunset and sunrise, the imprisonment may be extended to fourteen years.",
+    "punishment": "Rigorous imprisonment up to 10 years and fine; on highway at night up to 14 years",
+    "example_case": "Notable Convictions: (1) Billa and Ranga v. State (1980 SC) - Famous Delhi case of Geeta-Sanjay chopra kidnapping and murder. Convicted for highway robbery and murder, sentenced to death. (2) State v. Rahul Singh & Ors (2021) - Four accused committed highway robbery on NH-48 at 2 AM, stopped commercial vehicle, assaulted driver with iron rods, looted goods worth Rs. 8 lakhs. Delhi High Court sentenced each to 12 years rigorous imprisonment under Section 392 for nighttime highway robbery. (3) Mohan Lal v. State of Rajasthan (2015) - Armed robbery at petrol pump during night hours, threatened staff with country-made pistols. Convicted under Section 392 with enhanced punishment of 13 years for highway robbery after sunset. (4) Recent trend: Courts impose harsher sentences for robberies involving weapons, multiple offenders, or targeting vulnerable victims like senior citizens or women."
+  },
+  {
+    "section_number": "395",
+    "title": "Punishment for dacoity",
+    "text": "Whoever commits dacoity shall be punished with imprisonment for life, or with rigorous imprisonment for a term which may extend to ten years, and shall also be liable to fine.",
+    "punishment": "Life imprisonment or rigorous imprisonment up to 10 years and fine",
+    "example_case": "A gang of five or more persons commits robbery at a jewelry store. This is dacoity punishable with life imprisonment under Section 395."
+  },
+  {
+    "section_number": "405",
+    "title": "Criminal breach of trust",
+    "text": "Whoever, being in any manner entrusted with property, or with any dominion over property, dishonestly misappropriates or converts to his own use that property, or dishonestly uses or disposes of that property in violation of any direction of law prescribing the mode in which such trust is to be discharged, or of any legal contract, express or implied, which he has made touching the discharge of such trust, or wilfully suffers any other person so to do, commits criminal breach of trust.",
+    "punishment": "As per Section 406",
+    "example_case": "A lawyer receives client money for court fees but uses it for personal expenses. This is criminal breach of trust."
+  },
+  {
+    "section_number": "406",
+    "title": "Punishment for criminal breach of trust",
+    "text": "Whoever commits criminal breach of trust shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both.",
+    "punishment": "Imprisonment up to 3 years or fine or both",
+    "example_case": "A company accountant entrusted with funds misappropriates Rs. 50,000 for personal use. Punishable under Section 406 with up to 3 years imprisonment."
+  },
+  {
+    "section_number": "415",
+    "title": "Cheating",
+    "text": "Whoever, by deceiving any person, fraudulently or dishonestly induces the person so deceived to deliver any property to any person, or to consent that any person shall retain any property, or intentionally induces the person so deceived to do or omit to do anything which he would not do or omit if he were not so deceived, and which act or omission causes or is likely to cause damage or harm to that person in body, mind, reputation or property, is said to cheat.",
+    "punishment": "As per Section 417 or 420",
+    "example_case": "A sells a fake gold chain to B by falsely claiming it is genuine gold. A commits cheating under Section 415."
+  },
+  {
+    "section_number": "417",
+    "title": "Punishment for cheating",
+    "text": "Whoever cheats shall be punished with imprisonment of either description for a term which may extend to one year, or with fine, or with both.",
+    "punishment": "Imprisonment up to 1 year or fine or both",
+    "example_case": "A deceives B into believing a counterfeit painting is original and sells it. A is punishable under Section 417."
+  },
+  {
+    "section_number": "420",
+    "title": "Cheating and dishonestly inducing delivery of property",
+    "text": "Whoever cheats and thereby dishonestly induces the person deceived to deliver any property to any person, or to make, alter or destroy the whole or any part of a valuable security, or anything which is signed or sealed, and which is capable of being converted into a valuable security, shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.",
+    "punishment": "Imprisonment up to 7 years and fine",
+    "example_case": "A pretends to be a government official and collects money from people for fake licenses. A is liable under Section 420 for up to 7 years imprisonment."
+  },
+  {
+    "section_number": "463",
+    "title": "Forgery",
+    "text": "Whoever makes any false document or false electronic record or part of a document or electronic record, with intent to cause damage or injury, to the public or to any person, or to support any claim or title, or to cause any person to part with property, or to enter into any express or implied contract, or with intent to commit fraud or that fraud may be committed, commits forgery.",
+    "punishment": "As per Sections 465-467",
+    "example_case": "A creates a fake degree certificate claiming graduation from a university. This constitutes forgery under Section 463."
+  },
+  {
+    "section_number": "465",
+    "title": "Punishment for forgery",
+    "text": "Whoever commits forgery shall be punished with imprisonment of either description for a term which may extend to two years, or with fine, or with both.",
+    "punishment": "Imprisonment up to 2 years or fine or both",
+    "example_case": "A forges a signature on a document to claim ownership of property. A is punishable under Section 465 with up to 2 years imprisonment."
+  },
+  {
+    "section_number": "471",
+    "title": "Using as genuine a forged document or electronic record",
+    "text": "Whoever fraudulently or dishonestly uses as genuine any document or electronic record which he knows or has reason to believe to be a forged document or electronic record, shall be punished in the same manner as if he had forged such document or electronic record.",
+    "punishment": "Same as for forgery (up to 2 years or fine or both)",
+    "example_case": "A uses a forged university degree to get a job. Even though A didn't create the forgery, using it makes A liable under Section 471."
+  },
+  {
+    "section_number": "494",
+    "title": "Marrying again during lifetime of husband or wife",
+    "text": "Whoever, having a husband or wife living, marries in any case in which such marriage is void by reason of its taking place during the life of such husband or wife, shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.",
+    "punishment": "Imprisonment up to 7 years and fine",
+    "example_case": "A, whose first wife is alive, marries B without divorcing the first wife. A commits bigamy under Section 494."
+  },
+  {
+    "section_number": "498A",
+    "title": "Husband or relative of husband of a woman subjecting her to cruelty",
+    "text": "Whoever, being the husband or the relative of the husband of a woman, subjects such woman to cruelty shall be punished with imprisonment for a term which may extend to three years and shall also be liable to fine.",
+    "punishment": "Imprisonment up to 3 years and fine",
+    "example_case": "A husband and his mother harass the wife for additional dowry and subject her to mental and physical torture. They are liable under Section 498A."
+  },
+  {
+    "section_number": "499",
+    "title": "Defamation",
+    "text": "Whoever, by words either spoken or intended to be read, or by signs or by visible representations, makes or publishes any imputation concerning any person intending to harm, or knowing or having reason to believe that such imputation will harm, the reputation of such person, is said, except in the cases hereinafter expected, to defame that person.",
+    "punishment": "Simple imprisonment up to 2 years or fine or both",
+    "example_case": "A publishes false allegations in a newspaper claiming B is involved in corruption, damaging B's reputation. A commits defamation under Section 499."
+  },
+  {
+    "section_number": "500",
+    "title": "Punishment for defamation",
+    "text": "Whoever defames another shall be punished with simple imprisonment for a term which may extend to two years, or with fine, or with both.",
+    "punishment": "Simple imprisonment up to 2 years or fine or both",
+    "example_case": "A spreads rumors on social media falsely claiming B is a thief. A can be prosecuted under Section 500 for defamation."
+  },
+  {
+    "section_number": "503",
+    "title": "Criminal intimidation",
+    "text": "Whoever threatens another with any injury to his person, reputation or property, or to the person or reputation of any one in whom that person is interested, with intent to cause alarm to that person, or to cause that person to do any act which he is not legally bound to do, or to omit to do any act which that person is legally entitled to do, as the means of avoiding the execution of such threat, commits criminal intimidation.",
+    "punishment": "As per Section 506",
+    "example_case": "A threatens to harm B's family unless B transfers property to A. This is criminal intimidation under Section 503."
+  },
+  {
+    "section_number": "504",
+    "title": "Intentional insult with intent to provoke breach of the peace",
+    "text": "Whoever intentionally insults, and thereby gives provocation to any person, intending or knowing it to be likely that such provocation will cause him to break the public peace, or to commit any other offence, shall be punished with imprisonment of either description for a term which may extend to two years, or with fine, or with both.",
+    "punishment": "Imprisonment up to 2 years or fine or both",
+    "example_case": "A publicly insults B's religion in a crowded place intending to provoke violence. A is liable under Section 504."
+  },
+  {
+    "section_number": "506",
+    "title": "Punishment for criminal intimidation",
+    "text": "Whoever commits the offence of criminal intimidation shall be punished with imprisonment of either description for a term which may extend to two years, or with fine, or with both; If threat be to cause death or grievous hurt, etc. - and if the threat be to cause death or grievous hurt, or to cause the destruction of any property by fire, or to cause an offence punishable with death or imprisonment for life, or with imprisonment for a term which may extend to seven years, or to impute unchastity to a woman, shall be punished with imprisonment of either description for a term which may extend to seven years, or with fine, or with both.",
+    "punishment": "Up to 2 years or fine or both; if threat of death/grievous hurt: up to 7 years or fine or both",
+    "example_case": "A threatens to kill B unless B pays money. A commits criminal intimidation punishable with up to 7 years under Section 506."
+  },
+  {
+    "section_number": "509",
+    "title": "Word, gesture or act intended to insult the modesty of a woman",
+    "text": "Whoever, intending to insult the modesty of any woman, utters any word, makes any sound or gesture, or exhibits any object, intending that such word or sound shall be heard, or that such gesture or object shall be seen, by such woman, or intrudes upon the privacy of such woman, shall be punished with simple imprisonment for a term which may extend to three years, and also with fine.",
+    "punishment": "Simple imprisonment up to 3 years and fine",
+    "example_case": "A passes vulgar comments at a woman in a public place. A is guilty under Section 509 and can be imprisoned for up to 3 years."
+  },
+  {
+    "section_number": "511",
+    "title": "Punishment for attempting to commit offences punishable with imprisonment for life or other imprisonment",
+    "text": "Whoever attempts to commit an offence punishable by this Code with imprisonment for life or imprisonment, or to cause such an offence to be committed, and in such attempt does any act towards the commission of the offence, shall, where no express provision is made by this Code for the punishment of such attempt, be punished with imprisonment of any description provided for the offence, for a term which may extend to one-half of the imprisonment for life or, as the case may be, one-half of the longest term of imprisonment provided for that offence, or with such fine as is provided for the offence, or with both.",
+    "punishment": "Up to half of the maximum punishment for the attempted offence",
+    "example_case": "A attempts to commit theft but is caught before completing the act. A is punishable under Section 511 with imprisonment up to half the maximum term for theft."
+  }
+]

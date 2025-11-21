@@ -1,0 +1,72 @@
+[
+  {
+    "section_number": "3",
+    "title": "Right to information",
+    "text": "Subject to the provisions of this Act, all citizens shall have the right to information. For the purposes of this Act, right to information means the right to information accessible under this Act which is held by or under the control of any public authority and includes the right to: inspection of work, documents, records; taking notes, extracts or certified copies of documents or records; taking certified samples of material; obtaining information in the form of diskettes, floppies, tapes, video cassettes or in any other electronic mode or through printouts.",
+    "punishment": "N/A - Fundamental right under RTI",
+    "example_case": "A citizen files RTI application to obtain copies of tender documents for a government project. Under Section 3, this is a fundamental right."
+  },
+  {
+    "section_number": "4",
+    "title": "Obligations of public authorities",
+    "text": "Every public authority shall maintain all its records duly catalogued and indexed in a manner and the form which facilitates the right to information under this Act and ensure that all records that are appropriate to be computerized are, within a reasonable time and subject to availability of resources, computerized and connected through a network all over the country on different systems so that access to such records is facilitated; publish within one hundred and twenty days from the enactment of this Act particulars of its organization, functions and duties; the powers and duties of its officers and employees; the procedure followed in the decision making process; the norms set by it for the discharge of its functions; the rules, regulations, instructions, manuals and records, held by it or under its control or used by its employees for discharging its functions; a statement of the categories of documents that are held by it or under its control; the particulars of any arrangement that exists for consultation with, or representation by, the members of the public in relation to the formulation of its policy or implementation thereof; a statement of the boards, councils, committees and other bodies consisting of two or more persons constituted as its part or for the purpose of its advice; a directory of its officers and employees; the monthly remuneration received by each of its officers and employees; the budget allocated to each of its agency; the manner of execution of subsidy programmes; particulars of recipients of concessions, permits or authorizations granted by it; details in respect of the information, available to or held by it, reduced in an electronic form; the particulars of facilities available to citizens for obtaining information; the names, designations and other particulars of the Public Information Officers; such other information as may be prescribed.",
+    "punishment": "Penalty for non-compliance",
+    "example_case": "A government department fails to publish budget details on its website. This violates Section 4 obligations to proactively disclose information."
+  },
+  {
+    "section_number": "5",
+    "title": "Designation of Public Information Officers",
+    "text": "Every public authority shall designate as many officers as the Central Public Information Officers or State Public Information Officers, as the case may be, in all administrative units or offices under it as may be necessary to provide information to persons requesting for the information under this Act. Every Central Public Information Officer or State Public Information Officer shall deal with requests from persons seeking information and render reasonable assistance to the persons seeking such information.",
+    "punishment": "Penalty for PIO's failure to provide information",
+    "example_case": "Each government department appoints PIOs under Section 5. Citizens can directly approach these officers to file RTI applications."
+  },
+  {
+    "section_number": "6",
+    "title": "Request for obtaining information",
+    "text": "A person, who desires to obtain any information under this Act, shall make a request in writing or through electronic means in English or Hindi or in the official language of the area in which the application is being made, to the Central Public Information Officer or State Public Information Officer, as the case may be, specifying the particulars of the information sought by him or her. The applicant shall not be required to give any reason for requesting the information or any other personal details except those that may be necessary for contacting him.",
+    "punishment": "N/A - Procedural provision",
+    "example_case": "A citizen files an RTI application in writing asking for details of government expenditure on a project. No reason needs to be given under Section 6."
+  },
+  {
+    "section_number": "7",
+    "title": "Disposal of request",
+    "text": "The Central Public Information Officer or State Public Information Officer, as the case may be, on receipt of a request under section 6 shall, as expeditiously as possible, and in any case within thirty days of the receipt of the request, either provide the information on payment of such fee as may be prescribed or reject the request for any of the reasons specified in sections 8 and 9. Where the information sought for concerns the life or liberty of a person, the same shall be provided within forty-eight hours of the receipt of the request.",
+    "punishment": "Penalty for delay beyond 30 days",
+    "example_case": "RTI application filed on 1st January must be answered by 31st January under Section 7. If it concerns life/liberty, answer within 48 hours."
+  },
+  {
+    "section_number": "8",
+    "title": "Exemption from disclosure of information",
+    "text": "Notwithstanding anything contained in this Act, there shall be no obligation to give any citizen information which would prejudicially affect the sovereignty and integrity of India, the security, strategic, scientific or economic interests of the State, relation with foreign State or lead to incitement of an offence; information which has been expressly forbidden to be published by any court of law or tribunal or the disclosure of which may constitute contempt of court; information, the disclosure of which would cause a breach of privilege of Parliament or the State Legislature; information including commercial confidence, trade secrets or intellectual property, the disclosure of which would harm the competitive position of a third party, unless the competent authority is satisfied that larger public interest warrants the disclosure of such information; information available to a person in his fiduciary relationship, unless the competent authority is satisfied that the larger public interest warrants the disclosure of such information; information received in confidence from foreign Government; information, the disclosure of which would endanger the life or physical safety of any person or identify the source of information or assistance given in confidence for law enforcement or security purposes; information which would impede the process of investigation or apprehension or prosecution of offenders; cabinet papers including records of deliberations of the Council of Ministers, Secretaries and other officers; information which relates to personal information the disclosure of which has no relationship to any public activity or interest.",
+    "punishment": "N/A - Exemption provision",
+    "example_case": "RTI seeking national security details can be rejected under Section 8(1)(a). RTI seeking personal phone number of officer can be rejected under Section 8(1)(j)."
+  },
+  {
+    "section_number": "18",
+    "title": "Constitution of Central Information Commission",
+    "text": "The Central Government shall constitute a body to be known as the Central Information Commission to exercise the powers conferred on, and to perform the functions assigned to, it under this Act.",
+    "punishment": "N/A - Constitutional provision",
+    "example_case": "The Central Information Commission (CIC) is established under Section 18 to hear appeals and oversee RTI implementation at central level."
+  },
+  {
+    "section_number": "19",
+    "title": "Appeal",
+    "text": "Any person who does not receive a decision within the time specified in sub-section (1) or clause (a) of sub-section (3) of section 7, or is aggrieved by a decision of the Central Public Information Officer or State Public Information Officer, as the case may be, may within thirty days from the expiry of such period or from the receipt of such a decision prefer an appeal to such officer who is senior in rank to the Central Public Information Officer or State Public Information Officer as the case may be, in each public authority. Where an appellant is not satisfied with the decision of the appellate authority, the appellant may within a period of ninety days from the date on which the decision should have been made or was actually received, prefer a second appeal to the Central Information Commission or the State Information Commission.",
+    "punishment": "N/A - Appellate provision",
+    "example_case": "If PIO rejects RTI or doesn't reply in 30 days, first appeal goes to senior officer, then second appeal to CIC/SIC under Section 19."
+  },
+  {
+    "section_number": "20",
+    "title": "Penalties",
+    "text": "Where the Central Information Commission or the State Information Commission, as the case may be, at the time of deciding any complaint or appeal is of the opinion that the Central Public Information Officer or the State Public Information Officer, as the case may be, has, without any reasonable cause, refused to receive an application for information or has not furnished information within the time specified under sub-section (1) of section 7 or malafidely denied the request for information or knowingly given incorrect, incomplete or misleading information or destroyed information which was the subject of the request or obstructed in any manner in furnishing the information, it shall impose a penalty of two hundred and fifty rupees each day till application is received or information is furnished, so however, the total amount of such penalty shall not exceed twenty-five thousand rupees. The Commission shall give a reasonable opportunity of being heard to that officer before any penalty is imposed on him.",
+    "punishment": "Rs. 250 per day up to maximum Rs. 25,000",
+    "example_case": "PIO delays information for 40 days without reason. CIC imposes penalty of Rs. 250 × 10 days = Rs. 2,500 under Section 20."
+  },
+  {
+    "section_number": "22",
+    "title": "Act to have overriding effect",
+    "text": "The provisions of this Act shall have effect notwithstanding anything inconsistent therewith contained in the Official Secrets Act, 1923, and any other law for the time being in force or in any instrument having effect by virtue of any law other than this Act.",
+    "punishment": "N/A - Overriding provision",
+    "example_case": "Even if information is classified under Official Secrets Act, RTI Act Section 22 prevails unless it falls under Section 8 exemptions."
+  }
+]

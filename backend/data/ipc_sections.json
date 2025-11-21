@@ -1,0 +1,485 @@
+{
+  "sections": [
+    {
+      "section": "302",
+      "title": "Punishment for Murder",
+      "description": "Whoever commits murder shall be punished with death or imprisonment for life, and shall also be liable to fine.",
+      "punishment": "Death or Life Imprisonment and Fine",
+      "case_type": "Criminal",
+      "bailable": false,
+      "cognizable": true,
+      "procedure": [
+        "File FIR immediately at nearest police station",
+        "Police investigation and evidence collection",
+        "Post-mortem examination",
+        "Charge sheet filing",
+        "Trial in Sessions Court",
+        "Legal representation mandatory"
+      ],
+      "examples": [
+        "Intentional killing with premeditation",
+        "Murder during commission of another crime",
+        "Death caused with intent to kill"
+      ],
+      "keywords": ["murder", "killed", "death", "homicide", "intentional killing"]
+    },
+    {
+      "section": "304",
+      "title": "Punishment for Culpable Homicide Not Amounting to Murder",
+      "description": "Whoever commits culpable homicide not amounting to murder shall be punished with imprisonment for life or imprisonment up to 10 years and fine.",
+      "punishment": "Life Imprisonment or up to 10 years and Fine",
+      "case_type": "Criminal",
+      "bailable": false,
+      "cognizable": true,
+      "procedure": [
+        "File FIR at police station",
+        "Medical examination and autopsy",
+        "Police investigation",
+        "Evidence collection",
+        "Trial in Sessions Court"
+      ],
+      "examples": [
+        "Death caused without intention but with knowledge",
+        "Causing death by rash or negligent act",
+        "Death in sudden fight without premeditation"
+      ],
+      "keywords": ["culpable homicide", "death caused", "unintentional killing", "negligent death"]
+    },
+    {
+      "section": "323",
+      "title": "Punishment for Voluntarily Causing Hurt",
+      "description": "Whoever, except in the case provided for by section 334, voluntarily causes hurt, shall be punished with imprisonment up to one year, or with fine up to Rs. 1,000, or both.",
+      "punishment": "Imprisonment up to 1 year or Fine up to Rs. 1,000 or Both",
+      "case_type": "Criminal",
+      "bailable": true,
+      "cognizable": true,
+      "procedure": [
+        "Get medical examination certificate",
+        "File complaint at police station",
+        "Provide medical evidence",
+        "Record statement",
+        "Trial in Magistrate Court"
+      ],
+      "examples": [
+        "Physical assault causing minor injuries",
+        "Hitting someone causing hurt",
+        "Beating causing bodily pain"
+      ],
+      "keywords": ["assault", "hit", "beat", "hurt", "punch", "slap", "physical attack"]
+    },
+    {
+      "section": "325",
+      "title": "Punishment for Voluntarily Causing Grievous Hurt",
+      "description": "Whoever, except in the case provided for by section 335, voluntarily causes grievous hurt, shall be punished with imprisonment up to 7 years and fine.",
+      "punishment": "Imprisonment up to 7 years and Fine",
+      "case_type": "Criminal",
+      "bailable": false,
+      "cognizable": true,
+      "procedure": [
+        "Immediate medical treatment",
+        "Medical certificate of grievous hurt",
+        "File FIR at police station",
+        "Detailed medical examination",
+        "Evidence collection",
+        "Trial in Sessions Court"
+      ],
+      "examples": [
+        "Causing fractures or dislocation",
+        "Permanent disfigurement",
+        "Loss or impairment of any organ",
+        "Severe bodily injury"
+      ],
+      "keywords": ["grievous hurt", "serious injury", "fracture", "permanent damage", "severe assault"]
+    },
+    {
+      "section": "354",
+      "title": "Assault or Criminal Force to Woman with Intent to Outrage Her Modesty",
+      "description": "Whoever assaults or uses criminal force to any woman, intending to outrage or knowing it to be likely that he will thereby outrage her modesty, shall be punished with imprisonment up to 5 years and fine.",
+      "punishment": "Imprisonment from 1 to 5 years and Fine",
+      "case_type": "Criminal",
+      "bailable": false,
+      "cognizable": true,
+      "procedure": [
+        "File complaint at women's police station",
+        "Medical examination",
+        "Record statement before Magistrate",
+        "Evidence collection",
+        "Trial in Sessions Court",
+        "Legal aid available for victim"
+      ],
+      "examples": [
+        "Inappropriate touching",
+        "Molestation",
+        "Unwanted physical contact",
+        "Sexual harassment"
+      ],
+      "keywords": ["molest", "touch", "modesty", "harass", "inappropriate", "sexual assault"]
+    },
+    {
+      "section": "376",
+      "title": "Punishment for Rape",
+      "description": "Whoever commits rape shall be punished with rigorous imprisonment for not less than 10 years which may extend to life imprisonment and fine.",
+      "punishment": "Rigorous Imprisonment 10 years to Life and Fine",
+      "case_type": "Criminal",
+      "bailable": false,
+      "cognizable": true,
+      "procedure": [
+        "Immediate reporting to police (dial 100)",
+        "Medical examination within 24 hours",
+        "Statement recording before Magistrate",
+        "Evidence preservation",
+        "Fast-track court trial",
+        "Free legal aid available",
+        "Victim identity protection"
+      ],
+      "examples": [
+        "Sexual intercourse without consent",
+        "Sexual assault",
+        "Forceful sexual act"
+      ],
+      "keywords": ["rape", "sexual assault", "forceful intercourse", "without consent"]
+    },
+    {
+      "section": "379",
+      "title": "Punishment for Theft",
+      "description": "Whoever commits theft shall be punished with imprisonment up to 3 years, or with fine, or both.",
+      "punishment": "Imprisonment up to 3 years or Fine or Both",
+      "case_type": "Criminal",
+      "bailable": true,
+      "cognizable": true,
+      "procedure": [
+        "Report theft to police immediately",
+        "Provide list of stolen items",
+        "Submit proof of ownership",
+        "File FIR with details",
+        "Cooperate in investigation",
+        "Trial in Magistrate Court"
+      ],
+      "examples": [
+        "Stealing personal property",
+        "Theft of money or valuables",
+        "Shoplifting",
+        "Pickpocketing"
+      ],
+      "keywords": ["theft", "steal", "stole", "stolen", "robbed", "took", "pickpocket"]
+    },
+    {
+      "section": "392",
+      "title": "Punishment for Robbery",
+      "description": "Whoever commits robbery shall be punished with rigorous imprisonment up to 10 years and fine. If armed with deadly weapon, up to 14 years.",
+      "punishment": "Rigorous Imprisonment up to 10-14 years and Fine",
+      "case_type": "Criminal",
+      "bailable": false,
+      "cognizable": true,
+      "procedure": [
+        "File FIR immediately",
+        "Medical examination if injured",
+        "Describe robbers and weapons",
+        "List stolen items",
+        "Investigation by police",
+        "Trial in Sessions Court"
+      ],
+      "examples": [
+        "Theft with force or threat",
+        "Armed robbery",
+        "Highway robbery",
+        "Dacoity involving fewer people"
+      ],
+      "keywords": ["robbery", "robbed", "forceful theft", "armed theft", "looted", "dacoity"]
+    },
+    {
+      "section": "406",
+      "title": "Punishment for Criminal Breach of Trust",
+      "description": "Whoever commits criminal breach of trust shall be punished with imprisonment up to 3 years, or with fine, or both.",
+      "punishment": "Imprisonment up to 3 years or Fine or Both",
+      "case_type": "Criminal",
+      "bailable": true,
+      "cognizable": false,
+      "procedure": [
+        "File complaint at police station",
+        "Provide evidence of trust relationship",
+        "Submit documents proving breach",
+        "Police investigation",
+        "Trial in Magistrate Court"
+      ],
+      "examples": [
+        "Misappropriation of entrusted property",
+        "Embezzlement by employee",
+        "Agent misusing client funds",
+        "Trustee misappropriating trust property"
+      ],
+      "keywords": ["breach of trust", "embezzle", "misappropriate", "entrusted", "agent fraud"]
+    },
+    {
+      "section": "420",
+      "title": "Cheating and Dishonestly Inducing Delivery of Property",
+      "description": "Whoever cheats and thereby dishonestly induces the person deceived to deliver any property shall be punished with imprisonment up to 7 years and fine.",
+      "punishment": "Imprisonment up to 7 years and Fine",
+      "case_type": "Criminal",
+      "bailable": false,
+      "cognizable": true,
+      "procedure": [
+        "File FIR/complaint at cybercrime cell (if online)",
+        "Collect all evidence (messages, receipts, documents)",
+        "Submit bank statements",
+        "Police investigation",
+        "Trial in Sessions Court"
+      ],
+      "examples": [
+        "Online fraud and scams",
+        "Investment fraud",
+        "Property fraud",
+        "Identity theft for property",
+        "Ponzi schemes"
+      ],
+      "keywords": ["cheat", "fraud", "scam", "deceive", "fake", "dishonest", "online fraud"]
+    },
+    {
+      "section": "467",
+      "title": "Forgery of Valuable Security, Will, etc.",
+      "description": "Whoever forges a document purporting to be a valuable security or will, or authority to transfer valuable security, shall be punished with imprisonment for life or up to 10 years and fine.",
+      "punishment": "Life Imprisonment or up to 10 years and Fine",
+      "case_type": "Criminal",
+      "bailable": false,
+      "cognizable": true,
+      "procedure": [
+        "File FIR with forged documents",
+        "Handwriting expert examination",
+        "Document forensic analysis",
+        "Investigation by police",
+        "Trial in Sessions Court"
+      ],
+      "examples": [
+        "Forging signatures on checks",
+        "Fake will creation",
+        "Property document forgery",
+        "Counterfeit securities"
+      ],
+      "keywords": ["forgery", "fake document", "forged signature", "counterfeit", "false document"]
+    },
+    {
+      "section": "468",
+      "title": "Forgery for Purpose of Cheating",
+      "description": "Whoever commits forgery intending that the document forged shall be used for the purpose of cheating, shall be punished with imprisonment up to 7 years and fine.",
+      "punishment": "Imprisonment up to 7 years and Fine",
+      "case_type": "Criminal",
+      "bailable": false,
+      "cognizable": true,
+      "procedure": [
+        "Report to police with forged documents",
+        "Expert examination of documents",
+        "Collect evidence of cheating intent",
+        "Investigation",
+        "Trial in Sessions Court"
+      ],
+      "examples": [
+        "Fake certificates for jobs",
+        "Forged invoices",
+        "Fake identity documents for fraud"
+      ],
+      "keywords": ["forge for cheating", "fake certificate", "forged invoice", "false papers"]
+    },
+    {
+      "section": "498A",
+      "title": "Husband or Relative of Husband Subjecting Woman to Cruelty",
+      "description": "Whoever, being the husband or relative of the husband of a woman, subjects such woman to cruelty shall be punished with imprisonment up to 3 years and fine.",
+      "punishment": "Imprisonment up to 3 years and Fine",
+      "case_type": "Criminal",
+      "bailable": false,
+      "cognizable": true,
+      "procedure": [
+        "File complaint at women's police station",
+        "Medical examination if physically harmed",
+        "Record detailed statement",
+        "Collect evidence (messages, witnesses)",
+        "Police investigation",
+        "Trial in Sessions Court",
+        "Protection orders available"
+      ],
+      "examples": [
+        "Dowry harassment",
+        "Mental cruelty by husband",
+        "Physical abuse by in-laws",
+        "Harassment for dowry demands"
+      ],
+      "keywords": ["dowry", "cruelty", "harassment", "husband", "in-laws", "torture", "domestic violence"]
+    },
+    {
+      "section": "504",
+      "title": "Intentional Insult with Intent to Provoke Breach of Peace",
+      "description": "Whoever intentionally insults and thereby gives provocation to any person, intending to provoke breach of peace, shall be punished with imprisonment up to 2 years or fine or both.",
+      "punishment": "Imprisonment up to 2 years or Fine or Both",
+      "case_type": "Criminal",
+      "bailable": true,
+      "cognizable": false,
+      "procedure": [
+        "File complaint at police station",
+        "Provide evidence of insult",
+        "Witness statements if available",
+        "Police investigation",
+        "Trial in Magistrate Court"
+      ],
+      "examples": [
+        "Public insult causing humiliation",
+        "Verbal abuse to provoke fight",
+        "Defamatory statements"
+      ],
+      "keywords": ["insult", "abuse", "humiliate", "provoke", "defame", "verbal attack"]
+    },
+    {
+      "section": "506",
+      "title": "Punishment for Criminal Intimidation",
+      "description": "Whoever commits criminal intimidation shall be punished with imprisonment up to 2 years or fine or both. If threat is of death or grievous hurt, up to 7 years or fine or both.",
+      "punishment": "Imprisonment up to 2-7 years or Fine or Both",
+      "case_type": "Criminal",
+      "bailable": true,
+      "cognizable": true,
+      "procedure": [
+        "File complaint with threat evidence",
+        "Preserve messages/recordings",
+        "Record statement with details",
+        "Police investigation",
+        "Trial in Magistrate Court",
+        "Protection orders available"
+      ],
+      "examples": [
+        "Death threats",
+        "Threatening to cause injury",
+        "Intimidation to extort money",
+        "Threatening messages or calls"
+      ],
+      "keywords": ["threat", "threaten", "intimidate", "death threat", "kill threat", "harm threat"]
+    },
+    {
+      "section": "509",
+      "title": "Word, Gesture or Act Intended to Insult the Modesty of a Woman",
+      "description": "Whoever intending to insult the modesty of any woman, utters any word, makes any sound or gesture, or exhibits any object, shall be punished with simple imprisonment up to 3 years and fine.",
+      "punishment": "Simple Imprisonment up to 3 years and Fine",
+      "case_type": "Criminal",
+      "bailable": true,
+      "cognizable": true,
+      "procedure": [
+        "File complaint at women's police station",
+        "Record detailed statement",
+        "Provide evidence (CCTV, witnesses)",
+        "Police investigation",
+        "Trial in Magistrate Court"
+      ],
+      "examples": [
+        "Passing inappropriate comments",
+        "Obscene gestures towards woman",
+        "Eve-teasing",
+        "Catcalling"
+      ],
+      "keywords": ["insult modesty", "eve-teasing", "obscene gesture", "inappropriate comment", "catcall"]
+    },
+    {
+      "section": "511",
+      "title": "Punishment for Attempting to Commit Offences",
+      "description": "Whoever attempts to commit an offence punishable by imprisonment for life or imprisonment, shall be punished with imprisonment up to half the longest term provided for the offence.",
+      "punishment": "Up to half of the maximum punishment for the attempted offence",
+      "case_type": "Criminal",
+      "bailable": "Depends on main offence",
+      "cognizable": "Depends on main offence",
+      "procedure": [
+        "File FIR for attempted crime",
+        "Provide evidence of attempt",
+        "Police investigation",
+        "Trial based on attempted offence severity"
+      ],
+      "examples": [
+        "Attempted murder",
+        "Attempted robbery",
+        "Attempted rape"
+      ],
+      "keywords": ["attempt", "tried to", "attempted", "planning to"]
+    },
+    {
+      "section": "66D",
+      "title": "Punishment for Cheating by Personation Using Computer Resource (IT Act)",
+      "description": "Whoever, by means of any communication device or computer resource cheats by personation, shall be punished with imprisonment up to 3 years and fine up to Rs. 1 lakh.",
+      "punishment": "Imprisonment up to 3 years and Fine up to Rs. 1 lakh",
+      "case_type": "Cyber Crime",
+      "bailable": true,
+      "cognizable": true,
+      "procedure": [
+        "File complaint at cybercrime cell",
+        "Preserve all digital evidence (emails, messages, screenshots)",
+        "Submit transaction details",
+        "Bank statements if money involved",
+        "Cybercrime investigation",
+        "Trial in Sessions Court"
+      ],
+      "examples": [
+        "Fake social media profiles for fraud",
+        "Email phishing scams",
+        "Identity theft online",
+        "Impersonation for financial fraud",
+        "Online shopping scams"
+      ],
+      "keywords": ["cyber fraud", "online scam", "phishing", "fake profile", "identity theft", "online cheating"]
+    },
+    {
+      "section": "66E",
+      "title": "Punishment for Violation of Privacy (IT Act)",
+      "description": "Whoever intentionally captures, publishes or transmits the image of a private area of any person without consent shall be punished with imprisonment up to 3 years or fine up to Rs. 2 lakh or both.",
+      "punishment": "Imprisonment up to 3 years or Fine up to Rs. 2 lakh or Both",
+      "case_type": "Cyber Crime",
+      "bailable": true,
+      "cognizable": true,
+      "procedure": [
+        "File complaint at cybercrime cell",
+        "Preserve evidence of privacy violation",
+        "Request content takedown",
+        "Investigation by cybercrime unit",
+        "Trial in Sessions Court"
+      ],
+      "examples": [
+        "Unauthorized photo/video recording",
+        "Voyeurism",
+        "Publishing private images without consent",
+        "Revenge porn"
+      ],
+      "keywords": ["privacy violation", "unauthorized photo", "voyeurism", "private image", "revenge porn"]
+    },
+    {
+      "section": "375",
+      "title": "Definition of Rape",
+      "description": "A man is said to commit rape if he has sexual intercourse with a woman under circumstances falling under specified descriptions without her consent or with consent obtained under fear, misconception, or when she is incapable of giving consent.",
+      "punishment": "See Section 376",
+      "case_type": "Criminal",
+      "bailable": false,
+      "cognizable": true,
+      "procedure": [
+        "Same as Section 376"
+      ],
+      "examples": [
+        "Sexual intercourse without consent",
+        "Sex with minor (below 18)",
+        "Sex obtained through deception"
+      ],
+      "keywords": ["rape", "sexual intercourse", "without consent", "minor"]
+    },
+    {
+      "section": "34",
+      "title": "Acts Done by Several Persons in Furtherance of Common Intention",
+      "description": "When a criminal act is done by several persons in furtherance of the common intention of all, each person is liable as if he alone committed the act.",
+      "punishment": "Same as the main offence committed",
+      "case_type": "Criminal",
+      "bailable": "Depends on main offence",
+      "cognizable": "Depends on main offence",
+      "procedure": [
+        "Applied along with main offence section",
+        "File FIR mentioning all accused",
+        "Investigation to establish common intention",
+        "Trial based on main offence"
+      ],
+      "examples": [
+        "Group assault with common intention",
+        "Gang robbery",
+        "Conspiracy to commit crime"
+      ],
+      "keywords": ["common intention", "group crime", "conspiracy", "together committed"]
+    }
+  ]
+}

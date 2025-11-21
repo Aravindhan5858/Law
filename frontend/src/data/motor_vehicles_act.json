@@ -1,0 +1,128 @@
+[
+  {
+    "section_number": "3",
+    "title": "Driving regulations",
+    "text": "No person shall drive a motor vehicle in any public place unless he holds an effective driving licence issued to him authorising him to drive the vehicle; and no person shall so drive a transport vehicle other than a motor cab or motor cycle hired for his own use or rented under any scheme made under sub-section (2) of section 75 unless his driving licence specifically entitles him so to do.",
+    "punishment": "Fine up to Rs. 5,000 for first offence; up to Rs. 10,000 for subsequent offences",
+    "example_case": "A person drives a car without a valid driving licence on a public road. He is prosecuted under Section 3 with a fine of Rs. 5,000."
+  },
+  {
+    "section_number": "5",
+    "title": "Necessity for registration",
+    "text": "No person shall drive any motor vehicle and no owner of a motor vehicle shall cause or permit the vehicle to be driven in any public place or in any other place unless the vehicle is registered in accordance with this Chapter and the certificate of registration of the vehicle has not been suspended or cancelled and the vehicle carries a registration mark displayed in the prescribed manner.",
+    "punishment": "Fine up to Rs. 10,000 and/or imprisonment up to 1 year for subsequent offence",
+    "example_case": "A person drives an unregistered vehicle on public road. He violates Section 5 and can be fined up to Rs. 10,000."
+  },
+  {
+    "section_number": "39",
+    "title": "Necessity for driving licence",
+    "text": "No person shall drive a motor vehicle in any public place unless he holds an effective driving licence issued to him authorising him to drive the vehicle.",
+    "punishment": "Fine up to Rs. 5,000 for driving without licence",
+    "example_case": "A person caught driving without any licence faces prosecution under Section 39 with Rs. 5,000 fine."
+  },
+  {
+    "section_number": "66",
+    "title": "Restrictions on the use of vehicles leaving India",
+    "text": "No motor vehicle registered in India shall be taken outside India unless a certificate in such form and containing such particulars as may be prescribed is obtained from the registering authority.",
+    "punishment": "Fine up to Rs. 5,000",
+    "example_case": "A person attempts to drive an Indian-registered vehicle to Nepal without obtaining the required certificate under Section 66."
+  },
+  {
+    "section_number": "113",
+    "title": "Necessity for permits",
+    "text": "No owner of a motor vehicle shall use or permit the use of the vehicle as a transport vehicle in any public place whether or not such vehicle is actually carrying any passengers or goods save in accordance with the conditions of a permit granted or countersigned by a Regional or State Transport Authority or any prescribed authority authorising him the use of the vehicle in that place in the manner in which the vehicle is being used.",
+    "punishment": "Fine up to Rs. 10,000",
+    "example_case": "A private car owner uses his vehicle as a taxi without obtaining a permit under Section 113. He is liable for a fine of Rs. 10,000."
+  },
+  {
+    "section_number": "129",
+    "title": "Wearing of protective headgear",
+    "text": "Every person, driving or riding (otherwise than in a side car, on a motor cycle of any class or description) shall, while in a public place, wear protective headgear conforming to the standards of Bureau of Indian Standards.",
+    "punishment": "Fine of Rs. 1,000 and disqualification for 3 months",
+    "example_case": "A motorcyclist is caught riding without a helmet on a public road. He is fined Rs. 1,000 under Section 129."
+  },
+  {
+    "section_number": "130",
+    "title": "Duty to produce licence and certificate of registration",
+    "text": "Any person driving a motor vehicle in any public place shall, on demand by any police officer in uniform authorised in this behalf by the State Government, produce his licence and the certificate of registration of the vehicle and shall allow the police officer to examine the vehicle.",
+    "punishment": "Fine up to Rs. 500",
+    "example_case": "A driver refuses to show his licence to a traffic police officer on demand. He violates Section 130 and can be fined Rs. 500."
+  },
+  {
+    "section_number": "132",
+    "title": "Duty of driver to produce licence and certificate of insurance to victim or legal representative",
+    "text": "The driver of a motor vehicle involved in an accident in a public place shall, on demand by or on behalf of any person affected by the accident, produce for examination, his driving licence, certificate of insurance and certificate of registration of the vehicle, and give on demand his name and address and the name and address of the owner of the vehicle.",
+    "punishment": "Fine up to Rs. 500",
+    "example_case": "After an accident, the driver refuses to provide his details and documents to the victim. He violates Section 132."
+  },
+  {
+    "section_number": "134",
+    "title": "Duty of driver in case of accident and injury to a person",
+    "text": "When any person is injured or any property of a third party is damaged as a result of an accident involving a motor vehicle, the driver of the vehicle or other person in charge of the vehicle shall take all reasonable steps to secure medical attention to the injured person, by conveying him to the nearest medical practitioner or hospital, and it shall be the duty of the driver of the vehicle to give information regarding the accident to a police station or to the nearest Magistrate, as soon as possible but not later than twenty-four hours of the occurrence thereof.",
+    "punishment": "Imprisonment up to 6 months or fine up to Rs. 5,000 or both",
+    "example_case": "After hitting a pedestrian, the driver flees without providing medical help. He commits a hit-and-run under Section 134."
+  },
+  {
+    "section_number": "138",
+    "title": "Rash and negligent driving",
+    "text": "Whoever drives a motor vehicle in a manner so rash or negligent as to endanger human life, or to be likely to cause hurt or injury to any other person, shall be punishable with imprisonment for a term which may extend to six months or with fine which may extend to one thousand rupees, or with both.",
+    "punishment": "Imprisonment up to 6 months or fine up to Rs. 5,000 or both (amended)",
+    "example_case": "A driver overspeeds on a crowded road, narrowly missing pedestrians. He is prosecuted for rash driving under Section 138."
+  },
+  {
+    "section_number": "177",
+    "title": "Offences relating to documents",
+    "text": "Whoever drives a motor vehicle or causes or allows a motor vehicle to be used in contravention of the provisions of section 3 or section 4, or in contravention of any other provision of this Act or of any rule made thereunder for which no penalty is provided for in this Act, shall be punishable with a fine which may extend to five hundred rupees, and in the case of a continuing contravention with an additional fine which may extend to fifteen hundred rupees for every day after the date of the first such conviction during which the offence continues.",
+    "punishment": "Fine up to Rs. 500, additional Rs. 1,500 per day for continuing offence",
+    "example_case": "A driver continues to drive without proper documents even after conviction. He faces additional fines under Section 177."
+  },
+  {
+    "section_number": "179",
+    "title": "Disobedience of orders, obstruction and refusal of information",
+    "text": "Whoever wilfully causes obstruction to any person or authority in the discharge of any function under this Act or does not furnish information when required or furnishes false information, shall be punishable with imprisonment which may extend to one month, or with fine which may extend to two thousand rupees, or with both.",
+    "punishment": "Imprisonment up to 1 month or fine up to Rs. 2,000 or both",
+    "example_case": "A driver provides false information to an officer during checking. He is prosecuted under Section 179."
+  },
+  {
+    "section_number": "182",
+    "title": "Offences relating to licences",
+    "text": "Whoever drives a motor vehicle in contravention of section 3 shall be punishable for the first offence with a fine of five thousand rupees, and for any second or subsequent offence with imprisonment which may extend to six months or with fine which may extend to ten thousand rupees or with both.",
+    "punishment": "First offence: Fine Rs. 5,000; Subsequent: Imprisonment up to 6 months or fine Rs. 10,000 or both",
+    "example_case": "A person repeatedly drives without a licence. On the second offence, he faces imprisonment up to 6 months under Section 182."
+  },
+  {
+    "section_number": "183",
+    "title": "Driving at excessive speed, etc.",
+    "text": "Whoever drives a motor vehicle in contravention of the standards prescribed in respect of road safety, control of noise and air pollution shall be punishable with a fine which shall not be less than one thousand rupees but which may extend to two thousand rupees.",
+    "punishment": "Fine Rs. 1,000 to Rs. 2,000",
+    "example_case": "A vehicle emitting excessive smoke violates pollution norms. The driver is fined Rs. 2,000 under Section 183."
+  },
+  {
+    "section_number": "184",
+    "title": "Driving dangerously",
+    "text": "Whoever drives a motor vehicle at a speed or in a manner which is dangerous to the public, having regard to all the circumstances of the case including the nature, condition and use of the place where the vehicle is driven and the amount of traffic which actually is at the time or which might reasonably be expected to be in the place, shall be punishable for the first offence with imprisonment for a term which may extend to six months, or with fine which may extend to one thousand rupees, or with both, and for any second or subsequent offence if committed within three years of the commission of a previous similar offence with imprisonment for a term which may extend to two years, or with fine which may extend to two thousand rupees, or with both.",
+    "punishment": "First offence: Imprisonment up to 6 months or fine Rs. 1,000 or both; Subsequent: Imprisonment up to 2 years or fine Rs. 2,000 or both",
+    "example_case": "A driver zigzags through traffic at high speed on a busy road. He is prosecuted for dangerous driving under Section 184."
+  },
+  {
+    "section_number": "185",
+    "title": "Driving by a drunken person or by a person under the influence of drugs",
+    "text": "Whoever, while driving, or attempting to drive, a motor vehicle has, in his blood, alcohol exceeding 30 mg. per 100 ml. of blood detected in a test by a breath analyser, shall be punishable for the first offence with imprisonment for a term which may extend to six months, or with fine which may extend to two thousand rupees, or with both; and for a second or subsequent offence, if committed within three years of the commission of the previous similar offence, with imprisonment for a term which may extend to two years, or with fine which may extend to three thousand rupees, or with both.",
+    "punishment": "First offence: Imprisonment up to 6 months or fine Rs. 2,000 or both; Subsequent: Imprisonment up to 2 years or fine Rs. 3,000 or both",
+    "example_case": "A driver caught with blood alcohol level of 50 mg/100 ml is prosecuted for drunk driving under Section 185."
+  },
+  {
+    "section_number": "187",
+    "title": "Punishment for offences relating to accident",
+    "text": "Whoever fails to comply with the provisions of clause (c) of sub-section (1) of section 132 or section 134 shall be punishable with imprisonment for a term which may extend to three months, or with fine which may extend to five hundred rupees, or with both or if, having been previously convicted of an offence under this section, he is again convicted of an offence under this section, with imprisonment for a term which may extend to six months, or with fine which may extend to one thousand rupees, or with both.",
+    "punishment": "Imprisonment up to 3 months or fine Rs. 500 or both; Subsequent: Imprisonment up to 6 months or fine Rs. 1,000 or both",
+    "example_case": "A driver involved in an accident fails to inform the police within 24 hours. He violates Section 187."
+  },
+  {
+    "section_number": "196",
+    "title": "Protection of action taken in good faith",
+    "text": "No suit, prosecution or other legal proceeding shall lie against the Central Government or a State Government or any officer of the Central Government or State Government or local authority for anything which is in good faith done or intended to be done in pursuance of this Act or any rule, regulation or notification made or issued thereunder.",
+    "punishment": "N/A - Protection provision",
+    "example_case": "An RTO officer suspends a licence based on good faith belief of violations. He is protected from prosecution under Section 196."
+  }
+]

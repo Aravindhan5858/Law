@@ -8,7 +8,8 @@ import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import AnalyzePage from './pages/AnalyzePage';
 import ResultPage from './pages/ResultPage';
-import LawsPage from './pages/LawsPage';
+import OfflineLegalSearch from './pages/OfflineLegalSearch';
+import UnifiedSearchPage from './pages/UnifiedSearchPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import Home from './pages/Home';
@@ -63,12 +64,23 @@ export default function App() {
               }
             />
             <Route
-              path="/laws"
+              path="/offline-search"
               element={
                 <ProtectedRoute>
                   <>
                     <Header />
-                    <LawsPage />
+                    <OfflineLegalSearch />
+                  </>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/unified-search"
+              element={
+                <ProtectedRoute>
+                  <>
+                    <Header />
+                    <UnifiedSearchPage />
                   </>
                 </ProtectedRoute>
               }
