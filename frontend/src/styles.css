@@ -393,6 +393,10 @@ body {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  height: 100%;
 }
 
 .dashboard-card::before {
@@ -511,6 +515,7 @@ body {
   color: var(--text-secondary);
   font-size: 0.9375rem;
   line-height: 1.6;
+  flex: 1;
 }
 
 /* Card Arrow */
