@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
+import { LoaderProvider } from './context/LoaderContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Header from './components/Header';
 import LandingPage from './pages/LandingPage';
@@ -16,13 +17,14 @@ import Home from './pages/Home';
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <BrowserRouter
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
+    <LoaderProvider initialConfig={{ enabled: false, autoRedirect: false }}>
+      <ThemeProvider>
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
           <Routes>
             {/* Public routes */}
             <Route path="/" element={<LandingPage />} />
@@ -113,5 +115,6 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
+    </LoaderProvider>
   );
 }

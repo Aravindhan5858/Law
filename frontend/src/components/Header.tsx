@@ -36,8 +36,11 @@ export default function Header() {
               style={{ 
                 width: '45px', 
                 height: '45px',
-                filter: 'drop-shadow(0 2px 8px rgba(255, 215, 0, 0.3))',
-                padding: '4px'
+                filter: theme === 'dark' 
+                  ? 'drop-shadow(0 2px 8px rgba(255, 215, 0, 0.4))' 
+                  : 'drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3)) brightness(0.95)',
+                padding: '4px',
+                transition: 'filter 0.3s ease'
               }} 
             />
             Legal Case Advisor
