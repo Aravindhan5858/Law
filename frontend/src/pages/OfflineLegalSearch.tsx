@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLegalSearch } from '../hooks/useLegalSearch';
+import { useTheme } from '../context/ThemeContext';
 
 export default function OfflineLegalSearch() {
+  const { theme } = useTheme();
   const [query, setQuery] = useState('');
   
   const {
@@ -24,32 +26,33 @@ export default function OfflineLegalSearch() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-8 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
-        >
-          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
-            Offline Legal Search
-          </h1>
-        </motion.div>
+    <div className="dashboard">
+      {/* Header */}
+      <motion.div
+        className="dashboard-header"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1>Offline Legal Search</h1>
+        <p>Search IPC sections by number, keyword, or legal topic</p>
+      </motion.div>
 
-        {/* Search Bar */}
+      <div className="laws-container">
+        {/* Search Card */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.1 }}
-          className="bg-white rounded-2xl shadow-2xl p-6 mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="search-card"
         >
           <form onSubmit={handleSearch}>
-            <div className="flex gap-3">
-              <div className="flex-1 relative">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
-                  🔍
-                </div>
+            <div className="search-wrapper">
+              <div className="search-input-group">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="search-icon">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="m21 21-4.35-4.35"/>
+                </svg>
                 <input
                   type="text"
                   value={query}
@@ -58,37 +61,52 @@ export default function OfflineLegalSearch() {
                     if (error) clearError();
                   }}
                   placeholder="Search by section number, keyword, or legal topic..."
-                  className="w-full pl-12 pr-6 py-4 rounded-xl border-2 border-slate-300 
-                           focus:border-blue-500 focus:ring-4 focus:ring-blue-100 
-                           outline-none text-lg transition-all shadow-sm
-                           placeholder:text-slate-400"
+                  className="search-input"
                   disabled={!isReady || isIndexing}
                 />
               </div>
-              <button
+              <motion.button
                 type="submit"
                 disabled={!isReady || isIndexing || !query.trim() || isSearching}
-                className="px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 
-                         text-white rounded-xl font-bold text-lg
-                         hover:from-blue-700 hover:to-purple-700 
-                         disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed
-                         transition-all shadow-lg hover:shadow-xl transform hover:scale-105
-                         active:scale-95 disabled:transform-none"
+                className="btn btn-large btn-primary"
+                whileHover={{ scale: (!isReady || isIndexing || !query.trim() || isSearching) ? 1 : 1.02 }}
+                whileTap={{ scale: (!isReady || isIndexing || !query.trim() || isSearching) ? 1 : 0.98 }}
               >
                 {isSearching ? (
-                  <span className="flex items-center gap-2">
-                    <span className="animate-spin">⏳</span>
+                  <>
+                    <span className="spinner"></span>
                     Searching...
-                  </span>
+                  </>
                 ) : (
-                  <span className="flex items-center gap-2">
-                    <span>🔍</span>
-                    Search
-                  </span>
+                  <>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="11" cy="11" r="8"/>
+                      <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                    Search Laws
+                  </>
                 )}
-              </button>
+              </motion.button>
             </div>
           </form>
+
+          {/* Status Badge */}
+          {!isReady && (
+            <div className="status-badge indexing">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="spinner-icon">
+                <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+              </svg>
+              {isIndexing ? 'Indexing legal database...' : 'Initializing search...'}
+            </div>
+          )}
+          {isReady && !isIndexing && (
+            <div className="status-badge ready">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Search ready • Database indexed
+            </div>
+          )}
         </motion.div>
 
         {/* Error Message */}
@@ -98,24 +116,20 @@ export default function OfflineLegalSearch() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="mb-6 p-5 bg-gradient-to-r from-red-50 to-orange-50 
-                       border-l-4 border-red-500 rounded-xl shadow-lg"
+              className="error-banner"
             >
-              <div className="flex items-start gap-3">
-                <span className="text-3xl">⚠️</span>
-                <div className="flex-1">
-                  <h4 className="font-bold text-red-800 mb-1">Error</h4>
-                  <p className="text-red-700">{error}</p>
-                </div>
-                <button
-                  onClick={clearError}
-                  className="text-red-600 hover:text-red-800 text-2xl font-bold
-                           hover:bg-red-100 rounded-full w-8 h-8 flex items-center justify-center
-                           transition-all"
-                >
-                  ✕
-                </button>
-              </div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <span>{error}</span>
+              <button onClick={clearError} className="error-close">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18"/>
+                  <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
             </motion.div>
           )}
         </AnimatePresence>
@@ -128,90 +142,101 @@ export default function OfflineLegalSearch() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="space-y-5"
+              className="results-section"
             >
-              <div className="text-gray-700 mb-6 text-lg flex items-center gap-2">
-                <span className="text-2xl">🎯</span>
-                Found <span className="font-bold text-blue-600">{searchResults.length}</span> result{searchResults.length !== 1 ? 's' : ''} 
-                for <span className="font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">"{lastQuery}"</span>
+              <div className="results-header-info">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 16v-4"/>
+                  <path d="M12 8h.01"/>
+                </svg>
+                Found <strong>{searchResults.length}</strong> result{searchResults.length !== 1 ? 's' : ''} 
+                for <strong className="search-query">"{lastQuery}"</strong>
               </div>
 
-              {searchResults.map((result, index) => (
-                <motion.div
-                  key={`${result.law.act_name}-${result.law.section_number}`}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-2xl shadow-xl hover:shadow-2xl 
-                           transition-all border border-gray-100 
-                           hover:border-blue-300 overflow-hidden hover:scale-[1.01]"
-                >
-                  {/* Result Header */}
-                  <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 p-5 border-b-2 border-blue-200">
-                    <div className="flex items-start justify-between flex-wrap gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-3">
-                          <span className="px-4 py-1.5 bg-white/20 backdrop-blur text-white rounded-full 
-                                       text-sm font-bold shadow-lg">
-                            #{result.rank}
-                          </span>
-                          <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                            <span className="text-2xl">📜</span>
+              <div className="search-results-grid">
+                {searchResults.map((result, index) => (
+                  <motion.div
+                    key={`${result.law.act_name}-${result.law.section_number}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="law-result-card"
+                  >
+                    {/* Result Header */}
+                    <div className="law-card-header">
+                      <div className="law-card-title">
+                        <div className="law-badges">
+                          <span className="rank-badge">#{result.rank}</span>
+                          <span className="section-badge">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                              <polyline points="14 2 14 8 20 8"/>
+                            </svg>
                             Section {result.law.section_number}
-                          </h2>
+                          </span>
                         </div>
-                        <h3 className="text-lg font-semibold text-blue-100 mb-2">
-                          {result.law.title}
-                        </h3>
-                        <p className="text-sm text-blue-200 font-medium flex items-center gap-2">
-                          <span>📚</span>
+                        <h3 className="law-title">{result.law.title}</h3>
+                        <p className="law-act-name">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                          </svg>
                           {result.law.act_name}
                         </p>
                       </div>
                       
-                      <div className="text-right bg-white/20 backdrop-blur rounded-xl p-4 shadow-lg">
-                        <div className="text-sm text-blue-100 mb-1 font-medium">Match Score</div>
-                        <div className="text-4xl font-bold text-white">
-                          {Math.round(result.score * 100)}%
-                        </div>
+                      <div className="score-badge">
+                        <span className="score-label">Match</span>
+                        <span className="score-value">{Math.round(result.score * 100)}%</span>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Result Body */}
-                  <div className="p-6 space-y-5">
-                    {/* Definition */}
-                    <div>
-                      <h4 className="text-sm font-bold text-gray-500 uppercase mb-3 flex items-center gap-2">
-                        <span className="text-lg">📋</span> Definition
-                      </h4>
-                      <p className="text-gray-800 leading-relaxed text-base">
-                        {result.law.text}
-                      </p>
-                    </div>
+                    {/* Result Body */}
+                    <div className="law-card-body">
+                      {/* Definition */}
+                      <div className="law-section">
+                        <h4 className="section-heading">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <line x1="10" y1="9" x2="8" y2="9"/>
+                          </svg>
+                          Definition
+                        </h4>
+                        <p className="section-content">{result.law.text}</p>
+                      </div>
 
-                    {/* Punishment */}
-                    <div className="bg-gradient-to-br from-red-50 to-orange-50 p-5 rounded-xl border-l-4 border-red-500 shadow-sm">
-                      <h4 className="text-sm font-bold text-red-800 uppercase mb-3 flex items-center gap-2">
-                        <span className="text-lg">⚖️</span> Punishment
-                      </h4>
-                      <p className="text-red-900 font-medium leading-relaxed">
-                        {result.law.punishment}
-                      </p>
-                    </div>
+                      {/* Punishment */}
+                      <div className="law-section punishment-section">
+                        <h4 className="section-heading">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                          </svg>
+                          Punishment
+                        </h4>
+                        <p className="section-content">{result.law.punishment}</p>
+                      </div>
 
-                    {/* Example Case */}
-                    <div className="bg-gradient-to-br from-amber-50 to-yellow-50 p-5 rounded-xl border-l-4 border-amber-500 shadow-sm">
-                      <h4 className="text-sm font-bold text-amber-800 uppercase mb-3 flex items-center gap-2">
-                        <span className="text-lg">💼</span> Example Case
-                      </h4>
-                      <p className="text-amber-900 leading-relaxed">
-                        {result.law.example_case}
-                      </p>
+                      {/* Example Case */}
+                      <div className="law-section example-section">
+                        <h4 className="section-heading">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                          </svg>
+                          Example Case
+                        </h4>
+                        <p className="section-content">{result.law.example_case}</p>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -219,3 +244,4 @@ export default function OfflineLegalSearch() {
     </div>
   );
 }
+
