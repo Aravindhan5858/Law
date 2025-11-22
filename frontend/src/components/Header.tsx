@@ -1,96 +1,89 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 import { useTheme } from '../context/ThemeContext';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path: string) => location.pathname === path;
+
+  const navLinks = [
+    { path: '/home', label: 'Home', icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    )},
+    { path: '/analyze', label: 'Analyze', icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+      </svg>
+    )},
+    { path: '/offline-search', label: 'Laws', icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+      </svg>
+    )},
+    { path: '/about', label: 'About', icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4"/>
+        <path d="M12 8h.01"/>
+      </svg>
+    )},
+    { path: '/contact', label: 'Contact', icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+    )}
+  ];
 
   return (
-    <header style={{ 
-      background: 'var(--bg)', 
-      borderBottom: '1px solid var(--border-color)',
-      boxShadow: 'var(--shadow-sm)'
-    }}>
-      <div style={{ 
-        maxWidth: 1200, 
-        margin: '0 auto', 
-        padding: '12px 20px', 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'space-between' 
-      }}>
-        <div>
-          <Link to="/home" style={{ 
-            textDecoration: 'none', 
-            color: 'var(--text-primary)', 
-            fontSize: '1.1rem',
-            fontWeight: 700,
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem'
-          }}>
+    <header className="header">
+      <div className="header-container">
+        <div className="header-brand">
+          <Link to="/home" className="brand-link">
             <img 
               src="/assets/legal_logo.svg" 
               alt="Legal Case Advisor" 
+              className="brand-logo"
               style={{ 
-                width: '45px', 
-                height: '45px',
                 filter: theme === 'dark' 
                   ? 'drop-shadow(0 2px 8px rgba(255, 215, 0, 0.4))' 
-                  : 'drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3)) brightness(0.95)',
-                padding: '4px',
-                transition: 'filter 0.3s ease'
+                  : 'drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3)) brightness(0.95)'
               }} 
             />
-            Legal Case Advisor
+            <span className="brand-name">Legal Case Advisor</span>
           </Link>
         </div>
         
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-          <Link to="/home" style={{ 
-            textDecoration: 'none', 
-            color: 'var(--text-secondary)',
-            fontWeight: 500,
-            transition: 'color 0.2s'
-          }}>Home</Link>
-          <Link to="/analyze" style={{ 
-            textDecoration: 'none', 
-            color: 'var(--text-secondary)',
-            fontWeight: 500,
-            transition: 'color 0.2s'
-          }}>Analyze</Link>
-          <Link to="/offline-search" style={{ 
-            textDecoration: 'none', 
-            color: 'var(--text-secondary)',
-            fontWeight: 500,
-            transition: 'color 0.2s'
-          }}>Offline Search</Link>
-          <Link to="/about" style={{ 
-            textDecoration: 'none', 
-            color: 'var(--text-secondary)',
-            fontWeight: 500,
-            transition: 'color 0.2s'
-          }}>About</Link>
-          <Link to="/contact" style={{ 
-            textDecoration: 'none', 
-            color: 'var(--text-secondary)',
-            fontWeight: 500,
-            transition: 'color 0.2s'
-          }}>Contact</Link>
-          
+        {/* Desktop Navigation */}
+        <nav className="header-nav desktop-nav">
+          {navLinks.map(link => (
+            <Link 
+              key={link.path}
+              to={link.path} 
+              className={`nav-link ${isActive(link.path) ? 'active' : ''}`}
+            >
+              {link.icon}
+              <span>{link.label}</span>
+            </Link>
+          ))}
+        </nav>
+
+        {/* Header Actions */}
+        <div className="header-actions">
           <button
             onClick={toggleTheme}
-            style={{
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-              padding: '0.5rem',
-              display: 'flex',
-              alignItems: 'center',
-              color: 'var(--text-secondary)'
-            }}
+            className="theme-toggle"
             title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            aria-label="Toggle theme"
           >
             {theme === 'light' ? (
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -112,13 +105,61 @@ export default function Header() {
           </button>
           
           <SignedOut>
-            <SignInButton mode="modal" />
+            <SignInButton mode="modal">
+              <button className="sign-in-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                  <polyline points="10 17 15 12 10 7"/>
+                  <line x1="15" y1="12" x2="3" y2="12"/>
+                </svg>
+                Sign In
+              </button>
+            </SignInButton>
           </SignedOut>
           <SignedIn>
-            <UserButton />
+            <div className="user-button-wrapper">
+              <UserButton />
+            </div>
           </SignedIn>
-        </nav>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="mobile-menu-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Navigation */}
+      {isMobileMenuOpen && (
+        <nav className="mobile-nav">
+          {navLinks.map(link => (
+            <Link 
+              key={link.path}
+              to={link.path} 
+              className={`mobile-nav-link ${isActive(link.path) ? 'active' : ''}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {link.icon}
+              <span>{link.label}</span>
+            </Link>
+          ))}
+        </nav>
+      )}
     </header>
   );
 }
