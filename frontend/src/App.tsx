@@ -14,6 +14,7 @@ import UnifiedSearchPage from './pages/UnifiedSearchPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import Home from './pages/Home';
+import AssaultCaseAssistant from './pages/AssaultCaseAssistant';
 
 export default function App() {
   return (
@@ -105,6 +106,17 @@ export default function App() {
                   <>
                     <Header />
                     <ContactPage />
+                  </>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/assault-assistant"
+              element={
+                <ProtectedRoute>
+                  <>
+                    <Header />
+                    <AssaultCaseAssistant />
                   </>
                 </ProtectedRoute>
               }

@@ -4,13 +4,33 @@ import { SignIn } from '@clerk/clerk-react';
 
 const LoginPage: React.FC = () => {
   return (
-    <div className="auth-page">
+    <div className="modern-auth-page">
+      {/* Decorative gradient circle */}
+      <div className="gradient-circle"></div>
+      
+      {/* Floating accent dots */}
+      <div className="floating-dots">
+        <span className="dot dot-1"></span>
+        <span className="dot dot-2"></span>
+        <span className="dot dot-3"></span>
+        <span className="dot dot-4"></span>
+        <span className="dot dot-5"></span>
+        <span className="dot dot-6"></span>
+      </div>
+
+      {/* Glass-morphism login card */}
       <motion.div
-        className="auth-container clerk-container"
-        initial={{ opacity: 0, y: 20 }}
+        className="glass-card"
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
+        <div className="login-header">
+          <h1 className="login-title">Sign in to Home</h1>
+          <div className="title-underline"></div>
+          <p className="login-subtitle">Welcome back! Please sign in to continue</p>
+        </div>
+
         <SignIn 
           routing="virtual"
           signUpUrl="/signup"
@@ -18,16 +38,20 @@ const LoginPage: React.FC = () => {
           appearance={{
             elements: {
               rootBox: "w-full",
-              card: "shadow-none bg-transparent",
-              headerTitle: "text-2xl font-bold",
-              headerSubtitle: "text-gray-600",
-              socialButtonsBlockButton: "bg-white border-2 border-gray-300 hover:bg-gray-50 text-gray-700 font-semibold",
-              socialButtonsBlockButtonText: "font-semibold",
-              formButtonPrimary: "bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3",
-              footerActionLink: "text-blue-600 hover:text-blue-700 font-semibold",
-              identityPreviewEditButton: "text-blue-600",
-              formFieldInput: "border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-blue-500",
-              formFieldLabel: "text-gray-700 font-semibold",
+              card: "shadow-none bg-transparent modern-clerk-card",
+              headerTitle: "hidden",
+              headerSubtitle: "hidden",
+              header: "hidden",
+              socialButtonsBlockButton: "modern-social-btn",
+              socialButtonsBlockButtonText: "font-semibold text-sm",
+              formButtonPrimary: "modern-submit-btn",
+              footerActionLink: "modern-link",
+              identityPreviewEditButton: "modern-link",
+              formFieldInput: "modern-input",
+              formFieldLabel: "modern-label",
+              dividerRow: "modern-divider-row",
+              dividerText: "modern-divider-text",
+              dividerLine: "modern-divider-line",
             },
             layout: {
               socialButtonsPlacement: "top",
