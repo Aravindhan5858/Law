@@ -39,7 +39,7 @@ export const loaderConfig = {
   /**
    * Delay before showing the Continue button (in milliseconds)
    */
-  buttonDelay: 3000,
+  buttonDelay: 500,
 };
 
 export default loaderConfig;
