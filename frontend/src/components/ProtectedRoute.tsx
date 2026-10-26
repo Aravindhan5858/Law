@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '@clerk/clerk-react';
 import { motion } from 'framer-motion';
@@ -9,8 +9,19 @@ interface ProtectedRouteProps {
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const { isLoaded, isSignedIn } = useAuth();
+  const [hasTimedOut, setHasTimedOut] = useState(false);
 
-  if (!isLoaded) {
+  useEffect(() => {
+    if (isLoaded) {
+      setHasTimedOut(false);
+      return;
+    }
+
+    const timeout = window.setTimeout(() => setHasTimedOut(true), 8000);
+    return () => window.clearTimeout(timeout);
+  }, [isLoaded]);
+
+  if (!isLoaded && !hasTimedOut) {
     return (
       <div className="loading-screen">
         <motion.div
@@ -23,6 +34,17 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
           </svg>
         </motion.div>
         <p>Loading...</p>
+      </div>
+    );
+  }
+
+  if (!isLoaded && hasTimedOut) {
+    return (
+      <div className="loading-screen">
+        <p>Authentication is unavailable. Check your Clerk configuration and reload the page.</p>
+        <button type="button" onClick={() => window.location.reload()}>
+          Reload
+        </button>
       </div>
     );
   }
