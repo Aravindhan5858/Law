@@ -6,7 +6,7 @@ import evidenceActData from '../data/evidence_act.json';
 import crpcData from '../data/crpc.json';
 import contractActData from '../data/contract_act.json';
 import rtiActData from '../data/rti_act.json';
-import motorVehiclesActData from '../data/motor_vehicles_act.json'
+import motorVehiclesActData from '../data/motor_vehicles_act.json';
 
 /**
  * Load and merge all law datasets into a single array
