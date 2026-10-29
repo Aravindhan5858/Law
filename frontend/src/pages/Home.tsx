@@ -24,14 +24,22 @@ export default function Home() {
   };
 
   return (
-    <div className="dashboard">
+    <main className="dashboard dashboard-home">
       <motion.div
         className="dashboard-header"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1>Welcome back, {userName}!</h1>
+        <div>
+          <span className="dashboard-kicker">LEGAL CASE ADVISOR / WORKSPACE</span>
+          <h1>Good to see you, {userName}.</h1>
+          <p>Turn a difficult legal question into a clearer next step.</p>
+        </div>
+        <div className="system-status" aria-label="Legal search system status">
+          <span className="status-dot" />
+          <span>Search system online</span>
+        </div>
         <p>Your AI-powered legal assistant is ready to help you understand your legal situation.</p>
       </motion.div>
 
@@ -119,12 +127,13 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        <div style={{ marginTop: '3rem' }}>
-          <h3>How it works</h3>
+        <div className="how-it-works">
+          <span className="section-eyebrow">A SIMPLE THREE-STEP FLOW</span>
+          <h3>From situation to direction</h3>
           <ol style={{ lineHeight: '1.8' }}>
-            <li>Describe your incident or legal situation in plain language.</li>
-            <li>Our AI matcher analyzes and suggests likely IPC sections and legal actions.</li>
-            <li>Review the recommendations and consult a lawyer or file a complaint if needed.</li>
+            <li><strong>Describe</strong><span>Explain the situation in plain language.</span></li>
+            <li><strong>Understand</strong><span>Review relevant sections and context.</span></li>
+            <li><strong>Decide</strong><span>Use the findings to plan your next conversation.</span></li>
           </ol>
         </div>
 
@@ -133,6 +142,6 @@ export default function Home() {
           Always consult with a qualified legal professional for your specific situation.
         </div>
       </motion.div>
-    </div>
+    </main>
   );
 }
