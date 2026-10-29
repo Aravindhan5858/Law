@@ -40,7 +40,19 @@ export default function Home() {
           <span className="status-dot" />
           <span>Search system online</span>
         </div>
-        <p>Your AI-powered legal assistant is ready to help you understand your legal situation.</p>
+      </motion.div>
+
+      <motion.div
+        className="dashboard-intro"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15, duration: 0.45 }}
+      >
+        <div>
+          <span className="intro-label">START HERE</span>
+          <h2>What do you need to resolve?</h2>
+        </div>
+        <span className="intro-meta">154 sections indexed · 8 Acts covered</span>
       </motion.div>
 
       <motion.div
