@@ -359,6 +359,33 @@ const DetailedView: React.FC<{ analysis: any; theme: string }> = ({ analysis }) 
         </div>
       </div>
 
+      {(analysis.language || analysis.uncertainty) && (
+        <div className="result-section">
+          <h3 className="section-title">Analysis Confidence &amp; Missing Facts</h3>
+          <div className="classification-grid">
+            {analysis.language && (
+              <div className="info-box">
+                <span className="info-label">Detected language</span>
+                <span className="info-value">{analysis.language}</span>
+              </div>
+            )}
+            <div className="info-box">
+              <span className="info-label">Model confidence</span>
+              <span className="info-value">{Math.round((analysis.confidence || 0) * 100)}%</span>
+            </div>
+          </div>
+          {analysis.uncertainty && <p className="section-relevance">{analysis.uncertainty}</p>}
+          {analysis.followUpQuestions?.length > 0 && (
+            <div className="additional-notes">
+              <h4>Questions that can improve this analysis</h4>
+              <ul>
+                {analysis.followUpQuestions.map((question: string) => <li key={question}>{question}</li>)}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Applicable Sections */}
       <div className="result-section">
         <h3 className="section-title">
@@ -369,7 +396,7 @@ const DetailedView: React.FC<{ analysis: any; theme: string }> = ({ analysis }) 
           Applicable Legal Sections
         </h3>
         <div className="sections-list">
-          {analysis.applicableSections.map((section: any, idx: number) => (
+          {analysis.applicableSections.length > 0 ? analysis.applicableSections.map((section: any, idx: number) => (
             <div key={idx} className="section-card">
               <div className="section-header">
                 <h4>{section.act} - Section {section.section}</h4>
@@ -380,7 +407,9 @@ const DetailedView: React.FC<{ analysis: any; theme: string }> = ({ analysis }) 
                 <strong>Relevance:</strong> {section.relevance}
               </div>
             </div>
-          ))}
+          )) : (
+            <p className="section-relevance">No verified section matched the available facts. Answer the follow-up questions and consult a qualified lawyer before relying on a provision.</p>
+          )}
         </div>
       </div>
 

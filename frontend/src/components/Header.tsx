@@ -50,7 +50,7 @@ export default function Header() {
         <div className="header-brand">
           <Link to="/home" className="brand-link">
             <img 
-              src="/assets/legal_logo.svg" 
+              src="/assets/legal_case_mark.svg" 
               alt="Legal Case Advisor" 
               className="brand-logo"
               style={{ 

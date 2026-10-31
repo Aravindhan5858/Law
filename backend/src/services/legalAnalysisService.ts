@@ -3,7 +3,19 @@
  * Analyzes complaints and provides structured legal guidance
  */
 
+import {
+  detectLanguage,
+  getFollowUpQuestions,
+  normalizeIncident,
+  DetectedLanguage,
+} from './multilingualNlpService';
+
 interface LegalAnalysis {
+  language: DetectedLanguage;
+  normalizedInput: string;
+  confidence: number;
+  followUpQuestions: string[];
+  uncertainty: string;
   caseClassification: {
     primaryCategory: string;
     subcategory: string;
@@ -42,7 +54,8 @@ class LegalAnalysisService {
    * Analyze a complaint and provide structured legal analysis
    */
   analyzeComplaint(complaint: string): LegalAnalysis {
-    const lowerComplaint = complaint.toLowerCase();
+    const lowerComplaint = normalizeIncident(complaint);
+    const language = detectLanguage(complaint);
 
     // Detect complaint type
     const complaintType = this.classifyComplaint(lowerComplaint);
@@ -60,6 +73,13 @@ class LegalAnalysisService {
     const outcome = this.getExpectedOutcome(complaintType);
 
     return {
+      language,
+      normalizedInput: lowerComplaint,
+      confidence: sections.length > 0 ? 0.65 : 0,
+      followUpQuestions: getFollowUpQuestions(lowerComplaint),
+      uncertainty: sections.length > 0
+        ? 'These are possible provisions for information only. The incident date, facts, and official legal sources must be verified by a qualified lawyer.'
+        : 'The available facts are insufficient to suggest a provision safely. Please answer the follow-up questions before relying on any result.',
       caseClassification: complaintType,
       applicableSections: sections,
       punishmentDetails: punishment,
@@ -67,6 +87,11 @@ class LegalAnalysisService {
       expectedOutcome: outcome,
       additionalNotes: this.getAdditionalNotes(complaintType)
     };
+  }
+
+  analyzeFollowUp(complaint: string, answers: Record<string, string> = {}): LegalAnalysis {
+    const answerText = Object.values(answers).filter(Boolean).join(' ');
+    return this.analyzeComplaint(`${complaint} ${answerText}`.trim());
   }
 
   /**
@@ -92,6 +117,33 @@ class LegalAnalysisService {
         subcategory: 'Criminal Breach of Trust',
         severity: 'High',
         jurisdiction: 'Criminal Court'
+      };
+    }
+
+    if (complaint.includes('hit') || complaint.includes('assault') || complaint.includes('injur')) {
+      return {
+        primaryCategory: 'Physical Assault',
+        subcategory: 'Hurt or Voluntarily Causing Injury',
+        severity: 'Medium',
+        jurisdiction: 'Local Police / Criminal Court'
+      };
+    }
+
+    if (complaint.includes('threat') || complaint.includes('intimidat')) {
+      return {
+        primaryCategory: 'Criminal Intimidation',
+        subcategory: 'Threatening Communication',
+        severity: 'Medium',
+        jurisdiction: 'Local Police / Criminal Court'
+      };
+    }
+
+    if (complaint.includes('stole') || complaint.includes('theft')) {
+      return {
+        primaryCategory: 'Theft',
+        subcategory: 'Loss of Personal Property',
+        severity: 'High',
+        jurisdiction: 'Local Police / Criminal Court'
       };
     }
 
@@ -171,6 +223,10 @@ class LegalAnalysisService {
    * Get punishment details
    */
   private getPunishmentDetails(sections: LegalAnalysis['applicableSections']): LegalAnalysis['punishmentDetails'] {
+    if (sections.length === 0) {
+      return {};
+    }
+
     return {
       criminal: 'Section 420 IPC: Imprisonment up to 7 years + Fine\nSection 406 IPC: Imprisonment up to 3 years + Fine\nSection 66D IT Act: Imprisonment up to 3 years + Fine up to Rs. 1 lakh\n\nNote: These are criminal charges that can lead to arrest and prosecution of the seller/company officials.',
       civil: 'Consumer Protection Act: Consumer forum can order full refund with interest, compensation for mental harassment (typically Rs. 10,000 - Rs. 50,000), and litigation costs.',

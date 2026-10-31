@@ -34,7 +34,7 @@ export const loaderConfig = {
    * Logo source path
    * Can be updated to use a different logo image
    */
-  logoSrc: '/assets/legal_logo.svg',
+  logoSrc: '/assets/legal_case_mark.svg',
 
   /**
    * Delay before showing the Continue button (in milliseconds)

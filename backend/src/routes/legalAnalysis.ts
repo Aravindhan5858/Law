@@ -41,6 +41,28 @@ router.post('/analyze', (req: Request, res: Response) => {
   }
 });
 
+router.post('/follow-up', (req: Request, res: Response) => {
+  try {
+    const { complaint, answers } = req.body;
+
+    if (!complaint || typeof complaint !== 'string') {
+      return res.status(400).json({
+        error: 'Complaint text is required',
+        message: 'Please provide complaint and optional answers as { complaint, answers }'
+      });
+    }
+
+    const analysis = legalAnalysisService.analyzeFollowUp(complaint, answers || {});
+    return res.json({ success: true, analysis });
+  } catch (error) {
+    console.error('[Legal Follow-up Error]', error);
+    return res.status(500).json({
+      error: 'Follow-up analysis failed',
+      message: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
 /**
  * GET /api/legal-analysis/health
  * Health check for legal analysis service
