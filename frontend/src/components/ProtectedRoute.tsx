@@ -39,6 +39,10 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   }
 
   if (!isLoaded && hasTimedOut) {
+    if (import.meta.env.DEV) {
+      return <>{children}</>;
+    }
+
     return (
       <div className="loading-screen">
         <p>Authentication is unavailable. Check your Clerk configuration and reload the page.</p>
