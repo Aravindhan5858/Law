@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { useTheme } from '../context/ThemeContext';
 
 interface LegalAnalysis {
@@ -117,10 +118,7 @@ export default function AnalyzePage() {
     setAnalysis(null);
     
     try {
-      const API_URL = import.meta.env.VITE_API_URL
-        ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api`
-        : '/api';
-      const response = await axios.post(`${API_URL}/legal-analysis/analyze`, {
+      const response = await axios.post(`${API_BASE_URL}/legal-analysis/analyze`, {
         complaint: text.trim()
       });
       

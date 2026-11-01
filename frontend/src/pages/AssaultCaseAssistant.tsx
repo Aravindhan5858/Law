@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 
 interface LegalSection {
   section: string;
@@ -40,10 +41,7 @@ export default function AssaultCaseAssistant() {
     };
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL
-        ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api`
-        : '/api';
-      const res = await axios.post(`${API_URL}/assault-assistant`, payload);
+      const res = await axios.post(`${API_BASE_URL}/assault-assistant`, payload);
 
       if (res.data && res.data.response) {
         setResponse(res.data.response);

@@ -2,6 +2,7 @@
  * API Service for Legal Search
  * Connects to backend /api/search endpoint
  */
+import { API_BASE_URL } from '../config/api';
 
 interface SearchResult {
   section_number: string;
@@ -27,10 +28,6 @@ interface SearchStats {
   indexed: boolean;
   acts_covered: string[];
 }
-
-const API_BASE_URL = import.meta.env.VITE_API_URL
-  ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api`
-  : '/api';
 
 export class SearchAPI {
   /**
