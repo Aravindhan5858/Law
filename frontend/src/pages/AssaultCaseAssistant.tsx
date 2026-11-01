@@ -40,8 +40,10 @@ export default function AssaultCaseAssistant() {
     };
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
-      const res = await axios.post(`${API_URL}/api/assault-assistant`, payload);
+      const API_URL = import.meta.env.VITE_API_URL
+        ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api`
+        : '/api';
+      const res = await axios.post(`${API_URL}/assault-assistant`, payload);
 
       if (res.data && res.data.response) {
         setResponse(res.data.response);

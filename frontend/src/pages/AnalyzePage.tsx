@@ -117,8 +117,10 @@ export default function AnalyzePage() {
     setAnalysis(null);
     
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
-      const response = await axios.post(`${API_URL}/api/legal-analysis/analyze`, {
+      const API_URL = import.meta.env.VITE_API_URL
+        ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api`
+        : '/api';
+      const response = await axios.post(`${API_URL}/legal-analysis/analyze`, {
         complaint: text.trim()
       });
       

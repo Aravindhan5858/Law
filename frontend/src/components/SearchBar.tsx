@@ -15,8 +15,11 @@ export default function SearchBar() {
     if (!q || q.trim().length === 0) return setError('Please enter a search term');
     setLoading(true);
     try {
-      const res = await axios.get('/api/laws/search', { params: { q } });
-      setResult(res.data);
+      const res = await axios.get('/api/search', { params: { query: q } });
+      setResult(res.data.results?.[0] ?? null);
+      if (!res.data.results?.length) {
+        setError('No matching case or section found.');
+      }
     } catch (e: any) {
       if (e.response && e.response.data && e.response.data.message) setError(e.response.data.message);
       else setError('Search failed');
@@ -68,11 +71,12 @@ export default function SearchBar() {
         {error && <div style={{ color: 'crimson' }}>{error}</div>}
         {result ? (
           <div style={{ padding: 12, border: '1px solid #eee', borderRadius: 8 }}>
-            <h2>{result.caseTitle}</h2>
-            <p><b>Section:</b> {Array.isArray(result.sections) ? result.sections.join(', ') : result.sections}</p>
+            <h2>{result.title}</h2>
+            <p><b>Act:</b> {result.act}</p>
+            <p><b>Section:</b> {result.section_number}</p>
             <p><b>Description:</b> {result.description}</p>
             <p><b>Punishment:</b> {result.punishment}</p>
-            {result.procedure && <p><b>Procedure:</b> {result.procedure}</p>}
+            {result.example_case && <p><b>Example:</b> {result.example_case}</p>}
           </div>
         ) : (!error && <div style={{ color: '#666' }}>No matching case or section found.</div>)}
       </div>
