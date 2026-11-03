@@ -32,9 +32,9 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       >
         <div>
-          <span className="dashboard-kicker">LEGAL CASE ADVISOR / WORKSPACE</span>
+          <span className="dashboard-kicker">NYAYADESK / LEGAL WORKSPACE</span>
           <h1>Good to see you, {userName}.</h1>
-          <p>Turn a difficult legal question into a clearer next step.</p>
+          <p>Turn a difficult legal question into a clearer, more informed next step.</p>
         </div>
         <div className="system-status" aria-label="Legal search system status">
           <span className="status-dot" />
@@ -52,7 +52,7 @@ export default function Home() {
           <span className="intro-label">START HERE</span>
           <h2>What do you need to resolve?</h2>
         </div>
-        <span className="intro-meta">154 sections indexed · 8 Acts covered</span>
+        <span className="intro-meta">Search-ready database · Indian legal sources</span>
       </motion.div>
 
       <motion.div
@@ -75,7 +75,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3>Analyze Case</h3>
-              <p>Describe your legal situation and get instant analysis with relevant IPC sections and recommendations.</p>
+              <p>Describe your situation and get a structured starting point with relevant provisions and next steps.</p>
               <div className="card-arrow">→</div>
             </div>
           </Link>
@@ -92,7 +92,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3>Browse Laws</h3>
-              <p>Explore the complete database of IPC sections, punishments, and legal provisions.</p>
+              <p>Search indexed acts, sections, definitions, and provisions in one focused workspace.</p>
               <div className="card-arrow">→</div>
             </div>
           </Link>

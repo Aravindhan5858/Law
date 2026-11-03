@@ -98,7 +98,7 @@ const Loader: React.FC<LoaderProps> = ({
       >
         <img
           src={logoSrc}
-          alt="Legal Case Advisor"
+          alt="NyayaDesk"
           className="loader-logo"
         />
       </motion.div>

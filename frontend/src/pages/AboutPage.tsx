@@ -25,8 +25,8 @@ export default function AboutPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1>About Legal Case Advisor</h1>
-        <p>AI-powered legal assistance for understanding your rights and navigating legal matters</p>
+        <h1>About NyayaDesk</h1>
+        <p>A focused legal research workspace for turning complex questions into clearer next steps.</p>
       </motion.div>
 
       <motion.div
@@ -48,9 +48,8 @@ export default function AboutPage() {
           </div>
           <h3>Our Mission</h3>
           <p>
-            This project helps users identify likely applicable IPC sections and provides a suggested course of action. 
-            We use advanced AI technology combined with rule-based matching to analyze your legal situation and provide 
-            accurate, actionable guidance.
+            NyayaDesk helps users find potentially relevant provisions and organize their initial research. It combines
+            searchable legal data with structured analysis so you can prepare better questions for a qualified professional.
           </p>
         </motion.div>
 
@@ -66,10 +65,10 @@ export default function AboutPage() {
           </div>
           <h3>Data & References</h3>
           <ul style={{ paddingLeft: '1.5rem', lineHeight: '1.8' }}>
-            <li>Indian Penal Code (IPC) - Comprehensive criminal law coverage</li>
-            <li>Code of Criminal Procedure (CrPC) - Procedural guidelines</li>
-            <li>Information Technology Act - For cyber offences and digital crimes</li>
-            <li>Regularly updated legal database</li>
+            <li>Indian criminal and procedural law references</li>
+            <li>Information technology and cyber-law provisions</li>
+            <li>Consumer, contract, evidence, RTI, and motor-vehicle references</li>
+            <li>Searchable sections with context and examples</li>
           </ul>
         </motion.div>
 
@@ -87,7 +86,7 @@ export default function AboutPage() {
           <ol style={{ paddingLeft: '1.5rem', lineHeight: '1.8' }}>
             <li>Describe your legal situation in plain language</li>
             <li>Our AI analyzes your case using advanced pattern matching</li>
-            <li>Receive detailed analysis with applicable IPC sections</li>
+            <li>Receive a structured view of potentially relevant provisions</li>
             <li>Get actionable recommendations and next steps</li>
             <li>Consult with legal professionals for expert guidance</li>
           </ol>

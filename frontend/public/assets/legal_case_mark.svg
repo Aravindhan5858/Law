@@ -1,12 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
-  <title id="title">Legal Case Advisor mark</title>
-  <desc id="desc">A gold shield containing a balanced scale</desc>
+  <title id="title">NyayaDesk mark</title>
+  <desc id="desc">A modern indigo and teal legal compass mark</desc>
   <defs>
-    <linearGradient id="shield" x1="18" y1="10" x2="78" y2="88" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f2cf72"/>
-      <stop offset="1" stop-color="#b9842f"/>
+    <linearGradient id="mark" x1="18" y1="12" x2="78" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7180ff"/>
+      <stop offset="1" stop-color="#35d3bf"/>
     </linearGradient>
   </defs>
-  <path d="M48 6 80 18v25c0 21-13 37-32 47C29 80 16 64 16 43V18L48 6Z" fill="#0c172d" stroke="url(#shield)" stroke-width="4"/>
-  <path d="M48 25v38M30 33h36M36 33l-8 14a9 9 0 0 0 16 0l-8-14Zm24 0-8 14a9 9 0 0 0 16 0l-8-14ZM38 70h20" fill="none" stroke="#f2cf72" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <rect x="7" y="7" width="82" height="82" rx="26" fill="#101936" stroke="url(#mark)" stroke-width="4"/>
+  <circle cx="48" cy="48" r="25" fill="none" stroke="#d7ddff" stroke-width="3" opacity=".8"/>
+  <path d="m48 28 6 14 14 6-14 6-6 14-6-14-14-6 14-6 6-14Z" fill="url(#mark)"/>
+  <circle cx="48" cy="48" r="4" fill="#fff"/>
 </svg>

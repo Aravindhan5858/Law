@@ -39,8 +39,8 @@ export default function LogoDisplay() {
     <div className="logo-container">
       {!imageError ? (
         <img
-          src="/assets/legal_logo.svg"
-          alt="Legal Case Advisor"
+          src="/assets/legal_case_mark.svg"
+          alt="NyayaDesk"
           className={`logo ${fadeIn ? 'fade-in' : ''}`}
           onClick={() => setOpen(true)}
           onError={handleImageError}
@@ -66,7 +66,7 @@ export default function LogoDisplay() {
             </text>
           </svg>
           <p className="logo-missing-text">
-            Please add: /public/assets/legal_logo.png
+            NyayaDesk logo unavailable
           </p>
         </div>
       )}
@@ -82,8 +82,8 @@ export default function LogoDisplay() {
               ×
             </button>
             <img 
-              src="/assets/legal_logo.svg" 
-              alt="Legal Case Advisor Logo Enlarged" 
+              src="/assets/legal_case_mark.svg" 
+              alt="NyayaDesk logo enlarged" 
               className="modal-image"
             />
           </div>

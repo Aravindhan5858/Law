@@ -48,10 +48,10 @@ export default function Header() {
     <header className="header">
       <div className="header-container">
         <div className="header-brand">
-          <Link to="/home" className="brand-link">
+          <Link to="/home" className="brand-link" aria-label="NyayaDesk home">
             <img 
               src="/assets/legal_case_mark.svg" 
-              alt="Legal Case Advisor" 
+              alt="NyayaDesk" 
               className="brand-logo"
               style={{ 
                 filter: theme === 'dark' 
@@ -59,7 +59,7 @@ export default function Header() {
                   : 'drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3)) brightness(0.95)'
               }} 
             />
-            <span className="brand-name">Legal Case Advisor</span>
+            <span className="brand-name">Nyaya<span>Desk</span></span>
           </Link>
         </div>
         
@@ -82,8 +82,8 @@ export default function Header() {
           <button
             onClick={toggleTheme}
             className="theme-toggle"
-            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-            aria-label="Toggle theme"
+            title={`Theme: ${theme}. Click for the next theme`}
+            aria-label={`Current theme ${theme}. Change theme`}
           >
             {theme === 'light' ? (
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
