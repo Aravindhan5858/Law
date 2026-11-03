@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #0b0b0b;
+  background: #101936;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,22 +39,22 @@
   position: absolute;
   bottom: 15%;
   padding: 1rem 2.5rem;
-  background: linear-gradient(135deg, #ffd700, #ffed4e);
-  color: #0b0b0b;
+  background: linear-gradient(135deg, #6d7cff, #41d7c5);
+  color: #101936;
   border: none;
   border-radius: 50px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(65, 215, 197, 0.3);
   transition: all 0.3s ease;
   z-index: 10;
   outline: none;
 }
 
 .loader-continue-btn:hover {
-  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5);
-  background: linear-gradient(135deg, #ffed4e, #ffd700);
+  box-shadow: 0 6px 25px rgba(65, 215, 197, 0.5);
+  background: linear-gradient(135deg, #41d7c5, #6d7cff);
 }
 
 .loader-continue-btn:focus-visible {
@@ -85,13 +85,13 @@
 .loader-dots span {
   width: 10px;
   height: 10px;
-  background: #ffd700;
+  background: #41d7c5;
   border-radius: 50%;
   display: inline-block;
 }
 
 .loader-hint {
-  color: rgba(255, 215, 0, 0.7);
+  color: rgba(165, 235, 226, 0.8);
   font-size: 0.9rem;
   text-align: center;
   margin: 0;

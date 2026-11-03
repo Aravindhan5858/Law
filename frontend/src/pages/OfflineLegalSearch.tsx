@@ -35,7 +35,7 @@ export default function OfflineLegalSearch() {
         transition={{ duration: 0.5 }}
       >
         <h1>Offline Legal Search</h1>
-        <p>Search IPC sections by number, keyword, or legal topic</p>
+        <p>Search legal sections by number, keyword, act, or topic</p>
       </motion.div>
 
       <div className="laws-container">
@@ -244,4 +244,3 @@ export default function OfflineLegalSearch() {
     </div>
   );
 }
-

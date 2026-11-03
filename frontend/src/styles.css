@@ -20,15 +20,15 @@
   pointer-events: none !important;
 }
 :root {
-  --bg: #f5f7fb;
+  --bg: #f4f7fb;
   --surface: #ffffff;
   --muted: #718096;
-  --accent: #b98535;
+  --accent: #3157d5;
   --danger: #c2413b;
   --success: #138a72;
-  --radius: 6px;
+  --radius: 10px;
   --content-width: 900px;
-  --text-primary: #10203a;
+  --text-primary: #17213a;
   --text-secondary: #607087;
   --border-color: #dce4ee;
   --shadow-sm: 0 1px 3px rgba(16,32,58,0.08);
@@ -51,6 +51,36 @@
   --shadow-lg: 0 10px 40px rgba(0,0,0,0.3);
 }
 
+[data-theme="ocean"] {
+  --bg: #edf8f7;
+  --surface: #ffffff;
+  --muted: #527477;
+  --accent: #087f8c;
+  --danger: #c2413b;
+  --success: #07866d;
+  --text-primary: #12363b;
+  --text-secondary: #527477;
+  --border-color: #c9e6e3;
+  --shadow-sm: 0 1px 3px rgba(8, 127, 140, 0.1);
+  --shadow-md: 0 10px 24px rgba(8, 127, 140, 0.1);
+  --shadow-lg: 0 20px 50px rgba(8, 127, 140, 0.14);
+}
+
+[data-theme="sepia"] {
+  --bg: #f8f2e8;
+  --surface: #fffaf1;
+  --muted: #8a7358;
+  --accent: #a45b2a;
+  --danger: #b54435;
+  --success: #5c8055;
+  --text-primary: #38281d;
+  --text-secondary: #79634e;
+  --border-color: #e7d6bd;
+  --shadow-sm: 0 1px 3px rgba(91, 56, 27, 0.1);
+  --shadow-md: 0 10px 24px rgba(91, 56, 27, 0.09);
+  --shadow-lg: 0 20px 50px rgba(91, 56, 27, 0.14);
+}
+
 * { box-sizing: border-box; }
 
 html, body, #root { 
@@ -65,7 +95,7 @@ body {
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(235,241,248,0.78));
+  background-image: linear-gradient(135deg, color-mix(in srgb, var(--surface) 72%, transparent), color-mix(in srgb, var(--bg) 78%, transparent));
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -3769,11 +3799,10 @@ button.btn:disabled {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Brand refresh */
 .header {
-  background: rgba(12, 23, 45, 0.96);
-  border-bottom: 1px solid rgba(242, 207, 114, 0.24);
-  box-shadow: 0 8px 26px rgba(12, 23, 45, 0.18);
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
 }
 
 .header-container {
@@ -3782,7 +3811,7 @@ button.btn:disabled {
 }
 
 .brand-link {
-  color: #f7f3e8;
+  color: var(--text-primary);
   letter-spacing: 0.02em;
 }
 
@@ -3793,23 +3822,27 @@ button.btn:disabled {
 }
 
 .brand-name {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
   font-size: 1.05rem;
 }
 
+.brand-name span {
+  color: var(--accent);
+}
+
 .nav-link {
-  color: rgba(247, 243, 232, 0.68);
+  color: var(--text-secondary);
   border-radius: 5px;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #f2cf72;
-  background: rgba(242, 207, 114, 0.1);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
 .nav-link.active::after {
-  background: #f2cf72;
+  background: var(--accent);
 }
 
 .dashboard-home {
@@ -3830,20 +3863,20 @@ button.btn:disabled {
 .dashboard-home .dashboard-header h1 {
   font-family: Georgia, "Times New Roman", serif;
   letter-spacing: 0;
-  background: linear-gradient(120deg, #10203a 20%, #a8792f 80%);
+  background: linear-gradient(120deg, var(--text-primary) 20%, var(--accent) 80%);
   -webkit-background-clip: text;
   background-clip: text;
 }
 
 .dashboard-home .dashboard-card {
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.84);
-  box-shadow: 0 16px 34px rgba(16, 32, 58, 0.08);
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+  box-shadow: var(--shadow-md);
 }
 
 .dashboard-home .dashboard-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 22px 40px rgba(16, 32, 58, 0.14);
+  box-shadow: var(--shadow-lg);
 }
 
 [data-theme="dark"] body {
@@ -3852,6 +3885,11 @@ button.btn:disabled {
 
 [data-theme="dark"] .dashboard-home .dashboard-card {
   background: rgba(20, 34, 59, 0.9);
+}
+
+[data-theme="ocean"] body,
+[data-theme="sepia"] body {
+  background-image: linear-gradient(135deg, color-mix(in srgb, var(--surface) 72%, transparent), color-mix(in srgb, var(--bg) 78%, transparent));
 }
 
 .header-container {
@@ -5490,4 +5528,3 @@ button.btn:disabled {
 .cl-internal-* {
   color: rgba(255, 255, 255, 0.7) !important;
 }
-
