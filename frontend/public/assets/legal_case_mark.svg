@@ -1,14 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
-  <title id="title">NyayaDesk mark</title>
-  <desc id="desc">A modern indigo and teal legal compass mark</desc>
+  <title id="title">NyayaDesk logo</title>
+  <desc id="desc">A teal legal balance inside an indigo speech bubble</desc>
   <defs>
-    <linearGradient id="mark" x1="18" y1="12" x2="78" y2="84" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#7180ff"/>
-      <stop offset="1" stop-color="#35d3bf"/>
+    <linearGradient id="bubble" x1="14" y1="10" x2="82" y2="86" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5267e8"/>
+      <stop offset="1" stop-color="#27c7b5"/>
     </linearGradient>
   </defs>
-  <rect x="7" y="7" width="82" height="82" rx="26" fill="#101936" stroke="url(#mark)" stroke-width="4"/>
-  <circle cx="48" cy="48" r="25" fill="none" stroke="#d7ddff" stroke-width="3" opacity=".8"/>
-  <path d="m48 28 6 14 14 6-14 6-6 14-6-14-14-6 14-6 6-14Z" fill="url(#mark)"/>
-  <circle cx="48" cy="48" r="4" fill="#fff"/>
+  <path d="M48 7c22.6 0 41 16.8 41 37.5 0 12.2-6.7 23-17.2 29.9L75 88l-17-8.1c-3.2.7-6.5 1.1-10 1.1-22.6 0-41-16.8-41-37.5S25.4 7 48 7Z" fill="#101936" stroke="url(#bubble)" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M48 25v38M27 33h42M35 33l-9 16a10 10 0 0 0 18 0l-9-16Zm26 0-9 16a10 10 0 0 0 18 0l-9-16ZM35 67h26" fill="none" stroke="#dce4ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <circle cx="48" cy="33" r="4" fill="#27c7b5"/>
 </svg>

@@ -110,7 +110,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3>About</h3>
-              <p>Learn more about how our AI-powered legal advisor works and how it can help you.</p>
+              <p>See how NyayaDesk organizes legal information and helps you prepare better questions.</p>
               <div className="card-arrow">→</div>
             </div>
           </Link>
@@ -141,7 +141,7 @@ export default function Home() {
       >
         <div className="how-it-works">
           <span className="section-eyebrow">A SIMPLE THREE-STEP FLOW</span>
-          <h3>From situation to direction</h3>
+          <h3>From question to direction</h3>
           <ol style={{ lineHeight: '1.8' }}>
             <li><strong>Describe</strong><span>Explain the situation in plain language.</span></li>
             <li><strong>Understand</strong><span>Review relevant sections and context.</span></li>

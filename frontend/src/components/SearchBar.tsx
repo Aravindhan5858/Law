@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 
 export default function SearchBar() {
   const [q, setQ] = useState('');
@@ -15,7 +16,7 @@ export default function SearchBar() {
     if (!q || q.trim().length === 0) return setError('Please enter a search term');
     setLoading(true);
     try {
-      const res = await axios.get('/api/search', { params: { query: q } });
+      const res = await axios.get(`${API_BASE_URL}/search`, { params: { query: q } });
       setResult(res.data.results?.[0] ?? null);
       if (!res.data.results?.length) {
         setError('No matching case or section found.');

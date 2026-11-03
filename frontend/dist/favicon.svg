@@ -1,6 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="28" fill="#101936"/>
-  <circle cx="50" cy="50" r="27" fill="none" stroke="#7180ff" stroke-width="4"/>
-  <path d="m50 27 7 16 16 7-16 7-7 16-7-16-16-7 16-7 7-16Z" fill="#35d3bf"/>
-  <circle cx="50" cy="50" r="4" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="NyayaDesk">
+  <path d="M50 7c23 0 42 17 42 38 0 12-7 23-18 30l3 13-18-9c-3 .7-6 .9-9 .9-23 0-42-17-42-38S27 7 50 7Z" fill="#101936" stroke="#5267e8" stroke-width="4"/>
+  <path d="M50 27v39M29 36h42M37 36l-9 15a10 10 0 0 0 18 0l-9-15Zm26 0-9 15a10 10 0 0 0 18 0l-9-15ZM37 69h26" fill="none" stroke="#dce4ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="50" cy="36" r="4" fill="#27c7b5"/>
 </svg>

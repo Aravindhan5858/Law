@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 
 export default function ContactPage() {
   const [name, setName] = useState('');
@@ -16,7 +17,7 @@ export default function ContactPage() {
 
     setSending(true);
     try {
-      await axios.post('/api/contact', { name, email, message });
+      await axios.post(`${API_BASE_URL}/contact`, { name, email, message });
       alert('Thanks — we received your message.');
       setName(''); 
       setEmail(''); 
