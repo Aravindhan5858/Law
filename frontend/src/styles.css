@@ -4119,7 +4119,38 @@ button.btn:disabled {
   width: 48px;
   height: 48px;
   padding: 4px;
-  transition: filter 0.3s ease;
+  animation: brand-logo-float 4s ease-in-out infinite;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  transform-origin: center;
+}
+
+.brand-link:hover .brand-logo,
+.brand-link:focus-visible .brand-logo {
+  animation-play-state: paused;
+  transform: rotate(-8deg) scale(1.08);
+}
+
+@keyframes brand-logo-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-3px) rotate(2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo {
+    animation: none;
+    transition: filter 0.3s ease;
+  }
+
+  .brand-link:hover .brand-logo,
+  .brand-link:focus-visible .brand-logo {
+    transform: none;
+  }
 }
 
 .brand-name {
