@@ -17,13 +17,13 @@ export const loaderConfig = {
    * When true: Automatically navigates after `autoDelay` milliseconds
    * When false: User must click Continue button to navigate
    */
-  autoRedirect: false,
+  autoRedirect: true,
 
   /**
    * Delay before auto-redirect (in milliseconds)
    * Only applies if autoRedirect is true
    */
-  autoDelay: 5000,
+  autoDelay: 1500,
 
   /**
    * Target path to navigate to after loader
@@ -39,7 +39,7 @@ export const loaderConfig = {
   /**
    * Delay before showing the Continue button (in milliseconds)
    */
-  buttonDelay: 500,
+  buttonDelay: 300,
 };
 
 export default loaderConfig;
