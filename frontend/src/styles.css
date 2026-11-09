@@ -3996,6 +3996,24 @@ button.btn:disabled {
   background: color-mix(in srgb, var(--surface) 94%, transparent);
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
+  isolation: isolate;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.7;
+  transform: scaleX(0.35);
+  transform-origin: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.header:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .header-container {
@@ -4108,11 +4126,11 @@ button.btn:disabled {
   color: var(--text-primary);
   font-size: 1.125rem;
   font-weight: 700;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
 .brand-link:hover {
-  transform: scale(1.02);
+  transform: translateY(-1px);
 }
 
 .brand-logo {
@@ -4142,14 +4160,25 @@ button.btn:disabled {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .header::before,
   .brand-logo {
     animation: none;
     transition: filter 0.3s ease;
   }
 
+  .header::before,
   .brand-link:hover .brand-logo,
   .brand-link:focus-visible .brand-logo {
     transform: none;
+  }
+
+  .nav-link,
+  .nav-link svg,
+  .theme-toggle,
+  .mobile-menu-toggle,
+  .mobile-nav-link,
+  .sign-in-btn {
+    transition: none;
   }
 }
 
@@ -4176,13 +4205,14 @@ button.btn:disabled {
   font-weight: 500;
   font-size: 0.9375rem;
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
   position: relative;
 }
 
 .nav-link:hover {
   color: var(--text-primary);
   background: var(--bg);
+  transform: translateY(-2px);
 }
 
 .nav-link.active {
@@ -4194,15 +4224,27 @@ button.btn:disabled {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 1rem;
+  right: 1rem;
   height: 2px;
   background: var(--accent);
   border-radius: 2px 2px 0 0;
+  animation: nav-indicator-in 0.25s ease both;
+}
+
+@keyframes nav-indicator-in {
+  from { opacity: 0; transform: scaleX(0.2); }
+  to { opacity: 1; transform: scaleX(1); }
 }
 
 .nav-link svg {
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover svg,
+.nav-link.active svg {
+  transform: scale(1.1);
 }
 
 /* Header Actions */
@@ -4230,7 +4272,11 @@ button.btn:disabled {
   background: var(--bg);
   color: var(--accent);
   border-color: var(--accent);
-  transform: rotate(180deg);
+  transform: rotate(18deg) scale(1.06);
+}
+
+.theme-toggle:active {
+  transform: rotate(180deg) scale(0.92);
 }
 
 .sign-in-btn {
@@ -4252,6 +4298,7 @@ button.btn:disabled {
 .sign-in-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  filter: saturate(1.12);
 }
 
 .user-button-wrapper {
@@ -4274,6 +4321,7 @@ button.btn:disabled {
 .mobile-menu-toggle:hover {
   background: var(--bg);
   border-color: var(--accent);
+  transform: rotate(-3deg);
 }
 
 /* Mobile Navigation */
@@ -4284,6 +4332,7 @@ button.btn:disabled {
   background: var(--bg);
   border-top: 1px solid var(--border-color);
   animation: slideDown 0.3s ease;
+  transform-origin: top;
 }
 
 @keyframes slideDown {
@@ -4307,12 +4356,13 @@ button.btn:disabled {
   font-weight: 500;
   font-size: 1rem;
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, padding-left 0.2s ease;
 }
 
 .mobile-nav-link:hover {
   color: var(--text-primary);
   background: var(--surface);
+  padding-left: 1.25rem;
 }
 
 .mobile-nav-link.active {
