@@ -84,6 +84,7 @@ export default function Header() {
             className="theme-toggle"
             title={`Theme: ${theme}. Click for the next theme`}
             aria-label={`Current theme ${theme}. Change theme`}
+            aria-pressed={theme !== 'light'}
           >
             {theme === 'light' ? (
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -127,6 +128,8 @@ export default function Header() {
             className="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMobileMenuOpen ? (
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -146,7 +149,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <nav className="mobile-nav">
+        <nav id="mobile-navigation" className="mobile-nav">
           {navLinks.map(link => (
             <Link 
               key={link.path}
