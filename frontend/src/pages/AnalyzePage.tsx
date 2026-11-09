@@ -5,6 +5,33 @@ import { API_BASE_URL } from '../config/api';
 import { useTheme } from '../context/ThemeContext';
 
 interface LegalAnalysis {
+  complaintTitle?: string;
+  incidentSummary?: string;
+  legalCategory?: string;
+  peopleInvolved?: string[];
+  severity?: string;
+  severityExplanation?: string;
+  importantFacts?: string[];
+  missingInformation?: string[];
+  evidenceChecklist?: Array<{ item: string; reason: string }>;
+  authorityGuidance?: {
+    name: string;
+    why: string;
+    online: string[];
+    offline: string;
+    escalation: string;
+  };
+  problemAnalysis?: {
+    whatHappened: string;
+    possibleLiability: string;
+    rights: string[];
+    supportingFacts: string[];
+    alternativeInterpretations: string[];
+  };
+  remedies?: string[];
+  precautions?: string[];
+  legalAid?: string;
+  disclaimer?: string;
   caseClassification: {
     primaryCategory: string;
     subcategory: string;
@@ -49,6 +76,11 @@ export default function AnalyzePage() {
   const [isListening, setIsListening] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>('detailed');
   const [recognition, setRecognition] = useState<any>(null);
+  const [incidentDate, setIncidentDate] = useState('');
+  const [location, setLocation] = useState('');
+  const [category, setCategory] = useState('');
+  const [evidenceNames, setEvidenceNames] = useState<string[]>([]);
+  const [followUpAnswers, setFollowUpAnswers] = useState<Record<string, string>>({});
 
   // Initialize voice recognition
   React.useEffect(() => {
@@ -118,14 +150,39 @@ export default function AnalyzePage() {
     setAnalysis(null);
     
     try {
-      const response = await axios.post(`${API_BASE_URL}/legal-analysis/analyze`, {
-        complaint: text.trim()
+      const response = await axios.post(`${API_BASE_URL}/complaints/analyze`, {
+        complaint: text.trim(),
+        incidentDate: incidentDate || undefined,
+        location: location || undefined,
+        category: category || undefined,
+        evidenceNames,
       });
       
       if (response.data && response.data.analysis) {
         setAnalysis(response.data.analysis);
       } else {
         setError('Failed to analyze complaint. Please try again.');
+      }
+
+      async function submitFollowUp() {
+        if (!analysis?.followUpQuestions?.length) return;
+        setLoading(true);
+        setError(null);
+        try {
+          const response = await axios.post(`${API_BASE_URL}/complaints/follow-up`, {
+            complaint: text.trim(),
+            answers: followUpAnswers,
+            incidentDate: incidentDate || undefined,
+            location: location || undefined,
+            category: category || undefined,
+            evidenceNames,
+          });
+          setAnalysis(response.data.analysis);
+        } catch (err: any) {
+          setError(err.response?.data?.message || 'Follow-up analysis failed. Please try again.');
+        } finally {
+          setLoading(false);
+        }
       }
     } catch (err: any) {
       console.error('Analysis error:', err);
@@ -210,6 +267,37 @@ export default function AnalyzePage() {
             rows={8}
           />
 
+          <div className="complaint-metadata-grid">
+            <label>
+              Incident date (optional)
+              <input type="date" value={incidentDate} onChange={event => setIncidentDate(event.target.value)} />
+            </label>
+            <label>
+              Location (optional)
+              <input type="text" value={location} onChange={event => setLocation(event.target.value)} placeholder="City, district or state" />
+            </label>
+            <label>
+              Incident category (optional)
+              <select value={category} onChange={event => setCategory(event.target.value)}>
+                <option value="">Let the system identify it</option>
+                <option value="Physical assault">Physical assault</option>
+                <option value="Online / consumer issue">Online / consumer issue</option>
+                <option value="Threat or harassment">Threat or harassment</option>
+                <option value="Theft or property loss">Theft or property loss</option>
+              </select>
+            </label>
+            <label className="evidence-upload">
+              Evidence files (optional)
+              <input
+                type="file"
+                accept="image/*,.pdf,.doc,.docx"
+                multiple
+                onChange={event => setEvidenceNames(Array.from(event.target.files || []).map(file => file.name))}
+              />
+              {evidenceNames.length > 0 && <small>{evidenceNames.length} file name(s) attached for your checklist</small>}
+            </label>
+          </div>
+
           <div className="char-count">
             {text.length} characters
           </div>
@@ -278,6 +366,9 @@ export default function AnalyzePage() {
                 </h2>
                 
                 <div className="view-toggle">
+                  <button className="toggle-btn" onClick={() => window.print()} type="button" title="Print or save as PDF">
+                    Print / PDF
+                  </button>
                   <button
                     className={`toggle-btn ${viewMode === 'detailed' ? 'active' : ''}`}
                     onClick={() => setViewMode('detailed')}
@@ -308,7 +399,13 @@ export default function AnalyzePage() {
               </div>
 
               {viewMode === 'detailed' ? (
-                <DetailedView analysis={analysis} theme={theme} />
+                <DetailedView
+                  analysis={analysis}
+                  theme={theme}
+                  followUpAnswers={followUpAnswers}
+                  setFollowUpAnswers={setFollowUpAnswers}
+                  submitFollowUp={submitFollowUp}
+                />
               ) : (
                 <FlowchartView analysis={analysis} theme={theme} />
               )}
@@ -321,7 +418,13 @@ export default function AnalyzePage() {
 }
 
 // Detailed View Component
-const DetailedView: React.FC<{ analysis: any; theme: string }> = ({ analysis }) => {
+const DetailedView: React.FC<{
+  analysis: any;
+  theme: string;
+  followUpAnswers: Record<string, string>;
+  setFollowUpAnswers: React.Dispatch<React.SetStateAction<Record<string, string>>>;
+  submitFollowUp: () => void;
+}> = ({ analysis, followUpAnswers, setFollowUpAnswers, submitFollowUp }) => {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -330,6 +433,26 @@ const DetailedView: React.FC<{ analysis: any; theme: string }> = ({ analysis }) 
       transition={{ duration: 0.3 }}
     >
       {/* Case Classification */}
+      {analysis.complaintTitle && (
+        <div className="complaint-summary-hero">
+          <span className="section-badge">AI-assisted legal information</span>
+          <h3>{analysis.complaintTitle}</h3>
+          <p>{analysis.incidentSummary}</p>
+          <div className="classification-tags">
+            <span className="classification-tag">{analysis.legalCategory}</span>
+            <span className={`classification-tag severity-${(analysis.severity || '').toLowerCase()}`}>{analysis.severity} severity</span>
+          </div>
+          <p className="section-relevance">{analysis.severityExplanation}</p>
+        </div>
+      )}
+
+      {analysis.importantFacts?.length > 0 && (
+        <div className="result-section">
+          <h3 className="section-title">Important facts identified</h3>
+          <ul className="plain-list">{analysis.importantFacts.map((fact: string) => <li key={fact}>{fact}</li>)}</ul>
+        </div>
+      )}
+
       <div className="result-section">
         <h3 className="section-title">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -405,6 +528,14 @@ const DetailedView: React.FC<{ analysis: any; theme: string }> = ({ analysis }) 
               <p className="section-description">{section.description}</p>
               <div className="section-relevance">
                 <strong>Relevance:</strong> {section.relevance}
+              </div>
+              {section.ingredients?.length > 0 && <p className="section-relevance"><strong>Ingredients:</strong> {section.ingredients.join(' • ')}</p>}
+              <p className="section-relevance"><strong>Potential consequence:</strong> {section.punishment}</p>
+              <div className="legal-meta">
+                <span>{section.bailable || 'Bail status: requires verification'}</span>
+                <span>{section.cognizable || 'Cognizable status: requires verification'}</span>
+                <span className={section.status === 'requires-verification' ? 'verification-warning' : ''}>{section.status === 'possible' ? 'Possible provision' : 'Requires legal verification'}</span>
+                <a href={section.officialSource} target="_blank" rel="noreferrer">Official source</a>
               </div>
             </div>
           )) : (
@@ -495,6 +626,63 @@ const DetailedView: React.FC<{ analysis: any; theme: string }> = ({ analysis }) 
                     {step.authority}
                   </span>
                 </div>
+
+                {analysis.problemAnalysis && (
+                  <div className="result-section">
+                    <h3 className="section-title">Problem analysis</h3>
+                    <div className="analysis-copy-grid">
+                      <p><strong>What may have happened:</strong> {analysis.problemAnalysis.whatHappened}</p>
+                      <p><strong>Possible liability:</strong> {analysis.problemAnalysis.possibleLiability}</p>
+                      <p><strong>Rights:</strong> {analysis.problemAnalysis.rights.join(' ')}</p>
+                      <p><strong>Alternative interpretations:</strong> {analysis.problemAnalysis.alternativeInterpretations.join(' ')}</p>
+                    </div>
+                  </div>
+                )}
+
+                {analysis.evidenceChecklist?.length > 0 && (
+                  <div className="result-section">
+                    <h3 className="section-title">Evidence checklist</h3>
+                    <ul className="evidence-list">
+                      {analysis.evidenceChecklist.map((item: any) => (
+                        <li key={item.item}><input type="checkbox" /> <span><strong>{item.item}</strong><small>{item.reason}</small></span></li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {analysis.authorityGuidance && (
+                  <div className="result-section">
+                    <h3 className="section-title">Authority and contact guidance</h3>
+                    <div className="authority-card">
+                      <h4>{analysis.authorityGuidance.name}</h4>
+                      <p>{analysis.authorityGuidance.why}</p>
+                      <p><strong>Offline:</strong> {analysis.authorityGuidance.offline}</p>
+                      <p><strong>Escalation:</strong> {analysis.authorityGuidance.escalation}</p>
+                      <div className="official-links">{analysis.authorityGuidance.online.map((link: string) => <a key={link} href={link} target="_blank" rel="noreferrer">{link}</a>)}</div>
+                    </div>
+                  </div>
+                )}
+
+                {analysis.remedies?.length > 0 && (
+                  <div className="result-section">
+                    <h3 className="section-title">Remedies and precautions</h3>
+                    <ul className="plain-list">{analysis.remedies.map((item: string) => <li key={item}>{item}</li>)}</ul>
+                    <ul className="plain-list precaution-list">{analysis.precautions?.map((item: string) => <li key={item}>{item}</li>)}</ul>
+                    <p className="legal-disclaimer">{analysis.legalAid}</p>
+                  </div>
+                )}
+
+                {analysis.followUpQuestions?.length > 0 && (
+                  <div className="result-section follow-up-panel">
+                    <h3 className="section-title">Questions to improve this analysis</h3>
+                    {analysis.followUpQuestions.map((question: string) => (
+                      <label key={question}>{question}<input value={followUpAnswers[question] || ''} onChange={event => setFollowUpAnswers(prev => ({ ...prev, [question]: event.target.value }))} /></label>
+                    ))}
+                    <button className="btn btn-primary" type="button" onClick={submitFollowUp}>Update analysis</button>
+                  </div>
+                )}
+
+                {analysis.disclaimer && <p className="legal-disclaimer">{analysis.disclaimer}</p>}
               </div>
             </div>
           ))}
