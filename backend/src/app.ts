@@ -7,6 +7,7 @@ import contactRouter from './routes/contact';
 import searchRouter from './routes/search';
 import legalAnalysisRouter from './routes/legalAnalysis';
 import assaultAssistantRouter from './routes/assaultAssistant';
+import complaintsRouter from './routes/complaints';
 import { initializeSearchEngine } from './services/searchInitializer';
 
 const app = express();
@@ -26,5 +27,7 @@ app.use('/api/contact', contactRouter);
 app.use('/api/search', searchRouter);
 app.use('/api/legal-analysis', legalAnalysisRouter);
 app.use('/api/assault-assistant', assaultAssistantRouter);
+app.use('/api/complaints', complaintsRouter);
+app.use('/api', complaintsRouter);
 
 export default app;
