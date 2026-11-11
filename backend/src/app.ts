@@ -21,6 +21,14 @@ initializeSearchEngine().catch((err: Error) => {
   console.error('[App] Failed to initialize search engine:', err);
 });
 
+app.get('/', (_req, res) => {
+  res.json({
+    name: 'Legal Case Advisor API',
+    status: 'ok',
+    health: '/api/health',
+  });
+});
+
 app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));
 app.use('/api/analyze', analyzeRouter);
 app.use('/api/contact', contactRouter);

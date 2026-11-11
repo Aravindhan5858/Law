@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+// CSS is loaded by the bundler; TypeScript does not have declarations for stylesheets.
+// @ts-ignore
 import '../styles/LogoDisplay.css';
 
 export default function LogoDisplay() {
