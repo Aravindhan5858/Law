@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import loaderConfig from '../config/loaderConfig';
+// The CSS file is handled by the bundler and has no TypeScript module declaration.
+// @ts-expect-error
 import '../styles/Loader.css';
 
 interface LoaderProps {
@@ -23,8 +25,9 @@ const Loader: React.FC<LoaderProps> = ({
 }) => {
   const navigate = useNavigate();
   const [showButton, setShowButton] = useState(false);
-  const redirectTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const buttonTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const showButtonRef = useRef(false);
+  const redirectTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const buttonTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hasNavigatedRef = useRef(false);
 
   const cancelRedirect = useCallback(() => {
@@ -50,6 +53,7 @@ const Loader: React.FC<LoaderProps> = ({
   useEffect(() => {
     // Show button after configured delay
     buttonTimerRef.current = setTimeout(() => {
+      showButtonRef.current = true;
       setShowButton(true);
     }, buttonDelay);
 
@@ -62,7 +66,7 @@ const Loader: React.FC<LoaderProps> = ({
 
     // Keyboard support
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Enter' && showButton) {
+      if (e.key === 'Enter' && showButtonRef.current) {
         handleNavigate();
       } else if (e.key === 'Escape') {
         cancelRedirect();
@@ -81,7 +85,7 @@ const Loader: React.FC<LoaderProps> = ({
       }
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [autoRedirect, autoDelay, buttonDelay, handleNavigate, showButton, cancelRedirect]);
+  }, [autoRedirect, autoDelay, buttonDelay, handleNavigate, cancelRedirect]);
 
   const handleContinueClick = () => {
     cancelRedirect();

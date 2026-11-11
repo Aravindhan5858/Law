@@ -120,18 +120,21 @@ export function analyzeComplaint(complaint: string, metadata: ComplaintMetadata 
   const seriousInjury = hasAny(normalized, ['fracture', 'broken', 'grievous', 'hospital', 'weapon', 'knife']);
   const threat = hasAny(normalized, ['threat', 'intimidat', 'miratt']);
   const online = hasAny(normalized, ['online', 'website', 'cyber', 'upi', 'payment', 'e-commerce']);
-  const nonDelivery = hasAny(normalized, ['not delivered', 'no refund', 'product not delivered']);
+  const nonDelivery = hasAny(normalized, ['not delivered', 'never delivered', 'no refund', 'refund refused', 'product not delivered']);
   const theft = hasAny(normalized, ['theft', 'steal', 'stole', 'stolen', 'thirud']);
+  const domestic = hasAny(normalized, ['husband', 'wife', 'spouse', 'domestic', 'in-laws', 'in laws', 'dowry']);
 
   if (assault) {
-    legalCategory = 'Physical assault and hurt';
+    legalCategory = domestic ? 'Domestic violence and physical abuse' : 'Physical assault and hurt';
     title = seriousInjury ? 'Possible grievous hurt / assault complaint' : 'Possible voluntarily causing hurt complaint';
     severity = seriousInjury ? 'High' : 'Medium';
     severityExplanation = seriousInjury
       ? 'The description mentions a potentially serious injury, weapon or hospital treatment. A medical opinion is essential.'
       : 'The description indicates physical contact or injury, but the legal classification depends on the medical report and exact facts.';
-    authority = 'Local police station';
-    authorityWhy = 'Police can record the complaint, arrange investigation and refer the injured person for medical examination.';
+    authority = domestic ? 'Protection Officer / Local police station' : 'Local police station';
+    authorityWhy = domestic
+      ? 'A Protection Officer or police can help document abuse and connect the affected person with safety, medical and legal support.'
+      : 'Police can record the complaint, arrange investigation and refer the injured person for medical examination.';
     facts.push('The complaint describes physical contact or bodily injury.');
     if (bnsApplies) {
       sections.push(section(
@@ -156,6 +159,18 @@ export function analyzeComplaint(complaint: string, metadata: ComplaintMetadata 
     }
     if (!hasAny(normalized, ['medical', 'doctor', 'hospital', 'treatment'])) missing.push('Medical examination or treatment details');
     if (!hasAny(normalized, ['witness', 'cctv', 'video', 'photo'])) missing.push('Witnesses, CCTV or other supporting evidence');
+  }
+
+  if (domestic && !assault) {
+    legalCategory = 'Domestic violence and abuse';
+    title = 'Possible domestic violence or abuse complaint';
+    severity = 'High';
+    severityExplanation = 'The description indicates possible abuse within a domestic relationship. The type, frequency and immediate safety risk require sensitive fact-finding.';
+    authority = 'Protection Officer / Local police station';
+    authorityWhy = 'A Protection Officer, police station or legal-aid service can help assess safety and available remedies under the applicable domestic-violence framework.';
+    facts.push('The complaint refers to possible abuse within a domestic relationship.');
+    missing.push('Type, frequency and immediate safety risk of the abuse');
+    missing.push('Any medical, communication or financial evidence');
   }
 
   if (threat) {
@@ -273,7 +288,9 @@ export function analyzeComplaint(complaint: string, metadata: ComplaintMetadata 
 }
 
 function buildEvidenceChecklist(category: string, evidenceNames: string[]): Array<{ item: string; reason: string }> {
-  const items = category.includes('Assault') || category.includes('hurt')
+  const items = category.includes('Domestic')
+    ? [['Medical records or photographs', 'May document injury or health impact.'], ['Messages, call records or diary', 'May preserve a chronology of abuse.'], ['Trusted witness or support-service details', 'May help with safety planning and corroboration.']]
+    : category.includes('Assault') || category.includes('hurt')
     ? [['Medical report or prescription', 'Documents the injury and treatment.'], ['Photographs or video', 'May show injuries, location or events.'], ['Witness and CCTV details', 'May support the account of the incident.']]
     : category.includes('Online') || category.includes('Consumer')
       ? [['Order confirmation and invoice', 'Shows the transaction and promised service.'], ['Payment or bank record', 'Shows payment and amount.'], ['Messages and refund requests', 'Shows communication and attempts to resolve the issue.']]

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../config/api';
 import { useTheme } from '../context/ThemeContext';
 
@@ -69,6 +70,7 @@ type ViewMode = 'detailed' | 'flowchart';
 
 export default function AnalyzePage() {
   const { theme } = useTheme();
+  const navigate = useNavigate();
   const [text, setText] = useState('');
   const [loading, setLoading] = useState(false);
   const [analysis, setAnalysis] = useState<LegalAnalysis | null>(null);
@@ -160,33 +162,43 @@ export default function AnalyzePage() {
       
       if (response.data && response.data.analysis) {
         setAnalysis(response.data.analysis);
+        navigate('/result', {
+          state: {
+            result: response.data.analysis,
+            originalComplaint: text.trim(),
+          },
+        });
       } else {
-        setError('Failed to analyze complaint. Please try again.');
-      }
-
-      async function submitFollowUp() {
-        if (!analysis?.followUpQuestions?.length) return;
-        setLoading(true);
-        setError(null);
-        try {
-          const response = await axios.post(`${API_BASE_URL}/complaints/follow-up`, {
-            complaint: text.trim(),
-            answers: followUpAnswers,
-            incidentDate: incidentDate || undefined,
-            location: location || undefined,
-            category: category || undefined,
-            evidenceNames,
-          });
-          setAnalysis(response.data.analysis);
-        } catch (err: any) {
-          setError(err.response?.data?.message || 'Follow-up analysis failed. Please try again.');
-        } finally {
-          setLoading(false);
-        }
+        setError('Unable to generate a complete analysis. Please try again or provide more details.');
       }
     } catch (err: any) {
       console.error('Analysis error:', err);
       setError(err.response?.data?.message || 'Failed to analyze. Please check your connection.');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function submitFollowUp() {
+    if (!analysis?.followUpQuestions?.length) return;
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axios.post(`${API_BASE_URL}/complaints/follow-up`, {
+        complaint: text.trim(),
+        answers: followUpAnswers,
+        incidentDate: incidentDate || undefined,
+        location: location || undefined,
+        category: category || undefined,
+        evidenceNames,
+      });
+      if (!response.data?.analysis) {
+        throw new Error('The analysis response was empty.');
+      }
+      setAnalysis(response.data.analysis);
+    } catch (err: any) {
+      console.error('Follow-up analysis error:', err);
+      setError(err.response?.data?.message || err.message || 'Follow-up analysis failed. Please try again.');
     } finally {
       setLoading(false);
     }

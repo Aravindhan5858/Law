@@ -5,6 +5,39 @@ import { analyzeComplaint, ComplaintMetadata } from '../services/complaintAnalys
 const router = Router();
 const prisma = new PrismaClient();
 
+function responseData(analysis: ReturnType<typeof analyzeComplaint>) {
+  return {
+    complaintSummary: analysis.incidentSummary,
+    caseCategory: analysis.legalCategory,
+    problemAnalysis: [
+      analysis.problemAnalysis.whatHappened,
+      analysis.problemAnalysis.possibleLiability,
+    ].join(' '),
+    applicableLaws: analysis.applicableSections.map(section => ({
+      actName: section.act,
+      section: section.section,
+      explanation: section.description,
+      reason: section.relevance,
+      punishment: section.punishment,
+      classification: section.status,
+      officialSource: section.officialSource,
+    })),
+    missingInformation: analysis.missingInformation,
+    evidenceChecklist: analysis.evidenceChecklist,
+    recommendedActions: analysis.actionSteps.map(action => ({
+      step: action.step,
+      title: action.title,
+      description: action.action,
+      timeline: action.timeline,
+      authority: action.authority,
+    })),
+    authorityGuidance: analysis.authorityGuidance,
+    legalRemedies: analysis.remedies,
+    precautions: analysis.precautions,
+    officialSources: analysis.applicableSections.map(section => section.officialSource),
+  };
+}
+
 function metadataFromBody(body: Record<string, unknown>): ComplaintMetadata {
   return {
     incidentDate: typeof body.incidentDate === 'string' ? body.incidentDate : undefined,
@@ -37,7 +70,13 @@ router.post('/analyze', async (req: Request, res: Response) => {
         confidence: analysis.confidence,
       },
     });
-    return res.status(201).json({ success: true, id: submission.id, complaint, analysis });
+    return res.status(201).json({
+      success: true,
+      id: submission.id,
+      complaint: complaint.trim(),
+      analysis,
+      data: responseData(analysis),
+    });
   } catch (error) {
     console.error('[Complaint Analysis Error]', error);
     return res.status(500).json({ error: 'Analysis failed', message: 'Unable to save or analyze this complaint.' });
@@ -65,7 +104,14 @@ router.get('/analysis/:id', async (req: Request, res: Response) => {
   if (!Number.isInteger(id)) return res.status(400).json({ error: 'Analysis id must be a number' });
   const submission = await prisma.submission.findUnique({ where: { id } });
   if (!submission) return res.status(404).json({ error: 'Analysis not found' });
-  return res.json({ success: true, id: submission.id, createdAt: submission.createdAt, analysis: JSON.parse(submission.resultJson) });
+  const stored = JSON.parse(submission.resultJson) as { analysis: ReturnType<typeof analyzeComplaint> };
+  return res.json({
+    success: true,
+    id: submission.id,
+    createdAt: submission.createdAt,
+    analysis: stored.analysis,
+    data: responseData(stored.analysis),
+  });
 });
 
 router.get('/:id/analysis', async (req: Request, res: Response) => {
@@ -73,7 +119,14 @@ router.get('/:id/analysis', async (req: Request, res: Response) => {
   if (!Number.isInteger(id)) return res.status(400).json({ error: 'Analysis id must be a number' });
   const submission = await prisma.submission.findUnique({ where: { id } });
   if (!submission) return res.status(404).json({ error: 'Analysis not found' });
-  return res.json({ success: true, id: submission.id, createdAt: submission.createdAt, analysis: JSON.parse(submission.resultJson) });
+  const stored = JSON.parse(submission.resultJson) as { analysis: ReturnType<typeof analyzeComplaint> };
+  return res.json({
+    success: true,
+    id: submission.id,
+    createdAt: submission.createdAt,
+    analysis: stored.analysis,
+    data: responseData(stored.analysis),
+  });
 });
 
 router.get('/laws/search', (req: Request, res: Response) => {
