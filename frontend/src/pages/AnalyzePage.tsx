@@ -143,7 +143,7 @@ export default function AnalyzePage() {
 
   async function submit() {
     if (!text.trim() || text.trim().length < 10) {
-      alert('Please provide a detailed description (at least 10 characters).');
+      setError('Please provide a detailed description (at least 10 characters).');
       return;
     }
 
@@ -324,7 +324,7 @@ export default function AnalyzePage() {
             {loading ? (
               <>
                 <span className="spinner"></span>
-                Analyzing...
+                Analyzing your complaint... Please wait.
               </>
             ) : (
               <>

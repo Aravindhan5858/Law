@@ -1,29 +1,47 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import { API_BASE_URL } from '../config/api';
 
-export default function ContactPage() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [sending, setSending] = useState(false);
+const initialForm = { fullName: '', email: '', phone: '', subject: '', message: '' };
 
-  async function submit() {
-    if (!name || !email || !message) {
-      alert('Please fill in all fields');
+function validate(form: typeof initialForm): string {
+  if (Object.values(form).some(value => !value.trim())) return 'Please complete all fields.';
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) return 'Please enter a valid email address.';
+  if (!/^\+?[0-9\s().-]{7,20}$/.test(form.phone)) return 'Please enter a valid phone number.';
+  if (form.message.trim().length < 20) return 'Message must be at least 20 characters.';
+  return '';
+}
+
+export default function ContactPage() {
+  const [form, setForm] = useState(initialForm);
+  const [sending, setSending] = useState(false);
+  const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  const update = (field: keyof typeof initialForm, value: string) => {
+    setForm(current => ({ ...current, [field]: value }));
+    setFeedback(null);
+  };
+
+  async function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (sending) return;
+    const error = validate(form);
+    if (error) {
+      setFeedback({ type: 'error', text: error });
       return;
     }
 
     setSending(true);
     try {
-      await axios.post(`${API_BASE_URL}/contact`, { name, email, message });
-      alert('Thanks — we received your message.');
-      setName(''); 
-      setEmail(''); 
-      setMessage('');
-    } catch (e) {
-      alert('Failed to send message');
+      const response = await axios.post(`${API_BASE_URL}/contact`, form);
+      setFeedback({ type: 'success', text: response.data.message });
+      setForm(initialForm);
+    } catch (requestError) {
+      const message = axios.isAxiosError(requestError) && requestError.response?.data?.error
+        ? requestError.response.data.error
+        : 'Unable to submit your message right now. Please try again.';
+      setFeedback({ type: 'error', text: message });
     } finally {
       setSending(false);
     }
@@ -31,97 +49,60 @@ export default function ContactPage() {
 
   return (
     <div className="dashboard">
-      <motion.div
-        className="dashboard-header"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <motion.div className="dashboard-header" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
         <h1>Contact Us</h1>
-        <p>Have questions or feedback? We'd love to hear from you</p>
+        <p>Have questions or feedback? We&apos;d love to hear from you.</p>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        style={{ maxWidth: '600px', margin: '2rem auto' }}
-      >
-        <div className="contact-form">
-          <div className="form-group">
-            <label htmlFor="name">Your Name</label>
-            <input 
-              id="name"
-              type="text"
-              value={name} 
-              onChange={e => setName(e.target.value)} 
-              placeholder="Enter your full name"
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="email">Email Address</label>
-            <input 
-              id="email"
-              type="email"
-              value={email} 
-              onChange={e => setEmail(e.target.value)} 
-              placeholder="your.email@example.com"
-              className="form-input"
-            />
-          </div>
-
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} style={{ maxWidth: '600px', margin: '2rem auto' }}>
+        <form className="contact-form" onSubmit={submit} noValidate>
+          {([
+            ['fullName', 'Full Name', 'text', 'Enter your full name'],
+            ['email', 'Email Address', 'email', 'your.email@example.com'],
+            ['phone', 'Phone Number', 'tel', '+91 98765 43210'],
+            ['subject', 'Subject', 'text', 'How can we help?'],
+          ] as const).map(([field, label, type, placeholder]) => (
+            <div className="form-group" key={field}>
+              <label htmlFor={field}>{label}</label>
+              <input
+                id={field}
+                type={type}
+                value={form[field]}
+                onChange={event => update(field, event.target.value)}
+                placeholder={placeholder}
+                className="form-input"
+                required
+              />
+            </div>
+          ))}
           <div className="form-group">
             <label htmlFor="message">Message</label>
-            <textarea 
+            <textarea
               id="message"
-              value={message} 
-              onChange={e => setMessage(e.target.value)} 
+              value={form.message}
+              onChange={event => update('message', event.target.value)}
               placeholder="Tell us how we can help you..."
               rows={6}
               className="form-textarea"
+              minLength={20}
+              required
             />
           </div>
-
-          <button 
-            className="btn btn-primary btn-large" 
-            onClick={submit}
-            disabled={sending}
-          >
-            {sending ? (
-              <>
-                <span className="spinner"></span>
-                Sending...
-              </>
-            ) : (
-              <>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="22" y1="2" x2="11" y2="13" />
-                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                </svg>
-                Send Message
-              </>
-            )}
+          {feedback && (
+            <p role="status" style={{ color: feedback.type === 'success' ? 'var(--success-color, #15803d)' : 'var(--error-color, #b91c1c)' }}>
+              {feedback.text}
+            </p>
+          )}
+          <button className="btn btn-primary btn-large" type="submit" disabled={sending}>
+            {sending ? 'Sending...' : 'Submit Message'}
           </button>
-        </div>
+        </form>
 
         <div className="contact-info" style={{ marginTop: '3rem' }}>
           <h3 style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>Other Ways to Reach Us</h3>
           <div className="info-cards-grid">
-            <div className="mini-card">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-              <span>support@legaladvisor.com</span>
-            </div>
-            <div className="mini-card">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-              <span>+91 1800-123-4567</span>
-            </div>
+            <div className="mini-card"><span>support@legaladvisor.com</span></div>
+            <div className="mini-card"><span>+91 1800-123-4567</span></div>
           </div>
         </div>
       </motion.div>

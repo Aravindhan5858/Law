@@ -15,6 +15,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import Home from './pages/Home';
 import AssaultCaseAssistant from './pages/AssaultCaseAssistant';
+import ContactMessagesPage from './pages/ContactMessagesPage';
 
 export default function App() {
   return (
@@ -117,6 +118,17 @@ export default function App() {
                   <>
                     <Header />
                     <AssaultCaseAssistant />
+                  </>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/contact-messages"
+              element={
+                <ProtectedRoute>
+                  <>
+                    <Header />
+                    <ContactMessagesPage />
                   </>
                 </ProtectedRoute>
               }

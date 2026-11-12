@@ -23,9 +23,16 @@ npm run seed
 npm run dev
 ```
 
+Contact messages require MongoDB and SMTP configuration in `backend/.env`. Copy
+`.env.example`, set `MONGODB_URI`, `ADMIN_EMAIL`, `EMAIL_USER`, `EMAIL_PASS`,
+and a long `ADMIN_JWT_SECRET`. The admin API expects a JWT bearer token whose
+payload includes `role: "admin"` (or `isAdmin: true`).
+
 API Endpoints:
 - GET /api/health
 - POST /api/analyze { text }
+- POST /api/contact { fullName, email, phone, subject, message }
+- GET/PATCH/DELETE /api/admin/contact-messages (admin JWT required)
 - Admin: GET/POST /api/ipc (stubs)
 
 Notes:
