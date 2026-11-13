@@ -4617,6 +4617,143 @@ button.btn:disabled {
    ASSAULT CASE ASSISTANT STYLES
    ============================================ */
 
+.notification-bell {
+  position: relative;
+}
+
+.notification-bell-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.notification-bell-button:hover,
+.notification-bell-button:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--bg);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -0.45rem;
+  right: -0.45rem;
+  min-width: 1.15rem;
+  padding: 0.1rem 0.25rem;
+  color: #fff;
+  background: #dc2626;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.notification-popup {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  z-index: 20;
+  width: min(360px, calc(100vw - 2rem));
+  overflow: hidden;
+  color: var(--text-primary);
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+}
+
+.notification-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.notification-popup-header button,
+.notification-mark-read {
+  color: var(--accent);
+  background: none;
+  border: 0;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.notification-list {
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+  padding: 0.85rem 1rem;
+  color: inherit;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.notification-item:hover,
+.notification-item.unread {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.notification-item-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-item-subject {
+  font-weight: 600;
+}
+
+.notification-item-preview {
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notification-item time {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.notification-unread-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #dc2626;
+  border-radius: 50%;
+}
+
+.notification-empty,
+.notification-error {
+  margin: 0;
+  padding: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.notification-error {
+  color: var(--error-color, #b91c1c);
+}
+
 .assault-container {
   max-width: 1000px;
   margin: 0 auto;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 import { useTheme } from '../context/ThemeContext';
+import NotificationBell from './NotificationBell';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -109,6 +110,7 @@ export default function Header() {
               </svg>
             )}
           </button>
+          <NotificationBell />
           
           <SignedOut>
             <SignInButton mode="modal">

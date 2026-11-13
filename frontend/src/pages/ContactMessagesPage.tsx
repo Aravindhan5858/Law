@@ -25,6 +25,12 @@ export default function ContactMessagesPage() {
   const [newCount, setNewCount] = useState(0);
 
   const headers = useMemo(() => ({ Authorization: `Bearer ${token}` }), [token]);
+  const updateToken = (nextToken: string) => {
+    setToken(nextToken);
+    sessionStorage.setItem('adminToken', nextToken);
+    window.dispatchEvent(new Event('admin-token-updated'));
+  };
+
   async function loadMessages() {
     if (!token) return;
     try {
@@ -32,7 +38,7 @@ export default function ContactMessagesPage() {
       setMessages(response.data.messages);
       setNewCount(response.data.newCount);
       setError('');
-      sessionStorage.setItem('adminToken', token);
+      window.dispatchEvent(new Event('admin-token-updated'));
     } catch (requestError) {
       setError(axios.isAxiosError(requestError) ? requestError.response?.data?.error || 'Unable to load messages.' : 'Unable to load messages.');
     }
@@ -66,7 +72,7 @@ export default function ContactMessagesPage() {
       </div>
       <section className="contact-form" style={{ maxWidth: '1100px', margin: '2rem auto' }}>
         <label htmlFor="admin-token">Admin JWT token</label>
-        <input id="admin-token" className="form-input" type="password" value={token} onChange={event => setToken(event.target.value)} placeholder="Paste an admin bearer token" />
+        <input id="admin-token" className="form-input" type="password" value={token} onChange={event => updateToken(event.target.value)} placeholder="Paste an admin bearer token" />
         <div style={{ display: 'flex', gap: '1rem', margin: '1rem 0', flexWrap: 'wrap' }}>
           <input className="form-input" value={search} onChange={event => setSearch(event.target.value)} placeholder="Search name, email or subject" />
           <select className="form-input" value={status} onChange={event => setStatus(event.target.value)}>
