@@ -33,6 +33,13 @@ API Endpoints:
 - POST /api/analyze { text }
 - POST /api/contact { fullName, email, phone, subject, message }
 - GET/PATCH/DELETE /api/admin/contact-messages (admin JWT required)
+- GET /api/admin/contact-messages/unread-count (admin JWT required)
+- GET /api/admin/contact-messages/recent (admin JWT required)
+- PATCH /api/admin/contact-messages/:id/read (admin JWT required)
+
+The backend emits Socket.IO `contact:created` and `contact:updated` events to
+authenticated admin connections. Set `FRONTEND_ORIGIN` when the dashboard is
+served from a different origin.
 - Admin: GET/POST /api/ipc (stubs)
 
 Notes:

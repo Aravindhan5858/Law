@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 import app from './app';
 import mongoose from 'mongoose';
+import { createServer } from 'http';
+import { initializeRealtime } from './services/realtimeService';
 
 dotenv.config();
 
@@ -14,7 +16,9 @@ async function start() {
     console.warn('MONGODB_URI is not configured; contact storage is unavailable.');
   }
 
-  app.listen(port, () => {
+  const httpServer = createServer(app);
+  initializeRealtime(httpServer);
+  httpServer.listen(port, () => {
     console.log(`Backend listening on http://localhost:${port}`);
   });
 }

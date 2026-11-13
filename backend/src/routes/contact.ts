@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import ContactMessage from '../models/ContactMessage';
 import { sendContactNotification } from '../services/emailService';
 import { validateContactInput } from '../services/contactValidation';
+import { emitContactCreated } from '../services/realtimeService';
 
 const router = Router();
 const contactLimiter = rateLimit({
@@ -29,6 +30,7 @@ router.post('/', contactLimiter, async (req: Request, res: Response) => {
       status: 'New',
       notificationStatus: 'Pending',
     });
+    emitContactCreated(contact);
 
     try {
       await sendContactNotification(contact);

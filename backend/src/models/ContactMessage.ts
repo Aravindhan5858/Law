@@ -9,6 +9,7 @@ const contactMessageSchema = new Schema(
     subject: { type: String, required: true, trim: true, maxlength: 200 },
     message: { type: String, required: true, trim: true, maxlength: 5000 },
     status: { type: String, enum: ['New', 'Read', 'Replied', 'Closed'], default: 'New', index: true },
+    isRead: { type: Boolean, default: false, index: true },
     notificationStatus: { type: String, enum: ['Pending', 'Sent', 'Failed'], default: 'Pending' },
   },
   { timestamps: true, versionKey: false },
@@ -22,6 +23,7 @@ export interface ContactMessageDocument {
   subject: string;
   message: string;
   status: 'New' | 'Read' | 'Replied' | 'Closed';
+  isRead: boolean;
   notificationStatus: 'Pending' | 'Sent' | 'Failed';
   createdAt: Date;
   updatedAt: Date;
